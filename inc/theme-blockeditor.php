@@ -24,12 +24,12 @@ function ekiline_block_editor_setup() {
 	// Unidades de medida.
 	add_theme_support( 'custom-units', 'rem', 'em', 'px' );
 
-	// Estilos de apoyo.
+	// Estilos de apoyo, llamar siempre al tema padre.
 	add_theme_support( 'editor-styles' );
 	$block_styles = array(
-		'assets/css/bootstrap.min.css',
-		'style.css',
-		'assets/css/block-editor.css',
+		get_template_directory_uri() . '/assets/css/bootstrap.min.css',
+		get_template_directory_uri() . '/style.css',
+		get_template_directory_uri() . '/assets/css/block-editor.css',
 	);
 	add_editor_style( $block_styles );
 
