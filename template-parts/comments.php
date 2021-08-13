@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-		<button class="btn btn-link btn-sm text-secondary float-right" data-toggle="collapse" data-target="#comments-activity">
+		<button class="btn btn-link btn-sm text-secondary float-right" data-bs-toggle="collapse" data-bs-target="#comments-activity">
 			<?php esc_html_e( 'Hide comments', 'ekiline' ); ?> <span>&dtrif;</span>
 		</button>
 

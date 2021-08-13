@@ -257,7 +257,7 @@ class Ekiline_Nav_Menu extends Walker_Nav_Menu {
 		// 8) EKB4CSS: Bootstrap nuevo item
 		if ( $args->walker->has_children ) {
 			$split        = ( 0 === $depth ) ? 'nav-link' : 'dropdown-item';
-			$item_output .= '<a class="' . $split . ' dropdown-toggle dropdown-toggle-split" href="#" data-toggle="dropdown" data-reference="parent">&nbsp;</a>';
+			$item_output .= '<a class="' . $split . ' dropdown-toggle dropdown-toggle-split" href="#" data-bs-toggle="dropdown" data-reference="parent">&nbsp;</a>';
 		}
 
 		$item_output .= $args->after;

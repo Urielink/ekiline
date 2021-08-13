@@ -268,13 +268,11 @@ add_action( 'wp_enqueue_scripts', 'ekiline_above_fold_styles', 0 );
  */
 function ekiline_scripts() {
 	// Estilos.
-	wp_enqueue_style( 'bootstrap-4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.5', 'all' );
-	wp_enqueue_style( 'ekiline-style', get_stylesheet_uri(), array(), '4', 'all' );
+	wp_enqueue_style( 'bootstrap-5', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '5', 'all' );
+	wp_enqueue_style( 'ekiline-style', get_stylesheet_uri(), array(), '5', 'all' );
 	wp_enqueue_style( 'dashicons' );
 	// Scripts.
-	wp_enqueue_script( 'jquery-core' );
-	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), '4', true );
-	wp_enqueue_script( 'ekiline-swipe', get_template_directory_uri() . '/assets/js/carousel-swipe.min.js', array( 'jquery' ), '20150716', true );
+	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), '5', true );
 	wp_enqueue_script( 'ekiline-layout', get_template_directory_uri() . '/assets/js/ekiline.js', array( 'jquery' ), '20151226', true );
 	// Comentarios.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -291,7 +289,7 @@ add_action( 'wp_enqueue_scripts', 'ekiline_scripts', 1 );
  * B) Invasivo, directo con etiqueta en head
  * cada nuevo estilo en linea se agrega con: add_action( 'group_inline_css', 'new_style', 0/100 );
  */
-function group_inline_css_stored() {
+function ekiline_group_inline_css_stored() {
 	ob_start(); // inicia captura de datos.
 		do_action( 'group_inline_css' ); // accion predeterminada.
 		$stored_value = ob_get_contents(); // capturar los datos en una variable.
@@ -306,7 +304,7 @@ function group_inline_css_stored() {
 /**
  * En caso de declarar como dependencia ocupar:
  * function ekiline_inline_css_handled() {
- *   wp_add_inline_style( 'ekiline-style', group_inline_css_stored() );
+ *   wp_add_inline_style( 'ekiline-style', ekiline_group_inline_css_stored() );
  * }
  * add_action( 'wp_enqueue_scripts', 'ekiline_inline_css_handled' );
  */
@@ -317,7 +315,7 @@ function ekiline_inline_css_tag() {
 		'<style%1$sid="ekiline-style-inline-css">%2$s</style>' . "\n",
 		wp_kses_post( $type_attr ),
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		wp_strip_all_tags( group_inline_css_stored() )
+		wp_strip_all_tags( ekiline_group_inline_css_stored() )
 	);
 }
 add_action( 'wp_head', 'ekiline_inline_css_tag', 100 );

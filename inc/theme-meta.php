@@ -49,28 +49,17 @@ function ekiline_print_meta_description() {
 }
 add_action( 'wp_head', 'ekiline_print_meta_description', 0, 0 );
 
-
-/**
- * Meta KeyWords, extender, permitirlas en la páginas.
- * meta keywords, extend this to use in pages.
- **/
-function tags_support_all() {
-	// phpcs:ignore WPThemeReview.PluginTerritory.ForbiddenFunctions.plugin_territory_register_taxonomy_for_object_type
-	register_taxonomy_for_object_type( 'post_tag', 'page' );
-}
-add_action( 'init', 'tags_support_all' );
-
 /**
  * Incluir todas // ensure all tags are included in queries
  *
  * @param string $wp_query setup.
  */
-function tags_support_query( $wp_query ) {
+function ekiline_tags_support_query( $wp_query ) {
 	if ( $wp_query->get( 'tag' ) ) {
 		$wp_query->set( 'post_type', 'any' );
 	}
 }
-add_action( 'pre_get_posts', 'tags_support_query' );
+add_action( 'pre_get_posts', 'ekiline_tags_support_query' );
 
 /**
  * Funcion: Obtener Keywords segun el tipo de contenido.
@@ -83,7 +72,7 @@ function ekiline_meta_keywords() {
 
 		global $post;
 		$tags = get_the_tags( $post->ID );
-		
+
 		if ( $tags && ! is_wp_error( $tags ) ) {
 			$keywords = ekiline_collect_tags( $tags );
 		}
@@ -126,7 +115,9 @@ function ekiline_collect_tags( $tags ) {
  * Meta Keywords, incorporar.
  **/
 function ekiline_print_meta_keywords() {
-	echo '<meta name="keywords" content="' . esc_attr( ekiline_meta_keywords() ) . '" />' . "\n";
+	if ( ekiline_meta_keywords() ) {
+		echo '<meta name="keywords" content="' . esc_attr( ekiline_meta_keywords() ) . '" />' . "\n";
+	}
 }
 add_action( 'wp_head', 'ekiline_print_meta_keywords', 0, 0 );
 
@@ -161,7 +152,7 @@ function ekiline_meta_image() {
  * @param string $find_string direccion o dominio a verificar.
  */
 function ekiline_find_in_nav( $find_string ) {
-	$array_menu = wp_get_nav_menu_items( 'Social Menu' );
+	$array_menu = wp_get_nav_menu_items( 'social' );
 	$item       = $find_string;
 	if ( $array_menu ) {
 		foreach ( $array_menu as $m ) {
@@ -203,7 +194,7 @@ function ekiline_meta_social() {
 	global $wp;
 	$meta_social = '';
 	$find_url    = ekiline_find_in_nav( 'twitter.com' );
-	$meta_title  = ( ! wp_title( '', false, 'left' ) ) ? get_bloginfo( 'name' ) : ltrim( wp_title( '', false, 'left' ) );
+	$meta_title  = wp_get_document_title();
 	$meta_desc   = ekiline_meta_description();
 	$meta_imgs   = ekiline_meta_image();
 	$ttr_link    = ekiline_twitter_username( $find_url );

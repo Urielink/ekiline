@@ -14,33 +14,33 @@
 ?>
 
 <?php
-$post_style = 'article';
+$ekiline_post_style = 'article';
 
 if ( is_front_page() ) {
-	$post_style = 'frontpage';
+	$ekiline_post_style = 'frontpage';
 }
 
 if ( is_page() && ! get_theme_mod( 'ekiline_show_meta' ) ) {
-	$post_style = 'nometa';
+	$ekiline_post_style = 'nometa';
 }
 
 if ( ! is_singular() ) {
 	// Formato para listados.
-	$post_style = 'archive';
+	$ekiline_post_style = 'archive';
 	// Formato de tarjeta.
 	if ( get_theme_mod( 'ekiline_Columns' ) === '4' ) {
-		$post_style = 'card';
+		$ekiline_post_style = 'card';
 	}
 	// Formato personalizado para la busqueda no se afecta por columnas.
 	if ( is_search() ) {
-		$post_style = 'search';
+		$ekiline_post_style = 'search';
 	}
 }
 
 if ( class_exists( 'woocommerce' ) ) {
 	if ( is_cart() || is_checkout() || is_account_page() ) {
-		$post_style = 'user';
+		$ekiline_post_style = 'user';
 	}
 }
 
-get_template_part( 'template-parts/content', $post_style );
+get_template_part( 'template-parts/content', $ekiline_post_style );

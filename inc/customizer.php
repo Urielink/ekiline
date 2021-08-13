@@ -183,19 +183,21 @@ function ekiline_theme_customizer( $wp_customize ) {
 	);
 
 	// Layout control and full width.
-	$wlayout   = array();
-	$wlayout[] = array(
-		'name'  => 'Home',
-		'label' => __( 'Home and blog page', 'ekiline' ),
+	$wlayout = array(
+		array(
+			'name'  => 'Home',
+			'label' => __( 'Home and blog page', 'ekiline' ),
+		),
+		array(
+			'name'  => 'Archive',
+			'label' => __( 'Categories and archive pages', 'ekiline' ),
+		),
+		array(
+			'name'  => 'Single',
+			'label' => __( 'Entries and single pages', 'ekiline' ),
+		),
 	);
-	$wlayout[] = array(
-		'name'  => 'Archive',
-		'label' => __( 'Categories and archive pages', 'ekiline' ),
-	);
-	$wlayout[] = array(
-		'name'  => 'Single',
-		'label' => __( 'Entries and single pages', 'ekiline' ),
-	);
+
 	// En caso de woocommerce.
 	if ( class_exists( 'woocommerce' ) ) {
 		$wlayout[] = array(

@@ -1,13 +1,13 @@
 === Ekiline ===
 Contributors: urielink
-Requires at least: 4.8
-Tested up to: 5.6
-Requires PHP: 5.6
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 Donate link: https://www.paypal.com/paypalme/urielink
 
-A starter theme called ekiline.
+A starter theme called Ekiline.
 
 == Description ==
 Hello! I am ekiline, a wordpress theme created the easy development of a website.
@@ -38,8 +38,44 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 1.2 - March ##, 2021 =
+= 2.0.2 - July 23, 2021 =
+* improvement: organization of css styles in block editor. Child theme support.
+
+= 2.0.1 - July 20, 2021 =
+* Verified compatibility with wordpress 5.8
+
+= 2.0 - Jul 12, 2021 =
+* Update: upgrade to Bootstrap 5.0
+Enhance js scripts and css styles from v4 to the new v5.
+Next update: Customizer color palette for 100% compatibility when working with the new Bootstrap version.
+
+= 1.4.6 - Jul 06, 2021 =
+* Update: fix CSS block editor styles.
+
+= 1.4.5 - Jun 29, 2021 =
+* Update: fix CSS header styles. Discard use of wp_title function.
+
+= 1.4.4 - Jun 10, 2021 =
+* Update: show and hide the text description; the display_header_text () function bundled with the ekiline script from the navigation bar.
+
+= 1.4.3 - Jun 8, 2021 =
+* Update check, all ok.
+
+= 1.4.2 - May 26, 2021 =
+* Focus Trapping for Accessibility: Navbar, when using the keyboard (tab + shif, esc || enter, cmd || ctrl), close navigation when focusing on an external element (focus-trap).
+
+= 1.4.1 - April 16, 2021 =
+* Improved "Show site title and tagline" in its markup, customizer controls, and CSS.
+
+= 1.4 - April 16, 2021 =
+* CSS theme style improves, skip button in header, update of theme options, technical improvements of PHP code.
+
+= 1.3 - March 29, 2021 =
+* CSS theme style improves, show/hide site description, add smooth scroll class.
+
+= 1.2 - March 26, 2021 =
 * SEO improves add title reference in read more buttons, declare size in navbar icon.
+* Corrections suggested by the theme review team have been made.
 
 = 1.1 - March 02, 2021 =
 * New release
@@ -63,6 +99,13 @@ You should have received a copy of the GNU General Public License along with thi
 Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
 Ekiline for WordPress Theme bundles the following third-party resources:
-Bootstrap Bootstrap v4.5.0 (https://getbootstrap.com), Copyright 2011-2018 Twitter, Inc.
+
+Bootstrap Bootstrap v4.6.0 (https://getbootstrap.com), Copyright 2011-2018 Twitter, Inc.
 Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source: https://getbootstrap.com
+
+Digital art by Uri Lazcano ( ekiline-media.png, ekiline-patron.png ).
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
+
+Image for theme screenshot, Copyright Uri Lazcano
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/

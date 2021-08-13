@@ -21,11 +21,12 @@
 
 		<div class="headline position-relative <?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? 'container' : 'w-100'; ?>">
 			<h1 class="title display-3">
-				<?php echo wp_kses_post( custom_header_content( 'title' ) ); ?>
+				<?php echo wp_kses_post( ekiline_custom_header_content( 'title' ) ); ?>
+				<a class="skip-link smooth blink btn btn-lg btn-outline-light px-2" href="#primary" title="<?php esc_attr_e( 'Skip to content', 'ekiline' ); ?>" aria-label="Skip">&#8595;</a>
 			</h1>
-			<p class="lead">
-				<?php echo wp_kses_post( custom_header_content( 'text' ) ); ?>
-			</p>
+			<div class="lead">
+				<?php echo wp_kses_post( ekiline_custom_header_content( 'text' ) ); ?>
+			</div>
 		</div>
 	</div>
 

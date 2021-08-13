@@ -12,7 +12,7 @@
  * @param string $kind set type of content: css/js.
  * @param string $ignore set handlers to ignore.
  */
-function print_libs( $kind, $ignore ) {
+function ekiline_print_libs( $kind, $ignore ) {
 	if ( ! $kind || ! $ignore ) {
 		return;
 	}
@@ -35,23 +35,23 @@ function print_libs( $kind, $ignore ) {
 /**
  * Modulo en previsualizador
  */
-function print_styles_and_scripts_info() {
+function ekiline_print_styles_and_scripts_info() {
 	if ( is_customize_preview() ) {
 		// Ignorar estilos o scripts de customizer.
 		$ignore_css = array( 'admin-bar', 'customize-preview', 'wp-mediaelement' );
 		$ignore_js  = array( 'customize-preview', 'admin-bar', 'wp-mediaelement', 'mediaelement-vimeo', 'wp-playlist', 'customize-selective-refresh', 'customize-preview-widgets', 'customize-preview-nav-menus' );
 		// Mostrar modulo html.
 		$html_action  = '<div class="fixed-bottom" style="position:fixed;bottom:0px;left:0px;right:0px;z-index:100;">';
-		$html_action .= '<a class="btn btn-sm btn-primary show-handlers" data-toggle="collapse" href="#collapseHandlers">' . __( 'Sort Scripts ', 'ekiline' ) . '</a> ';
+		$html_action .= '<a class="btn btn-sm btn-primary show-handlers" data-bs-toggle="collapse" href="#collapseHandlers">' . __( 'Sort Scripts ', 'ekiline' ) . '</a> ';
 		$html_action .= '<div class="collapse" id="collapseHandlers" style="background:#eeeeee;color:#656a6f;padding:10px;">';
 		$html_action .= '<small>' . __( 'Choose and copy handlers in customizer "Ekiline Sort Scripts" option', 'ekiline' ) . '</small><br>';
-		$html_action .= __( 'Styles: ', 'ekiline' ) . '<code>' . print_libs( 'css', $ignore_css ) . '</code><br>';
-		$html_action .= __( 'Scripts: ', 'ekiline' ) . '<code>' . print_libs( 'js', $ignore_js ) . '</code>';
+		$html_action .= __( 'Styles: ', 'ekiline' ) . '<code>' . ekiline_print_libs( 'css', $ignore_css ) . '</code><br>';
+		$html_action .= __( 'Scripts: ', 'ekiline' ) . '<code>' . ekiline_print_libs( 'js', $ignore_js ) . '</code>';
 		$html_action .= '</div></div>';
 		echo wp_kses_post( $html_action );
 	}
 }
-add_action( 'wp_footer', 'print_styles_and_scripts_info', 0 );
+add_action( 'wp_footer', 'ekiline_print_styles_and_scripts_info', 0 );
 
 /**
  * 2) Controles Customizer, campos para los estilos.
@@ -119,7 +119,7 @@ function ekiline_reload_libraries( $wp_customize ) {
 		);
 
 		// Opciones por cada manejador registrado.
-		$libraries = ctmzr_array_handlers( $kind );
+		$libraries = ekiline_ctmzr_array_handlers( $kind );
 
 		if ( $libraries ) {
 
@@ -171,7 +171,7 @@ add_action( 'customize_register', 'ekiline_reload_libraries' );
  *
  * @param string $kind set type of content: css/js.
  */
-function ctmzr_array_handlers( $kind = null ) {
+function ekiline_ctmzr_array_handlers( $kind = null ) {
 	$handlers = get_theme_mod( 'ekiline_' . $kind . '_handler_array' );
 	if ( $handlers ) {
 		$handlers_ar = explode( ',', $handlers );
@@ -184,8 +184,8 @@ function ctmzr_array_handlers( $kind = null ) {
  *
  * @param string $kind set type of content: css/js.
  */
-function ctmzr_handlers_options( $kind = null ) {
-	$libs        = ctmzr_array_handlers( $kind );
+function ekiline_ctmzr_handlers_options( $kind = null ) {
+	$libs        = ekiline_ctmzr_array_handlers( $kind );
 	$item        = '';
 	$item_change = array();
 	if ( $libs ) {
@@ -232,7 +232,7 @@ if ( get_theme_mod( 'ekiline_css_handler_array' ) ) {
  * @param string $src url recurso.
  */
 function ekiline_change_css_tag( $tag, $handle, $src ) {
-	foreach ( ctmzr_handlers_options( 'css' ) as $pre_style ) {
+	foreach ( ekiline_ctmzr_handlers_options( 'css' ) as $pre_style ) {
 		if ( $pre_style['handler'] === $handle && '1' === $pre_style['option'] ) {
 			$tag = '<link rel="preload" as="style" href="' . esc_url( $src ) . '">' . "\n";
 		}
@@ -246,7 +246,7 @@ function ekiline_change_css_tag( $tag, $handle, $src ) {
 function ekiline_styles_localize() {
 
 	global $wp_styles;
-	$load_css_from = ctmzr_handlers_options( 'css' );
+	$load_css_from = ekiline_ctmzr_handlers_options( 'css' );
 	$the_styles    = array();
 
 	foreach ( $load_css_from as $pre_style ) {
@@ -283,31 +283,14 @@ function ekiline_styles_localize() {
 function ekiline_load_all_csstojs() {
 	?>
 	<script>
-	var allCss = <?php ekiline_styles_localize(); ?>;
-	if ( allCss !== null ) {
+	var ekiline_all_css = <?php ekiline_styles_localize(); ?>;
+	if ( ekiline_all_css !== null ) {
 		window.addEventListener( 'DOMContentLoaded', function () {
-			loadStylesNativo(allCss );
-		} );
-	}
-	// Carga de estilos CSS.
-	function loadStyles( styles ) {
-		var $ = jQuery.noConflict();
-		var head = $( 'head' );
-		var wpcss = head.find( 'style[id="ekiline-style-inline-css"]' );
-		var cssinline = head.find( 'style:last' );
-		$.each( styles, function( key, value ) {
-			var linkCss = $( '<link/>',{ 'rel':'stylesheet', 'id':value.id, 'href':value.src, 'media':value.media } );
-			if ( wpcss.length ) {
-				wpcss.before( linkCss );
-			} else if ( cssinline.length ) {
-				cssinline.before( linkCss );
-			} else {
-				head.append( linkCss );
-			}
+			ekiline_loadStylesNativo( ekiline_all_css );
 		} );
 	}
 	// Carga de estilos CSS nativo.
-	function loadStylesNativo(styles){
+	function ekiline_loadStylesNativo( styles ){
 		var head = document.querySelector('head');
 		var wpcss = head.querySelector('#ekiline-style-inline-css');
 		var cssinline = head.getElementsByTagName('style')[head.getElementsByTagName('style').length - 1];
@@ -337,7 +320,7 @@ function ekiline_load_all_csstojs() {
  * Orden: 6.1, 6.3, 6.2 + 6.4.
  */
 if ( get_theme_mod( 'ekiline_js_handler_array' ) ) {
-	add_filter( 'script_loader_tag', 'override_scripts', 10, 2 );
+	add_filter( 'script_loader_tag', 'ekiline_override_scripts', 10, 2 );
 	add_filter( 'script_loader_tag', 'ekiline_change_js_tag', 10, 4 );
 	add_action( 'wp_footer', 'ekiline_load_all_jstojs', 100 );
 }
@@ -345,14 +328,14 @@ if ( get_theme_mod( 'ekiline_js_handler_array' ) ) {
 /**
  * Accion 6.1: Transformar etiquetas individuales con nuevo atributo, publicar
  * Se ejecuta en #329
- * add_filter( 'script_loader_tag', 'override_scripts', 10, 2 );
+ * add_filter( 'script_loader_tag', 'ekiline_override_scripts', 10, 2 );
  *
  * @param string $tag etiqueta a modificar.
  * @param string $handle manejador.
  */
-function override_scripts( $tag, $handle ) {
+function ekiline_override_scripts( $tag, $handle ) {
 
-	$load_jss_from = ctmzr_handlers_options( 'js' );
+	$load_jss_from = ekiline_ctmzr_handlers_options( 'js' );
 
 	foreach ( $load_jss_from as $new_script ) {
 		if ( $new_script['handler'] === $handle ) {
@@ -376,7 +359,7 @@ function override_scripts( $tag, $handle ) {
 function ekiline_scripts_localize() {
 
 	global $wp_scripts;
-	$load_jss_from = ctmzr_handlers_options( 'js' );
+	$load_jss_from = ekiline_ctmzr_handlers_options( 'js' );
 	$the_scripts   = array();
 
 	foreach ( $load_jss_from as $handler ) {
@@ -418,7 +401,7 @@ function ekiline_scripts_localize() {
 function ekiline_change_js_tag( $tag, $handle, $src ) {
 
 	global $wp_scripts;
-	$load_jss_from = ctmzr_handlers_options( 'js' );
+	$load_jss_from = ekiline_ctmzr_handlers_options( 'js' );
 	// Reemplazos.
 	$rplcs_comment = array( '<!-- script src=', '></script -->' );
 	$rplcs_preload = array( '<link rel="preload" as="script" href=', '/>' );
@@ -445,53 +428,37 @@ function ekiline_change_js_tag( $tag, $handle, $src ) {
 function ekiline_load_all_jstojs() {
 	?>
 	<script>
-	var allJss = <?php ekiline_scripts_localize(); ?>;
-	if ( allJss !== null ) {
+	var ekiline_all_jss = <?php ekiline_scripts_localize(); ?>;
+	if ( ekiline_all_jss !== null ) {
 		window.addEventListener( 'DOMContentLoaded', function () {
-			loadScriptsOrderedNative( allJss , 0 );
+			ekiline_loadScriptsOrderedNative( ekiline_all_jss , 0 );
 		} );
 	}
-	// Carga a discrecion.
-	function loadScripts(scripts ) {
-		var $ = jQuery.noConflict();
-		$.each( scripts, function( key, value ) {
-			$.getScript( value.src );
-		} );
-	}
-		// Carga a discrecion nativo.
-		function loadScriptsNative(scripts){
-			scripts.forEach(function(value, key){
-				var script = document.createElement('script');
-					script.src = value.src;
-					document.body.appendChild(script);
-			} );
-		}
-	// Carga ordenada.
-	function loadScriptsOrdered(scripts,i ) {
-		var $ = jQuery.noConflict();
-		if (i < scripts.length ) {
-			$.getScript(scripts[i].src, function () {
-				i++;
-				loadScriptsOrdered(scripts,i);
-			} );
-		}
-	}
-		// Carga ordenada nativo 2 funciones.
-		function getScriptNative(scriptUrl, callback) {
+	// Carga a discrecion nativo.
+	function ekiline_loadScriptsNative(scripts){
+		scripts.forEach(function(value, key){
 			var script = document.createElement('script');
-			script.src = scriptUrl;
-			script.onload = callback;
-			document.body.appendChild(script);
-		}
+				script.src = value.src;
+				document.body.appendChild(script);
+		} );
+	}
 
-		function loadScriptsOrderedNative(scripts,i) {
-			if (i<scripts.length){
-				getScriptNative( scripts[i].src, function () {
-					i++;
-					loadScriptsOrderedNative(scripts,i);
-				});
-			}
+	// Carga ordenada nativo 2 funciones.
+	function ekiline_getScriptNative(scriptUrl, callback) {
+		var script = document.createElement('script');
+		script.src = scriptUrl;
+		script.onload = callback;
+		document.body.appendChild(script);
+	}
+
+	function ekiline_loadScriptsOrderedNative(scripts,i) {
+		if (i<scripts.length){
+			ekiline_getScriptNative( scripts[i].src, function () {
+				i++;
+				ekiline_loadScriptsOrderedNative(scripts,i);
+			});
 		}
+	}
 	</script>
 	<?php
 }
@@ -500,13 +467,13 @@ function ekiline_load_all_jstojs() {
  * 7 Todos los scripts al footer / All scripts to footer
  */
 if ( get_theme_mod( 'ekiline_scripts_at_footer' ) === true ) {
-	add_action( 'after_setup_theme', 'footer_enqueue_scripts' );
+	add_action( 'after_setup_theme', 'ekiline_footer_enqueue_scripts' );
 }
 
 /**
  * 7.1 Organizar scripts con filtros.
  */
-function footer_enqueue_scripts() {
+function ekiline_footer_enqueue_scripts() {
 	// Emojis al footer.
 	$emoji_detect = 'print_emoji_detection_script';
 	$emoji_styles = 'print_emoji_styles';

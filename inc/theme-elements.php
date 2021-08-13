@@ -26,11 +26,11 @@ function ekiline_localize_extra_terms() {
  * Reemplazar el marcado para el enlace de leer mas
  * Custom read more link
  */
-function override_read_more_link() {
+function ekiline_override_read_more_link() {
 	/* translators: screenread only %s is replaced with title */
-	return '<a class="more-link" href="' . get_permalink() . '" aria-label="' . sprintf( esc_html__( 'Continue reading %s', 'ekiline' ), wp_strip_all_tags( get_the_title() ) ) . '">' . __( 'Read more', 'ekiline' ) . '</a>';
+	return '<a class="more-link" href="' . esc_url( get_permalink() ) . '" aria-label="' . sprintf( esc_attr__( 'Continue reading: %s', 'ekiline' ), wp_strip_all_tags( get_the_title() ) ) . '">' . __( 'Read more', 'ekiline' ) . '</a>';
 }
-add_filter( 'the_content_more_link', 'override_read_more_link' );
+add_filter( 'the_content_more_link', 'ekiline_override_read_more_link' );
 
 /**
  * Widgets en footer
@@ -165,8 +165,8 @@ function ekiline_content_additions( $content ) {
 			$css_class = 'more-link btn btn-primary btn-block mt-2';
 		}
 		/* translators: screenread only %s is replaced with title */
-		$tittle = sprintf( esc_html__( 'Continue reading %s', 'ekiline' ), wp_strip_all_tags( get_the_title() ) );
-		$link   = '... <a class="' . $css_class . '" href="' . get_permalink() . '" aria-label="' . $tittle . '">' . $tittle . '</a>';
+		$tittle = sprintf( esc_attr__( 'Continue reading: %s', 'ekiline' ), wp_strip_all_tags( get_the_title() ) );
+		$link   = '... <a class="' . $css_class . '" href="' . esc_url( get_permalink() ) . '" aria-label="' . $tittle . '">' . $tittle . '</a>';
 
 		if ( strpos( $post->post_content, '<!--more-->' ) ) {
 			$content = $content;
@@ -227,7 +227,7 @@ function ekiline_link_pages() {
 	}
 
 	$args = array(
-		'before'         => '<p class="page-links border-bottom p-2 text-right"><i class="float-left">' . esc_html__( 'Continue reading:', 'ekiline' ) . '</i>',
+		'before'         => '<p class="page-links border-bottom p-2 text-right"><i class="float-left">' . esc_html__( 'Continue reading: ', 'ekiline' ) . '</i>',
 		'after'          => '</p>',
 		'link_before'    => '<span class="btn btn-sm btn-primary">',
 		'link_after'     => '</span>',
@@ -265,36 +265,6 @@ function ekiline_password_form() {
 add_filter( 'the_password_form', 'ekiline_password_form' );
 
 /**
- * 2) Expirar la sesion que permite leer un contenido protegido
- * Expire post password
- *
- * @link https://developer.wordpress.org/reference/hooks/post_password_expires/
- *
- * @param string $time set time values.
- */
-function ekiline_expire_cookie( $time ) {
-
-	$session = '0';
-	$stck    = '';
-
-	if ( '0' === $session ) {
-		// Set cookie to expire at the end of the session.
-		$stck = 0;
-	} elseif ( '5' === $session ) {
-		// For 5 minutes (60 * 5).
-		$stck = time() + 300;
-	} elseif ( '10' === $session ) {
-		// For 10 mn.
-		$stck = time() + 600;
-	}
-
-	return $stck;
-
-}
-add_filter( 'post_password_expires', 'ekiline_expire_cookie' );
-
-
-/**
  * Paginacion para page & single & archive
  *
  * @link https://codex.wordpress.org/Next_and_Previous_Links
@@ -330,10 +300,10 @@ function ekiline_pagination() {
 		$nexr_id = ( isset( $pages[ $current + 1 ] ) ) ? $pages[ $current + 1 ] : '';
 
 		if ( ! empty( $prev_id ) ) {
-			$prev_link .= '<li class="page-item page-link"><a href="' . get_permalink( $prev_id ) . '" title="' . get_the_title( $prev_id ) . '"><span>&leftarrow;</span> ' . get_the_title( $prev_id ) . '</a></li>';
+			$prev_link .= '<li class="page-item page-link"><a href="' . esc_url( get_permalink( $prev_id ) ) . '" title="' . esc_attr( get_the_title( $prev_id ) ) . '"><span>&leftarrow;</span> ' . esc_attr( get_the_title( $prev_id ) ) . '</a></li>';
 		}
 		if ( ! empty( $nexr_id ) ) {
-			$next_link .= '<li class="page-item page-link"><a href="' . get_permalink( $nexr_id ) . '" title="' . get_the_title( $nexr_id ) . '">' . get_the_title( $nexr_id ) . ' <span>&rightarrow;</span></a></li>';
+			$next_link .= '<li class="page-item page-link"><a href="' . esc_url( get_permalink( $nexr_id ) ) . '" title="' . esc_attr( get_the_title( $nexr_id ) ) . '">' . esc_attr( get_the_title( $nexr_id ) ) . ' <span>&rightarrow;</span></a></li>';
 		}
 	}
 
@@ -383,7 +353,7 @@ function ekiline_pagination() {
 		}
 	}
 
-	$the_pages .= '<nav id="page-navigation" class="d-flex justify-content-center w-100" aria-label="Page navigation">';
+	$the_pages .= '<nav id="page-navigation" class="d-flex justify-content-center w-100" aria-label="' . esc_attr( 'Page navigation', 'ekiline' ) . '">';
 	$the_pages .= '<ul class="pagination justify-content-between">';
 	$the_pages .= $prev_link;
 	$the_pages .= $next_link;
@@ -393,8 +363,6 @@ function ekiline_pagination() {
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo $the_pages;
 }
-
-
 
 /**
  * Obtener categorias para pagina 404
@@ -439,7 +407,6 @@ function ekiline_category_transient_flusher() {
 add_action( 'edit_category', 'ekiline_category_transient_flusher' );
 add_action( 'save_post', 'ekiline_category_transient_flusher' );
 
-
 /**
  * Extension servir contenido sin formato por medio de url (1).
  *
@@ -471,105 +438,3 @@ function ekiline_serve_template( $template ) {
 }
 add_filter( 'single_template', 'ekiline_serve_template' );
 add_filter( 'page_template', 'ekiline_serve_template' );
-
-/**
- * Incorporar datos a sitemap.
- * Referencias:
- *
- * @link https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/
- * @link https://www.sitemaps.org/protocol.html
- * @link https://developer.wordpress.org/reference/functions/get_the_date/
- * @link https://developer.wordpress.org/reference/functions/current_time/
- *
- * @param string $entry publicacion.
- * @param string $post tipo de publicacion.
- */
-function ekiline_sitemap_more_atts( $entry, $post ) {
-
-	$frec  = 'never';
-	$prior = '0.6';
-	$set_y = ( current_time( 'Y', true ) - get_the_modified_date( 'Y', $post ) );
-	$set_m = ( current_time( 'm', true ) - get_the_modified_date( 'm', $post ) );
-	$set_d = ( current_time( 'd', true ) - get_the_modified_date( 'd', $post ) );
-
-	if ( 2 > $set_y ) {
-		$frec  = 'yearly';
-		$prior = '0.7';
-	}
-
-	if ( 0 === $set_y ) {
-		if ( 2 > $set_m ) {
-			$frec  = 'monthly';
-			$prior = '0.8';
-		}
-		if ( 0 === $set_m ) {
-			if ( 8 < $set_d ) {
-				$frec  = 'weekly';
-				$prior = '0.9';
-			} elseif ( 7 > $set_d ) {
-				$frec  = 'daily';
-				$prior = '1.0';
-			}
-		}
-	}
-
-	if ( 3 < $set_y ) {
-		$prior = '0.5';
-	}
-
-	$entry['lastmod']    = $post->post_modified_gmt;
-	$entry['changefreq'] = $frec;
-	$entry['priority']   = $prior;
-
-	return $entry;
-}
-add_filter( 'wp_sitemaps_posts_entry', 'ekiline_sitemap_more_atts', 10, 2 );
-
-/**
- * Estilo personalizado en sitemap.
- * Referencias:
- *
- * @param string $css estilos.
- */
-function ekiline_sitemap_css( $css ) {
-	$css = '
-	body {
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-		color: #444;
-		font-size:.83rem;
-	}
-
-	#sitemap__table {
-		border: solid 1px #ccc;
-		border-collapse: collapse;
-	}
-
-	#sitemap__table tr td.loc {
-		direction: ltr;
-	}
-
-	#sitemap__table tr th {
-		text-align: left;
-	}
-
-	#sitemap__table tr td,
-	#sitemap__table tr th {
-		padding: 10px;
-	}
-
-	#sitemap__table tr:nth-child(odd) td {
-		background-color: #eee;
-	}
-
-	#sitemap__table tr:hover td {
-		background-color: #ddd;
-	}
-
-	a:hover {
-		text-decoration: none;
-	}
-	';
-	return $css;
-}
-
-add_filter( 'wp_sitemaps_stylesheet_css', 'ekiline_sitemap_css', 0, 1 );

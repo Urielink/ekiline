@@ -15,20 +15,16 @@ function ekiline_logo_theme() {
 	$brand_hor  = wp_get_attachment_image_url( get_theme_mod( 'ekiline_logo_max' ), 'medium' );
 
 	if ( $brand_hor && ! $brand_icon ) {
-		echo '<img class="img-fluid" src="' . esc_url( $brand_hor ) . '" alt="' . esc_html( get_bloginfo( 'name' ) ) . '" loading="lazy"/>';
-	} elseif ( ! $brand_hor && $brand_icon ) {
-		echo '<img class="brand-icon" src="' . esc_url( get_site_icon_url() ) . '" alt="' . esc_html( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>
-			' . esc_html( get_bloginfo( 'name' ) );
-	} elseif ( $brand_hor && $brand_icon ) {
+		echo '<img class="img-fluid" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" loading="lazy"/>';
+	} elseif ( ! $brand_hor && ( $brand_icon && get_site_icon_url() ) ) {
+		echo '<img class="brand-icon" src="' . esc_url( get_site_icon_url() ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>';
+	} elseif ( $brand_hor && ( $brand_icon && get_site_icon_url() ) ) {
 		echo '
-		<img class="img-fluid d-none d-md-block" src="' . esc_url( $brand_hor ) . '" alt="' . esc_html( get_bloginfo( 'name' ) ) . '" loading="lazy"/>
-		<span class="d-block d-md-none">
-			<img class="brand-icon" src="' . esc_url( get_site_icon_url( '150' ) ) . '" alt="' . esc_html( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>
-			' . esc_html( get_bloginfo( 'name' ) ) . '
-		</span>';
-	} else {
-		echo esc_html( get_bloginfo( 'name' ) );
+		<img class="img-fluid d-none d-md-inline" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" loading="lazy"/>
+		<img class="brand-icon d-inline d-md-none" src="' . esc_url( get_site_icon_url( '150' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>';
 	}
+	$hide_title = ( $brand_hor && ( $brand_icon && get_site_icon_url() ) ) ? ' d-md-none' : '';
+	echo '<span class="site-title' . esc_attr( $hide_title ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
 }
 
 /**
@@ -102,7 +98,7 @@ function ekiline_navbar_menu( $nav_position ) {
 			$nav_head  = ' flex-md-column';
 			break;
 		case 5:
-			$nav_help  = ' offcanvas ' . $nav_inverse;
+			$nav_help  = ' off-canvas-nav ' . $nav_inverse;
 			$nav_align = ' ml-auto';
 			break;
 		case 6:
@@ -131,6 +127,16 @@ function ekiline_navbar_menu( $nav_position ) {
 		$toggle_btn = 'modal-toggler navbar-toggler collapsed';
 	}
 
+	// Mejora, obtener el nombre del menu y agregarlo como clase.
+	$menu_name = wp_get_nav_menu_name( $nav_position );
+	$menu_obj  = wp_get_nav_menu_object( $menu_name );
+	// Validar la existencia de objeto.
+	if ( $menu_obj ) {
+		$menu_slug = ' menu-' . $menu_obj->slug;
+		// Acumular a la clase principal.
+		$nav_align .= $menu_slug;
+	}
+
 	// Clases reunidas para <nav>.
 	$nav_class_css = 'navbar ' . $nav_inverse . $nav_position . '-navbar ' . $expand . $nav_action;
 
@@ -151,7 +157,7 @@ function ekiline_navbar_menu( $nav_position ) {
 
 			<?php dynamic_sidebar( 'navbar-w1' ); ?>
 
-			<button class="<?php echo esc_attr( $toggle_btn ); ?>" type="button" data-toggle="<?php echo esc_attr( $datatoggle ); ?>" data-target="#<?php echo esc_attr( $datatarget ); ?>" aria-label="Toggle navigation">
+			<button class="<?php echo esc_attr( $toggle_btn ); ?>" type="button" data-bs-toggle="<?php echo esc_attr( $datatoggle ); ?>" data-bs-target="#<?php echo esc_attr( $datatarget ); ?>" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ekiline' ); ?>">
 				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 			</button>
 
@@ -160,7 +166,7 @@ function ekiline_navbar_menu( $nav_position ) {
 			<div id="<?php echo esc_attr( $datatarget ); ?>" class="<?php echo esc_attr( $collapse_css ); ?>">
 
 			<?php if ( '5' === $styles ) { ?>
-				<button class="<?php echo esc_attr( $toggle_btn ); ?>" type="button" data-toggle="<?php echo esc_attr( $datatoggle ); ?>" data-target="#<?php echo esc_attr( $datatarget ); ?>" aria-label="Toggle navigation">
+				<button class="<?php echo esc_attr( $toggle_btn ); ?>" type="button" data-bs-toggle="<?php echo esc_attr( $datatoggle ); ?>" data-bs-target="#<?php echo esc_attr( $datatarget ); ?>" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ekiline' ); ?>">
 					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</button>
 			<?php } ?>
@@ -227,25 +233,29 @@ function ekiline_modal_menu_bottom( $nav_position ) {
 			$modal_css = 'modal fade right-aside modal-nav';
 			break;
 	}
+
+	// Mejora, obtener el nombre del menu y agregarlo como clase.
+	$menu_name = wp_get_nav_menu_name( $nav_position );
+	$menu_obj  = wp_get_nav_menu_object( $menu_name );
+	// Validar la existencia de objeto.
+	$menu_slug = ( $menu_obj ) ? ' menu-' . $menu_obj->slug : '';
 	?>
 
 <div id="<?php echo esc_attr( $modal_id ); ?>" class="<?php echo esc_attr( $modal_css ); ?>" tabindex="-1" role="dialog" aria-labelledby="navModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<!-- <div class="modal-header">
-				<h3 class="modal-title" id="navModalLabel"><?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?></h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div> -->
+			<div class="modal-header d-none">
+				<strong class="modal-title" id="navModalLabel"><?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?></strong>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'ekiline' ); ?>"></button>
+			</div>
 			<div class="modal-body navbar-light bg-light">
 
 				<div class="btn-group float-right">
-					<button type="button" class="modal-resize btn btn-sm btn-outline-secondary" aria-label="Modal size">
+					<button type="button" class="modal-resize btn btn-sm btn-outline-secondary" aria-label="<?php esc_attr_e( 'Modal size', 'ekiline' ); ?>">
 						<span>&leftarrow;</span>
 						<span>&rightarrow;</span>
 					</button>
-					<button type="button" class="navbar-toggler m-0 btn btn-sm btn-outline-secondary" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="navbar-toggler m-0 btn btn-sm btn-outline-secondary" data-bs-dismiss="modal" aria-label="<?php esc_attr_e( 'Close', 'ekiline' ); ?>">
 						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
 				</div>
@@ -265,7 +275,7 @@ function ekiline_modal_menu_bottom( $nav_position ) {
 						'container'       => 'div',
 						'container_class' => 'navbar-collapse collapse show',
 						'container_id'    => '',
-						'menu_class'      => 'navbar-nav',
+						'menu_class'      => 'navbar-nav ' . $menu_slug,
 						'menu_id'         => 'modal-menu',
 						'fallback_cb'     => 'ekiline_nav_fallback',
 						'walker'          => new Ekiline_Nav_Menu(),
@@ -312,12 +322,11 @@ function ekiline_nav_fallback() {
 		</li>
 	</ul>
 	<div class="navbar-text ml-auto">
-		<a target="_blank" class="btn btn-sm btn-outline-warning" href="<?php echo esc_url( 'https://ekiline.com/docs/' ); ?>"><?php esc_html_e( 'Theme help', 'ekiline' ); ?></a>
+		<a target="_blank" class="btn btn-sm btn-outline-warning" href="<?php echo esc_url( 'https://ekiline.com/' ); ?>"><?php esc_html_e( 'Theme help', 'ekiline' ); ?></a>
 	</div>
 
 	<?php
 } // ekiline_nav_fallback
-
 
 /**
  * Agregar a wp_body_open, menu a la pagina, en la parte superior.
@@ -327,3 +336,14 @@ function ekiline_top_navbar() {
 	ekiline_navbar_menu( 'primary' );
 }
 add_action( 'wp_body_open', 'ekiline_top_navbar', 0 );
+
+/**
+ * Mostrar/Ocultar la descripcion del sitio en navbar.
+ * Show/Hide site description from customizer options.
+ */
+function ekiline_display_header_text_by_css() {
+	if ( ! display_header_text() ) {
+		echo '#primarySiteNavigation .site-title, #primarySiteNavigation .site-description{position:absolute !important;clip:rect(1px, 1px, 1px, 1px);}';
+	}
+}
+add_action( 'group_inline_css', 'ekiline_display_header_text_by_css', 7 );

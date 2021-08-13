@@ -39,7 +39,7 @@ function ekiline_width_control() {
  *
  * @param string $width_sb_ctrl setip sidebar view.
  */
-function view_sidebar_filter( $width_sb_ctrl ) {
+function ekiline_view_sidebar_filter( $width_sb_ctrl ) {
 
 	// No ejecutar en admin.
 	if ( is_admin() ) {
@@ -52,7 +52,7 @@ function view_sidebar_filter( $width_sb_ctrl ) {
 		$opt = get_theme_mod( 'ekiline_disableSbHome' );
 	}
 
-	if ( is_archive() || is_category() || ! is_singular() ) {
+	if ( is_archive() || is_category() ) {
 		$opt = get_theme_mod( 'ekiline_disableSbArchive' );
 	}
 
@@ -82,7 +82,7 @@ function view_sidebar_filter( $width_sb_ctrl ) {
 	return $width_sb_ctrl;
 
 }
-add_filter( 'sidebars_widgets', 'view_sidebar_filter' );
+add_filter( 'sidebars_widgets', 'ekiline_view_sidebar_filter' );
 
 
 /**

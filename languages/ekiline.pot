@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2021-03-02 21:08-0600\n"
-"PO-Revision-Date: 2021-03-02 20:46-0600\n"
+"POT-Creation-Date: 2021-07-12 19:48-0500\n"
+"PO-Revision-Date: 2021-03-25 21:40-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,12 +53,12 @@ msgstr ""
 msgid "Proudly powered by %1$s and %2$s. "
 msgstr ""
 
-#: footer.php:35 inc/info.php:116
+#: footer.php:35 inc/info.php:98
 msgid "WordPress"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-#: footer.php:35 inc/info.php:28
+#: footer.php:35
 msgid "Ekiline"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Bottom aside"
 msgstr ""
 
-#: functions.php:121 inc/theme-customcolors.php:114
+#: functions.php:121 inc/theme-customcolors.php:118
 msgid "Footer"
 msgstr ""
 
@@ -333,70 +333,70 @@ msgstr ""
 msgid "Enable pagination between pages."
 msgstr ""
 
-#: inc/info.php:46 inc/info.php:108
+#: inc/info.php:26 inc/info.php:90
 msgid "About Ekiline"
 msgstr ""
 
-#: inc/info.php:62
+#: inc/info.php:45
 msgid "About Ekiline for WordPress"
 msgstr ""
 
-#: inc/info.php:69
+#: inc/info.php:51
 msgid "Thanks for using this theme!"
 msgstr ""
 
-#: inc/info.php:72
+#: inc/info.php:54
 msgid "Find more information to improve your skills in customizing your site."
 msgstr ""
 
-#: inc/info.php:78
+#: inc/info.php:60
 msgid "Add an extra to the creation and delivery of your projects."
 msgstr ""
 
-#: inc/info.php:81
+#: inc/info.php:63
 msgid ""
 "Quick use guide in Keynote or Powerpoint to freely customize and deliver to "
 "your clients."
 msgstr ""
 
-#: inc/info.php:83
+#: inc/info.php:65
 msgid "More design elements, CSS, HTML and JS available to grow your project."
 msgstr ""
 
-#: inc/info.php:85
+#: inc/info.php:67
 msgid "Ekiline Blocks, plugin with carousel and more options in page editor."
 msgstr ""
 
-#: inc/info.php:87
+#: inc/info.php:69
 msgid "Complete clean theme, no warnings or messages."
 msgstr ""
 
-#: inc/info.php:90
+#: inc/info.php:72
 msgid "Buy and download"
 msgstr ""
 
-#: inc/info.php:91 inc/info.php:208
+#: inc/info.php:73
 msgid "FundMe"
 msgstr ""
 
-#: inc/info.php:97
+#: inc/info.php:79
 #, php-format
 msgid "%1$s with Ekiline and %2$s, %3$s."
 msgstr ""
 
-#: inc/info.php:98
+#: inc/info.php:80
 msgid "Make money"
 msgstr ""
 
-#: inc/info.php:99
+#: inc/info.php:81
 msgid "fund its development"
 msgstr ""
 
-#: inc/info.php:100
+#: inc/info.php:82
 msgid "discover how"
 msgstr ""
 
-#: inc/info.php:109
+#: inc/info.php:91
 msgid ""
 "Ekiline simplifies the creation of a website with WordPress, it is a working "
 "method that brings together the standard practices of the internet industry, "
@@ -404,58 +404,58 @@ msgid ""
 "For more information visit ekiline.com"
 msgstr ""
 
-#: inc/info.php:110
+#: inc/info.php:92
 msgid "About Uri Lazcano"
 msgstr ""
 
-#: inc/info.php:113
+#: inc/info.php:95
 msgid ""
 "Frontend designer established in Mexico City. 10 years developing websites "
 "and 10 more years of experience in graphic design for advertising. Check my "
 "career and work."
 msgstr ""
 
-#: inc/info.php:117
+#: inc/info.php:99
 msgid "Github"
 msgstr ""
 
-#: inc/info.php:118
+#: inc/info.php:100
 msgid "Linkedin"
 msgstr ""
 
-#: inc/info.php:119
+#: inc/info.php:101
 msgid "Behance"
 msgstr ""
 
-#: inc/info.php:120 inc/info.php:155
+#: inc/info.php:102 inc/info.php:153
 msgid "B I X N I A"
 msgstr ""
 
-#: inc/info.php:128
+#: inc/info.php:110
 msgid "Ekiline docs"
 msgstr ""
 
-#: inc/info.php:131
+#: inc/info.php:113
 msgid "Install"
 msgstr ""
 
-#: inc/info.php:132
+#: inc/info.php:114
 msgid "Customize"
 msgstr ""
 
-#: inc/info.php:133
+#: inc/info.php:115
 msgid "Elements and blocks"
 msgstr ""
 
-#: inc/info.php:134
+#: inc/info.php:116
 msgid "Compatibility"
 msgstr ""
 
-#: inc/info.php:136
+#: inc/info.php:137
 msgid "Limited liability:"
 msgstr ""
 
-#: inc/info.php:137
+#: inc/info.php:138
 msgid ""
 "As a courtesy, we provide information on how to use certain third-party "
 "products, but we do not directly support their use and we are not "
@@ -464,21 +464,13 @@ msgid ""
 "trademarks of their respective owners."
 msgstr ""
 
-#: inc/info.php:152
+#: inc/info.php:150
 #, php-format
 msgid "&copy; Copyright %1$s Ekiline"
 msgstr ""
 
-#: inc/info.php:154
+#: inc/info.php:152
 msgid "All rights reserved. Ekiline developed by"
-msgstr ""
-
-#: inc/info.php:206
-msgid "About"
-msgstr ""
-
-#: inc/info.php:207
-msgid "Get more"
 msgstr ""
 
 #: inc/theme-blockeditor.php:39
@@ -593,129 +585,129 @@ msgstr ""
 msgid "D4"
 msgstr ""
 
-#: inc/theme-customcolors.php:22 inc/theme-customheader.php:27
+#: inc/theme-customcolors.php:19 inc/theme-customheader.php:21
 msgid "Colors"
 msgstr ""
 
-#: inc/theme-customcolors.php:23
+#: inc/theme-customcolors.php:20
 msgid ""
 "Customize the Bootstrap color palette and use the CSS classes set in your "
 "design. Or adjust the colors per item."
 msgstr ""
 
-#: inc/theme-customcolors.php:31
+#: inc/theme-customcolors.php:28
 msgid "Customize the Bootstrap color palette"
 msgstr ""
 
-#: inc/theme-customcolors.php:39
+#: inc/theme-customcolors.php:36
 msgid "Customize colors per item"
 msgstr ""
 
-#: inc/theme-customcolors.php:51
+#: inc/theme-customcolors.php:47
 msgid "Background color and text"
 msgstr ""
 
-#: inc/theme-customcolors.php:70
+#: inc/theme-customcolors.php:74
 msgid "Color on main container"
 msgstr ""
 
-#: inc/theme-customcolors.php:78
+#: inc/theme-customcolors.php:82
 msgid "Navbar background"
 msgstr ""
 
-#: inc/theme-customcolors.php:88
+#: inc/theme-customcolors.php:92
 msgid "Bottom bar"
 msgstr ""
 
-#: inc/theme-customcolors.php:141
+#: inc/theme-customcolors.php:145
 msgid "Change Bootstrap color palette and use default classes"
 msgstr ""
 
-#: inc/theme-customcolors.php:141
+#: inc/theme-customcolors.php:145
 msgid ""
 "<br><code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "primary</code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:149
+#: inc/theme-customcolors.php:153
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "secondary</code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:157
+#: inc/theme-customcolors.php:161
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-success</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:165
+#: inc/theme-customcolors.php:169
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-danger</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:173
+#: inc/theme-customcolors.php:177
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-warning</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:181
+#: inc/theme-customcolors.php:185
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-info</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:189
+#: inc/theme-customcolors.php:193
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-light</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:197
+#: inc/theme-customcolors.php:201
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-dark</"
 "code>"
 msgstr ""
 
-#: inc/theme-customcolors.php:247
+#: inc/theme-customcolors.php:251
 msgid "Use light navbar"
 msgstr ""
 
-#: inc/theme-customheader.php:28
+#: inc/theme-customheader.php:22
 msgid "Transparency color"
 msgstr ""
 
-#: inc/theme-customheader.php:36
+#: inc/theme-customheader.php:30
 msgid "Text color"
 msgstr ""
 
-#: inc/theme-customheader.php:44
+#: inc/theme-customheader.php:38
 msgid "Links color"
 msgstr ""
 
-#: inc/theme-customheader.php:92
+#: inc/theme-customheader.php:86
 msgid "If Post Page is assigned (Homepage Settings), show page title."
 msgstr ""
 
-#: inc/theme-customheader.php:113
+#: inc/theme-customheader.php:107
 msgid "Narrow header (jumbotron)"
 msgstr ""
 
-#: inc/theme-customheader.php:137
+#: inc/theme-customheader.php:131
 msgid "Header image height"
 msgstr ""
 
-#: inc/theme-customheader.php:138
+#: inc/theme-customheader.php:132
 msgid "Extend the image to fill the entire screen"
 msgstr ""
 
-#: inc/theme-customheader.php:161
+#: inc/theme-customheader.php:155
 msgid "Front Page video"
 msgstr ""
 
-#: inc/theme-customheader.php:162
+#: inc/theme-customheader.php:156
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
@@ -770,43 +762,55 @@ msgstr ""
 
 #: inc/theme-elements.php:31 inc/theme-elements.php:168
 #, php-format
-msgid "Continue reading %s"
+msgid "Continue reading: %s"
 msgstr ""
 
-#: inc/theme-elements.php:31 inc/theme-elements.php:168
+#: inc/theme-elements.php:31
 msgid "Read more"
 msgstr ""
 
-#: inc/theme-elements.php:229
-msgid "Continue reading:"
+#: inc/theme-elements.php:230
+msgid "Continue reading: "
 msgstr ""
 
-#: inc/theme-elements.php:258
+#: inc/theme-elements.php:259
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
 msgstr ""
 
-#: inc/theme-elements.php:259
+#: inc/theme-elements.php:260
 msgid "Password:"
 msgstr ""
 
-#: inc/theme-elements.php:261
+#: inc/theme-elements.php:262
 msgctxt "post password form"
 msgid "Enter"
 msgstr ""
 
-#: inc/theme-elements.php:359
+#: inc/theme-elements.php:360
 msgid "&larr; Previous"
 msgstr ""
 
-#: inc/theme-elements.php:360
+#: inc/theme-elements.php:361
 msgid "Next &rarr;"
 msgstr ""
 
 #: inc/theme-meta.php:36
 #, php-format
 msgid "There are %1$s entries related to %2$s"
+msgstr ""
+
+#: inc/theme-navbars.php:154 inc/theme-navbars.php:163
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/theme-navbars.php:237 inc/theme-navbars.php:248
+msgid "Close"
+msgstr ""
+
+#: inc/theme-navbars.php:244
+msgid "Modal size"
 msgstr ""
 
 #: inc/theme-navbars.php:301
@@ -1033,7 +1037,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Developed with Bootstrap 4 and HTML5. Multiple widget areas and widgets to "
+"Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to "
 "facilitate website creation. Includes optimization (SEO) functions. "
 "Documentation: http://www.ekiline.com"
 msgstr ""

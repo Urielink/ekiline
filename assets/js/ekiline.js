@@ -1,134 +1,34 @@
 /* Ekiline for WordPress Theme, Copyright 2018 Uri Lazcano. Ekiline is distributed under the terms of the GNU GPL. http://ekiline.com */
 window.onload = function() {
-    if (window.jQuery) {
-		ekilineJQueryGroup();
-    } else {
-		transformarCarruselNativo('.carousel-multiple');
-		smoothNavigation('.smooth');
-    }
-}
 
-function ekilineJQueryGroup(){
-	// Compatibilidad de jquery.
-	jQuery(document).ready(function( $ ) {
+	ekiline_smoothNavigation('.smooth');
+	ekiline_navBar_behavior();
+	ekiline_navModal_behavior();
+	ekiline_nestedDropdowns('.dropdown-menu a.dropdown-toggle');
+	ekiline_transformarCarrusel('.carousel-multiple');
 
-		/* Scroll suave */
-		var $root = $('html, body');
-		$('.smooth').click(function() {
-			var href = $.attr(this, 'href');
-			$root.animate({
-				scrollTop: $(href).offset().top
-			}, 500, function () {
-				window.location.hash = href;
-			});
-			return false;
-		});
+	/* Bootstrap: inicializar tooltips y popovers */
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		tooltipTriggerList.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl)
+	})
 
-		/* Ajuste en dropdown de widgets dentro de navbar */
-		$('.dropdown-menu a.dropdown-toggle').on('click', function(e){
-			$(this).next('ul').toggle();
-			e.stopPropagation();
-			e.preventDefault();
-		});
-
-		/* animar el boton del menu modal */
-		$('.modal-toggler').on('click',function(){
-			$(this).removeClass('collapsed');
-		});
-
-		$('.modal-nav').on('hidden.bs.modal', function(){
-			$('.modal-toggler').addClass('collapsed');
-		});
-
-		/* cambiar el tamaño de una ventana modal */
-		$( '.modal-resize' ).click(function(){
-			$( '.modal-open' ).toggleClass('modal-full');
-			$( this ).find('span:first-child').toggleClass('float-right');
-		});
-
-		/* Navegacion con scroll */
-		if ( $('#primarySiteNavigation.navbar-sticky').length > 0 ) {
-			var last_scroll_top = 0, scroll_top;
-			$(window).on('scroll', function() {
-				scroll_top = $(this).scrollTop();
-				if( scroll_top < last_scroll_top ) {
-					$('#primarySiteNavigation.navbar-sticky').removeClass('scrolled-down').addClass('scrolled-up');
-				} else {
-					$('#primarySiteNavigation.navbar-sticky').removeClass('scrolled-up').addClass('scrolled-down');
-				}
-				last_scroll_top = scroll_top;
-			});
-		}
-
-		/**
-		 * Bootstrap
-		 */
-
-		/* inicializar popovers y tooltips */
-		$('[data-toggle="tooltip"]').tooltip();
-		$('[data-toggle="popover"]').popover();
-
-		/* Ekiline: carrusel extendido */
-		// function transformarCarrusel(carrusel){
-		// cambiar la declaracion, para poder hacer uso en el editor .
-		window.transformarCarrusel = function(carrusel){
-
-			// Condiciones si no hay carrusel,
-			// O saber que ya fue intervenido, no hacer nada.
-			if ( 0 === $(carrusel).length || 0 < $(carrusel).find('figure').length ) {
-				return;
-			}
-
-			$(carrusel).each(function(){
-
-				// Vistas, columnas y grupo.
-				var params = [ ['x2','6','0'],['x3','4','1'],['x4','3','2'],['x6','2','4'] ];
-				var view, item;
-				// Envoltorio extra para agrupar.
-				for ( var i = 0; i < params.length; i++ ) {
-					if ( $(this).hasClass( params[i][0] ) ){
-						item = params[i][1];
-						view = params[i][2];
-					}
-				}
-				// Items envoltorio.
-				$(this).find('.carousel-item').each(function(){
-					// console.log($(this).children());
-					$(this).children().wrapAll('<figure class="col-md-' + item + '">','</figure>');
-				});
-				// Loop grupos.
-				$(this).find( '.carousel-item').each(function(){
-					// Copiar el primer slide y agregarlo.
-					var next = $(this).next();
-					if ( !next.length ) {
-						next = $(this).siblings(':first');
-					}
-					next.children(':first-child').clone().appendTo( $(this) );
-					// Agrupar slides (view).
-					for ( var i=0;i<view;i++ ) {
-						next = next.next();
-						if ( !next.length ) {
-							next = $(this).siblings(':first');
-						}
-						next.children(':first-child').clone().appendTo( $(this) );
-					}
-				});
-			});
-		}
-		transformarCarrusel('.carousel-multiple');
-	});
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+		popoverTriggerList.map(function (popoverTriggerEl) {
+		return new bootstrap.Popover(popoverTriggerEl)
+	})
 }
 
 /**
  * Scroll suave, aplica a enlaces con clase (.smooth).
  * @param {string} item Clase en link para ejecutar scroll.
  */
-function smoothNavigation(item = null){
+function ekiline_smoothNavigation(item = null){
 	document.querySelectorAll('.smooth').forEach(anchor => {
 		var href = anchor.getAttribute('href');
 		anchor.addEventListener('click', function (e) {
 			e.preventDefault();
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
+			document.querySelector( this.getAttribute('href') ).scrollIntoView({
 				behavior: 'smooth'
 			});
 			window.location.hash = href;
@@ -136,12 +36,100 @@ function smoothNavigation(item = null){
 	});
 }
 
+/* Navegacion con scroll */
+function ekiline_navBar_behavior(){
+
+	var navbarSticky = document.querySelector('#primarySiteNavigation.navbar-sticky');
+
+	if ( navbarSticky ){
+		var last_scroll_top = 0, scroll_top;
+
+		window.addEventListener('scroll', function() {
+
+			scroll_top = this.scrollY;
+
+			if( scroll_top < last_scroll_top ) {
+				navbarSticky.classList.remove('scrolled-down');
+				navbarSticky.classList.add('scrolled-up');
+			} else {
+				navbarSticky.classList.remove('scrolled-up');
+				navbarSticky.classList.add('scrolled-down');
+			}
+
+			last_scroll_top = scroll_top;
+		});
+	}
+
+	/**
+	 * Hacks interesantes:
+	 * Uso de teclado
+	 * - document.addEventListener('keydown', (e) => { console.log(e.code) }, true );
+	 * Verificar descencientes
+	 * parentEl.contains(childEl)
+	 */
+	// Elemento activo.
+	var domFocusitem = document.activeElement;
+	domFocusitem.addEventListener('focus', () => {
+		// Si navbar se muestra.
+		var activeNav = document.querySelector('.navbar-collapse.show:not(.modal .navbar-collapse)');
+		if ( activeNav ){
+			// Cotejar si el objeto seleccionado es descendiente.
+			var newDomFocusitem = document.activeElement;
+			var isDescendant = activeNav.contains( newDomFocusitem );
+			if ( ! isDescendant ){
+				var closeNav = activeNav;
+				// cerrar la navegacion.
+				new bootstrap.Collapse(closeNav, {
+					close: true
+				})
+			}
+		}
+	}, true);
+
+}
+
+/* Animar el boton del menu modal */
+function ekiline_navModal_behavior(){
+
+	var modalTogglerBtn = document.querySelector('.modal-toggler');
+	var modalNav = document.querySelector('.modal-nav');
+
+	if ( modalTogglerBtn && modalNav ){
+		modalTogglerBtn.addEventListener('click', function() {
+			this.classList.remove('collapsed');
+		}, false);
+
+		modalNav.addEventListener('hidden.bs.modal', function () {
+			modalTogglerBtn.classList.add('collapsed');
+		}, false);
+
+		// Cambiar el tamaño de modal.
+		var modalResizeBtn = document.querySelector('.modal-resize');
+
+		modalResizeBtn.addEventListener('click', function() {
+			var modalOpen = document.querySelector('.modal-open');
+			modalOpen.classList.toggle('modal-full');
+			this.firstElementChild.classList.toggle('float-right');
+		}, false);
+	}
+}
+
+/* Ajuste en dropdown de widgets dentro de navbar */
+function ekiline_nestedDropdowns(item = null){
+	var dropdownList = [].slice.call(document.querySelectorAll(item))
+	dropdownList.map(function (dropdownEl) {
+		dropdownEl.addEventListener('click', function(e) {
+			e.stopPropagation();
+			e.preventDefault();
+		}, false);
+	})
+}
+
 /**
- * Modificar carrusel.
- * Se ocupa en el Editor de bloques también.
+ * Modificar carrusel. Se ocupa en el Editor de bloques también.
  * @param {string} carrusel Idendifica la clase para reajustar el diseno.
  */
-window.transformarCarruselNativo = function(carrusel){
+window.ekiline_transformarCarrusel = function(carrusel){
 
 	// Si no hay carrusel cancelar todo.
 	var loaditem = document.querySelector(carrusel);
@@ -151,15 +139,12 @@ window.transformarCarruselNativo = function(carrusel){
 
 	// Funcion envoltorio (Wrapper).
 	function envolver(fuente,col){
-		// console.log(fuente)
 		var hijos = fuente.children;
-		// var padre = fuente.parentNode;//prueba
 		// crear envoltorio
 		var wrapper = document.createElement('figure');
 			wrapper.className = 'col-md-' + col;
 		// envolver los hijos.
 		for (var i = hijos.length - 1; i >= 0; i--) {
-			// padre.appendChild(hijos[i]);//prueba
 			wrapper.appendChild(hijos[i]);
 		};
 		fuente.appendChild(wrapper);
@@ -168,46 +153,26 @@ window.transformarCarruselNativo = function(carrusel){
 	// Si hay carrusel,
 	var siCarruseles = document.querySelectorAll(carrusel);
 
-	// // Cuantos son.
-	// console.log('cuantosson');
-	// console.log(siCarruseles.length);
-
-	// Modificar cada uno
+	// Cuantos son, modificar cada uno
 	Array.prototype.forEach.call(siCarruseles, function(unCarrusel, i){
 
-		// // objeto e indice.
-		// console.log('quees');
-		// console.log(unCarrusel);
-		// console.log('contar');
-		// console.log(i);
-
-		// Vistas, columnas y grupo.
+		// Objeto e indice. Vistas, columnas y grupo.
 		var params = [ ['x2','6','0'],['x3','4','1'],['x4','3','2'],['x6','2','4'] ];
 		var view, item;
 		// Envoltorio extra para agrupar.
 		for ( var i = 0; i < params.length; i++ ) {
-			// //atributos por clase.
-			// console.log(params[i][0]);
+			// Atributos por clase.
 			if ( unCarrusel.classList.contains(params[i][0]) ) {
 				item = params[i][1];
 				view = params[i][2];
 			}
 		}
 
-		// //resultado de seleccion por carrusel
-		// console.log(item);
-		// console.log(view);
-
-		// // Carrusel padre.
-		// console.log(unCarrusel);
-
-		// Items para envoltorio.
+		// Resultado de seleccion por carrusel
+		// Carrusel padre. Items para envoltorio.
 		hijosCarrusel = unCarrusel.querySelectorAll('.carousel-item');
 
-		// Carrusel hijo.
-		// console.log(hijosCarrusel);
-
-		// Envoltorio por item.
+		// Carrusel hijo. Envoltorio por item.
 		Array.prototype.forEach.call(hijosCarrusel, function(el,i){
 			envolver(el,item);
 		});
@@ -220,20 +185,12 @@ window.transformarCarruselNativo = function(carrusel){
 				next = el.parentNode.children[0];
 			}
 
-			// Elemento siguiente.
-			// console.log(next);
-
-			// Elemento siguiente clonar.
-			// console.log(next.children[0]);
-			// console.log(el.parentNode.children[i]);
-
+			// Elemento siguiente. Clonar.
 			var firstChildClone = next.children[0].cloneNode(true);
 			var firstChildSet = el.parentNode.children[i];
 			firstChildSet.appendChild(firstChildClone);
 
 			// Agrupar slides (view).
-			// console.log(view)
-
 			for ( var i=0;i<view;i++ ) {
 				next = next.nextElementSibling;
 				if ( !next ) {

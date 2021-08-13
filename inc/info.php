@@ -1,6 +1,6 @@
 <?php
 /**
- * Ekiline administration info
+ * Ekiline info
  *
  * Admin bar button
  *
@@ -18,26 +18,6 @@
  */
 
 /**
- * Ekiline, adminbar "fundme" button.
- */
-function ekiline_bar() {
-	global $wp_admin_bar;
-	$wp_admin_bar->add_menu(
-		array(
-			'id'     => 'goekiline',
-			'title'  => __( 'Ekiline', 'ekiline' ),
-			'href'   => esc_url( 'themes.php?page=ekiline_options' ),
-			'meta'   => array(
-				'class'  => 'gold',
-				'target' => '_self',
-			),
-			'parent' => 'top-secondary',
-		)
-	);
-}
-add_action( 'admin_bar_menu', 'ekiline_bar', 0 );
-
-/**
  * Ekiline, side menu button.
  */
 function ekiline_theme_page() {
@@ -46,7 +26,7 @@ function ekiline_theme_page() {
 		__( 'About Ekiline', 'ekiline' ),
 		'edit_posts',
 		'ekiline_options',
-		'theme_html_page'
+		'ekiline_theme_html_page'
 	);
 }
 add_action( 'admin_menu', 'ekiline_theme_page' );
@@ -54,8 +34,11 @@ add_action( 'admin_menu', 'ekiline_theme_page' );
 /**
  * Ekiline, info.
  */
-function theme_html_page() { ?>
-
+function ekiline_theme_html_page() { ?>
+<style>
+	.ekiline-notice, .ekiline-notice h4, .ekiline-notice ul, .ekiline-notice ul li{ margin:0px 5px 0px 0px !important; padding-bottom:0px !important; display: inline-block; }
+	.ekiline-notice ul li{ display:none;}
+</style>
 <div class="wrap">
 	<h1>
 		<span class="dashicons dashicons-layout" aria-hidden="true"></span>
@@ -63,7 +46,6 @@ function theme_html_page() { ?>
 	</h1>
 
 	<div id="welcome-panel" class="welcome-panel">
-
 		<div class="welcome-panel-content">
 
 			<h2><?php esc_html_e( 'Thanks for using this theme!', 'ekiline' ); ?></h2>
@@ -133,6 +115,25 @@ function theme_html_page() { ?>
 							<li><?php printf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( 'https://ekiline.com/elementos/' ), esc_html__( 'Elements and blocks', 'ekiline' ) ); ?></li>
 							<li><?php printf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( 'https://ekiline.com/compatible/' ), esc_html__( 'Compatibility', 'ekiline' ) ); ?></li>
 						</ul>
+
+						<?php
+						/**
+						 * Widget RSS reader.
+						 */
+						$rss_instance = array(
+							'title' => 'Ekiline Tips:',
+							'url'   => 'http://ekiline.com/feed/',
+							'items' => 5,
+						);
+						$rss_args     = array(
+							'before_widget' => '<div class="ekiline-notice widget %s">',
+							'after_widget'  => '</div>',
+							'before_title'  => '<h4 class="widgettitle">',
+							'after_title'   => '</h4>',
+						);
+						the_widget( 'WP_Widget_RSS', $rss_instance, $rss_args );
+						?>
+
 						<p><small><strong><?php esc_html_e( 'Limited liability:', 'ekiline' ); ?></strong>
 						<?php esc_html_e( 'As a courtesy, we provide information on how to use certain third-party products, but we do not directly support their use and we are not responsible for the functions, reliability or compatibility of such products. The names, trademarks and logos of third parties are registered trademarks of their respective owners.', 'ekiline' ); ?></small></p>
 					</div>
@@ -141,9 +142,6 @@ function theme_html_page() { ?>
 
 		</div>
 	</div>
-
-
-
 
 	<p style="text-align: right;">
 		<small>
@@ -156,94 +154,12 @@ function theme_html_page() { ?>
 		</small>
 	</p>
 </div>
-
-	<?php
-}
-
-
-/**
- * Noticias para el suscriptor de Ekiline, con widget
- *
- * @link https://developer.wordpress.org/reference/functions/the_widget/
- */
-
-// Verificar paginas de administracion.
-global $pagenow;
-$adminpages = array( 'index.php', 'themes.php', 'tools.php', 'plugins.php' );
-
-if ( in_array( $pagenow, $adminpages, true ) ) {
-	add_action( 'admin_notices', 'ekiline_docs_feed' );
-	add_action( 'admin_footer', 'ekiline_docs_feed_set' );
-}
-
-/**
- * 1) Obtener noticias de Ekiline mediante feed.
- * Setup Feed #155
- */
-function ekiline_docs_feed() {
-	?>
-	<div class="notice notice-success is-dismissible ekiline-notice" style="display: none;">
-
-		<?php
-		$rss_instance = array(
-			'title'        => 'Ekiline Tips',
-			'url'          => 'http://ekiline.com/feed/',
-			'items'        => 5,
-			'show_summary' => 0,
-			'show_author'  => 0,
-			'show_date'    => 0,
-		);
-		$rss_args     = array(
-			'before_widget' => '<div class="widget rss-admin-notice %s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widgettitle">',
-			'after_title'   => '</h2>',
-		);
-
-		the_widget( 'WP_Widget_RSS', $rss_instance, $rss_args );
-		?>
-		<div>
-			<?php printf( '<a class="button button-primary"  href="%1$s">%2$s</a>', esc_url( 'themes.php?page=ekiline_options' ), esc_html__( 'About', 'ekiline' ) ); ?>
-			<?php printf( '<a class="button button-primary"  href="%1$s" target="_blank">%2$s</a>', esc_url( 'https://ekiline.com/compra/' ), esc_html__( 'Get more', 'ekiline' ) ); ?>
-			<?php printf( '<a class="button button-primary gold"  href="%1$s" target="_blank">%2$s</a>', esc_url( 'https://ekiline.com/fondeo/' ), esc_html__( 'FundMe', 'ekiline' ) ); ?>
-		</div>
-	</div>
-
-	<?php
-}
-
-/**
- * 2) Agregar comportaminetos JS.
- * Setup JS in Notice #156
- */
-function ekiline_docs_feed_set() {
-	?>
 <script type='text/javascript'>
-jQuery(document).ready(function($){
-	$('.ekiline-notice').delay(2000).show(100);
-	var random = Math.floor(Math.random() * 10) + 1;
-	$('.ekiline-notice ul li:nth-child('+random+')').delay(3000).show(100);
-});
+	jQuery(document).ready(function($){
+		var random = Math.floor(Math.random() * 5) + 1;
+		$('.ekiline-notice ul li:nth-child('+random+')').delay(3000).show(100);
+	});
 </script>
 	<?php
 }
 
-/**
- * 3) Agregar estilos CSS.
- * Setup CSS styles in Notice.
- */
-function ekiline_admin_styles() {
-	$extracss  = '.gold a::before { content: "\f511";} .gold a{ background-color: #58aa03 !important; } .gold:hover a{ background-color: #ffb900 !important; color: #fff !important; } .gold:hover a::before { content: "\f339"; color: #fff !important; }';
-	$extracss .= '.advice a::before { content: "\f325";} .advice a { background-color: #ff7e00 !important; } .advice:hover a { background-color: #ff7e00 !important; color: #fff !important; } .advice:hover a::before { content: "\f325"; color: #fff !important; }';
-	$extracss .= 'a.gold{ background-color: #58aa03 !important;border:none !important; } a.gold:hover{ background-color: #ffb900 !important; color: #fff !important; } a.gold:hover .dashicons-carrot::before {content: "\f339";color: #fff !important;}';
-	$extracss .= '.dash-note{margin: 0px 10px 0px 0px;float: left;font-size: 20px;}';
-	$extracss .= '.ekiline-notice { display:flex;justify-content: space-between;align-items: center; padding:10px; }';
-	$extracss .= '.ekiline-notice h2, .ekiline-notice ul, .ekiline-notice li{ margin:0px; }';
-	$extracss .= '.ekiline-notice h2{ margin-right:10px; }';
-	$extracss .= '.rss-admin-notice{ margin:0px;display:flex;justify-content: space-between;align-items: center; }';
-	$extracss .= '.rss-admin-notice ul li{ display:none; }';
-	$extracss .= 'a[href^="themes.php?page=ekiline_options"]{background-color:#58aa03;color:#ffffff !important;}';
-	$extracss .= 'a[href^="themes.php?page=ekiline_options"]:hover{background-color:#ffb900 !important;}';
-	wp_add_inline_style( 'wp-admin', $extracss );
-}
-add_action( 'admin_enqueue_scripts', 'ekiline_admin_styles' );

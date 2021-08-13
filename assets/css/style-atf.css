@@ -15,7 +15,8 @@ html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-t
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}
 dl,ol,ul{margin-top:0;margin-bottom:1rem}
-a{color:#007bff;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects}
+a{color:#007bff;text-decoration:underline;background-color:transparent;-webkit-text-decoration-skip:objects}
+article a:not(.btn),article a:not(.entry-title),article a:not(.entry-meta), #comments a, .widget a, .custom-header a{text-decoration: underline;}
 img{vertical-align:middle;border-style:none}
 .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 
@@ -175,15 +176,13 @@ img{vertical-align:middle;border-style:none}
 /* Custom header */
 .bg-deep, .wp-block-cover.bg-deep div{background-size: 1px;background-repeat: no-repeat;-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
 #custom_header_module .wp-block-cover, #custom_header_module .wp-block-cover.has-background-dim::before{display:flex;align-items:flex-end;}
-#custom_header_module > .alignfull {margin-left: calc( -100vw / 2 + 100% / 2);margin-right: calc( -100vw / 2 + 100% / 2);width: 100vw;}
+#custom_header_module > .alignfull {margin-left: calc( -101vw / 2 + 100% / 2);margin-right: calc( -101vw / 2 + 100% / 2);width: 100vw;}
 #custom_header_module .wp-block-cover.has-background-dim::before{z-index: 1;opacity: .2 !important;}
 #custom_header_module .wp-block-cover .headline {z-index:1;}
 #custom_header_module h1{line-height:.88;}
 
 @media only screen and (max-width:576px){
 #custom_header_module > .alignfull {margin-left: calc( -100vw / 2 + 100% / 2 );margin-right: calc( -100vw / 2 + 100% / 2); }
-.scroll-x{display:block;overflow-x:scroll;}
-.scroll-x small {display:flex;width:max-content;}
 }
 @keyframes bgresize { 0% { background-size: 150%; } 100% { background-size: 130%; } }
 .bg-deep, .wp-block-cover.bg-deep{animation: bgresize 5s ease;background-position: 50% 50%;background-repeat: no-repeat;background-size: 130%;}
