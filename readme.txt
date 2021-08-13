@@ -38,6 +38,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.0.2 - Aug 13, 2021 =
+* test branches.
+
 = 2.0.2 - July 23, 2021 =
 * improvement: organization of css styles in block editor. Child theme support.
 
