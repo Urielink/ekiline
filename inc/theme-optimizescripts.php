@@ -139,7 +139,7 @@ function ekiline_reload_libraries( $wp_customize ) {
 			}
 
 			foreach ( $libraries as $handler ) {
-				// ID Ejemplo: ekiline_sortcss_bootstrap-4.
+				// ID Ejemplo: ekiline_sortcss_bootstrap-style.
 				$library_field_name = 'ekiline_' . $kind . '_' . $handler;
 				$wp_customize->add_setting(
 					$library_field_name,
