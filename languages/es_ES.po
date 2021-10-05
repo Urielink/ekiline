@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2021-03-25 21:41-0600\n"
-"PO-Revision-Date: 2021-07-12 19:49-0500\n"
+"POT-Creation-Date: 2021-10-04 21:23-0500\n"
+"PO-Revision-Date: 2021-10-04 21:31-0500\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: es_ES\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -84,7 +84,7 @@ msgstr "Sidebar derecho"
 msgid "Bottom aside"
 msgstr "Sidebar inferior"
 
-#: functions.php:121 inc/theme-customcolors.php:118
+#: functions.php:121 inc/theme-customcolors.php:113
 msgid "Footer"
 msgstr "Pie de página"
 
@@ -165,7 +165,7 @@ msgid "Remove"
 msgstr "Remover"
 
 #: inc/customizer.php:52 inc/customizer.php:131 inc/customizer.php:154
-#: inc/customizer.php:268 inc/widget-options.php:114
+#: inc/customizer.php:270 inc/widget-options.php:114
 msgid "Default"
 msgstr "Default"
 
@@ -275,67 +275,67 @@ msgstr "Categorías y páginas de archivo"
 msgid "Entries and single pages"
 msgstr "Entradas y páginas"
 
-#: inc/customizer.php:203
+#: inc/customizer.php:205
 msgid "WooCommerce pages"
 msgstr "Páginas de WooCommerce"
 
-#: inc/customizer.php:224
+#: inc/customizer.php:226
 msgid "Enabled sidebars"
 msgstr "Sidebars habilitadas"
 
-#: inc/customizer.php:225
+#: inc/customizer.php:227
 msgid "Disable left"
 msgstr "Deshabilitar sidebar izquierda"
 
-#: inc/customizer.php:226
+#: inc/customizer.php:228
 msgid "Disable right"
 msgstr "Deshabilitar sidebar derecha"
 
-#: inc/customizer.php:227
+#: inc/customizer.php:229
 msgid "Disable both"
 msgstr "Deshabilitar sidebars"
 
-#: inc/customizer.php:244
+#: inc/customizer.php:246
 msgid "Show full width layout"
 msgstr "Ver a todo lo ancho"
 
-#: inc/customizer.php:264
+#: inc/customizer.php:266
 msgid "Columns"
 msgstr "Columnas"
 
-#: inc/customizer.php:265
+#: inc/customizer.php:267
 msgid "Show your lists in columns"
 msgstr "Muestra tus listados en columnas"
 
-#: inc/customizer.php:269
+#: inc/customizer.php:271
 msgid "2 columns"
 msgstr "2 columnas"
 
-#: inc/customizer.php:270
+#: inc/customizer.php:272
 msgid "3 columns"
 msgstr "3 columnas"
 
-#: inc/customizer.php:271
+#: inc/customizer.php:273
 msgid "4 columns"
 msgstr "4 columnas"
 
-#: inc/customizer.php:272
+#: inc/customizer.php:274
 msgid "Cards grid"
 msgstr "Cuadrícula de tarjetas"
 
-#: inc/customizer.php:290
+#: inc/customizer.php:292
 msgid "In page meta"
 msgstr "Página meta"
 
-#: inc/customizer.php:291
+#: inc/customizer.php:293
 msgid "Show meta data in pages, author, date, tags."
 msgstr "Mostrar metadatos en páginas, autor, fecha, etiquetas."
 
-#: inc/customizer.php:309
+#: inc/customizer.php:311
 msgid "In page pagination"
 msgstr "Paginación en página"
 
-#: inc/customizer.php:310
+#: inc/customizer.php:312
 msgid "Enable pagination between pages."
 msgstr "Habilite la paginación entre páginas."
 
@@ -608,7 +608,7 @@ msgstr "D3"
 msgid "D4"
 msgstr "D4"
 
-#: inc/theme-customcolors.php:19 inc/theme-customheader.php:21
+#: inc/theme-customcolors.php:19 inc/theme-customheader.php:22
 msgid "Colors"
 msgstr "Colores"
 
@@ -632,25 +632,25 @@ msgstr "Personaliza colores por elemento"
 msgid "Background color and text"
 msgstr "Color de fondo y texto"
 
-#: inc/theme-customcolors.php:74
+#: inc/theme-customcolors.php:72
 msgid "Color on main container"
 msgstr "Color en contenedor principal"
 
-#: inc/theme-customcolors.php:82
+#: inc/theme-customcolors.php:80
 msgid "Navbar background"
 msgstr "Color de fondo barra de navegación"
 
-#: inc/theme-customcolors.php:92
+#: inc/theme-customcolors.php:89
 msgid "Bottom bar"
 msgstr "Barra inferior"
 
-#: inc/theme-customcolors.php:145
+#: inc/theme-customcolors.php:139
 msgid "Change Bootstrap color palette and use default classes"
 msgstr ""
 "Personaliza los colores básicos de Bootstrap y utiliza las clases CSS "
 "establecidas"
 
-#: inc/theme-customcolors.php:145
+#: inc/theme-customcolors.php:139
 msgid ""
 "<br><code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "primary</code>"
@@ -658,7 +658,7 @@ msgstr ""
 "<br><code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "primary</code>"
 
-#: inc/theme-customcolors.php:153
+#: inc/theme-customcolors.php:147
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "secondary</code>"
@@ -666,7 +666,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "secondary</code>"
 
-#: inc/theme-customcolors.php:161
+#: inc/theme-customcolors.php:155
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-success</"
 "code>"
@@ -674,7 +674,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-success</"
 "code>"
 
-#: inc/theme-customcolors.php:169
+#: inc/theme-customcolors.php:163
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-danger</"
 "code>"
@@ -682,7 +682,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-danger</"
 "code>"
 
-#: inc/theme-customcolors.php:177
+#: inc/theme-customcolors.php:171
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-warning</"
 "code>"
@@ -690,7 +690,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-warning</"
 "code>"
 
-#: inc/theme-customcolors.php:185
+#: inc/theme-customcolors.php:179
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-info</"
 "code>"
@@ -698,7 +698,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-info</"
 "code>"
 
-#: inc/theme-customcolors.php:193
+#: inc/theme-customcolors.php:187
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-light</"
 "code>"
@@ -706,7 +706,7 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-light</"
 "code>"
 
-#: inc/theme-customcolors.php:201
+#: inc/theme-customcolors.php:195
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-dark</"
 "code>"
@@ -714,84 +714,92 @@ msgstr ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-dark</"
 "code>"
 
-#: inc/theme-customcolors.php:251
+#: inc/theme-customcolors.php:246
 msgid "Use light navbar"
 msgstr "Contraste claro en navegación"
 
-#: inc/theme-customheader.php:22
-msgid "Transparency color"
-msgstr "Color de transparencia"
-
-#: inc/theme-customheader.php:30
+#: inc/theme-customheader.php:23
 msgid "Text color"
 msgstr "Color de texto"
 
-#: inc/theme-customheader.php:38
+#: inc/theme-customheader.php:37
+msgid "Transparency color"
+msgstr "Color de transparencia"
+
+#: inc/theme-customheader.php:45
 msgid "Links color"
 msgstr "Color de enlaces"
 
-#: inc/theme-customheader.php:86
+#: inc/theme-customheader.php:94
 msgid "If Post Page is assigned (Homepage Settings), show page title."
 msgstr ""
 "Si se asigna Página de entradas (Ajustes de la página de inicio), muestre el "
 "título de la página."
 
-#: inc/theme-customheader.php:107
+#: inc/theme-customheader.php:115
 msgid "Narrow header (jumbotron)"
 msgstr "Cebecera estrecho (jumbotron)"
 
-#: inc/theme-customheader.php:131
+#: inc/theme-customheader.php:139
 msgid "Header image height"
 msgstr "Altura de cabecera"
 
-#: inc/theme-customheader.php:132
+#: inc/theme-customheader.php:140
 msgid "Extend the image to fill the entire screen"
 msgstr "Extienda la imagen para llenar toda la pantalla"
 
-#: inc/theme-customheader.php:155
+#: inc/theme-customheader.php:163
 msgid "Front Page video"
 msgstr "Vídeo de la página principal"
 
-#: inc/theme-customheader.php:156
+#: inc/theme-customheader.php:164
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
 "Formatos recomendados: MP4, WEBM or OGV, la imagen de cabecera se conserva "
 "como fondo del video"
 
-#: inc/theme-customheader.php:326 template-parts/content-article.php:56
+#: inc/theme-customheader.php:333 template-parts/content-article.php:56
 #: template-parts/content-card.php:33
 #, php-format
 msgid "Categories: %s"
 msgstr "Categorías: %s"
 
-#: inc/theme-customheader.php:332 template-parts/content-article.php:63
+#: inc/theme-customheader.php:339
+msgid "Categories:"
+msgstr "Categorías:"
+
+#: inc/theme-customheader.php:357 template-parts/content-article.php:63
 #, php-format
 msgid "Tags: %s"
 msgstr "Etiquetas: %s"
 
-#: inc/theme-customheader.php:363 template-parts/content-article.php:22
+#: inc/theme-customheader.php:363
+msgid "Tags:"
+msgstr "Etiquetas: %s"
+
+#: inc/theme-customheader.php:401 template-parts/content-article.php:22
 #, php-format
 msgctxt "post authors"
 msgid "Written by %s"
 msgstr "Escrito por %s"
 
-#: inc/theme-customheader.php:385 template-parts/content-headline.php:70
+#: inc/theme-customheader.php:423 template-parts/content-headline.php:70
 #, php-format
 msgid "%s results found."
 msgstr "%s resultados encontrados."
 
-#: inc/theme-customheader.php:387 template-parts/content-headline.php:64
+#: inc/theme-customheader.php:425 template-parts/content-headline.php:64
 #: template-parts/searchform.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultados para: %s"
 
-#: inc/theme-customheader.php:391
+#: inc/theme-customheader.php:429
 msgid "It looks like nothing was found at this location."
 msgstr "Parece que no encontramos nada en esta ubicación."
 
-#: inc/theme-customheader.php:392
+#: inc/theme-customheader.php:430
 msgid "Maybe try one of the links below or a search?"
 msgstr ""
 "¿Qué tal si pruebas con los links que aparecen abajo o haz una búsqueda?"
@@ -838,11 +846,11 @@ msgctxt "post password form"
 msgid "Enter"
 msgstr "Ingresar"
 
-#: inc/theme-elements.php:360
+#: inc/theme-elements.php:330
 msgid "&larr; Previous"
 msgstr "&larr; Anterior"
 
-#: inc/theme-elements.php:361
+#: inc/theme-elements.php:331
 msgid "Next &rarr;"
 msgstr "Siguiente &rarr;"
 
@@ -851,27 +859,27 @@ msgstr "Siguiente &rarr;"
 msgid "There are %1$s entries related to %2$s"
 msgstr "Hay%1$s entradas relacionadas con%2$s"
 
-#: inc/theme-navbars.php:154 inc/theme-navbars.php:163
+#: inc/theme-navbars.php:160 inc/theme-navbars.php:169
 msgid "Toggle navigation"
 msgstr "Cambiar modo de Navegación"
 
-#: inc/theme-navbars.php:237 inc/theme-navbars.php:248
+#: inc/theme-navbars.php:249 inc/theme-navbars.php:258
 msgid "Close"
 msgstr "Cerrar"
 
-#: inc/theme-navbars.php:244
+#: inc/theme-navbars.php:254
 msgid "Modal size"
 msgstr "Tamaño modal"
 
-#: inc/theme-navbars.php:301
+#: inc/theme-navbars.php:311
 msgid "Assign a menu!"
 msgstr "¡Asigna un menú!"
 
-#: inc/theme-navbars.php:304
+#: inc/theme-navbars.php:314
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: inc/theme-navbars.php:315
+#: inc/theme-navbars.php:325
 msgid "Theme help"
 msgstr "Ayuda en tema"
 
@@ -914,23 +922,27 @@ msgstr "Mover todos los scripts al final de la página"
 msgid "Comma separated %1$s handlers"
 msgstr "Controladores %1$s separados por comas"
 
-#: inc/theme-optimizescripts.php:127 inc/theme-optimizescripts.php:133
+#: inc/theme-optimizescripts.php:128 inc/theme-optimizescripts.php:135
 msgid "No changes"
 msgstr "Sin cambios"
 
-#: inc/theme-optimizescripts.php:128 inc/theme-optimizescripts.php:137
+#: inc/theme-optimizescripts.php:129 inc/theme-optimizescripts.php:139
 msgid "javascript load"
 msgstr "carga javascript"
 
-#: inc/theme-optimizescripts.php:134
+#: inc/theme-optimizescripts.php:130 inc/theme-optimizescripts.php:140
+msgid "after scroll load"
+msgstr "después de Scroll"
+
+#: inc/theme-optimizescripts.php:136
 msgid "async"
 msgstr "async"
 
-#: inc/theme-optimizescripts.php:135
+#: inc/theme-optimizescripts.php:137
 msgid "defer"
 msgstr "defer"
 
-#: inc/theme-optimizescripts.php:136
+#: inc/theme-optimizescripts.php:138
 msgid "defer & async"
 msgstr "defer & async"
 
@@ -955,8 +967,8 @@ msgstr "Ocultar comentarios"
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s comentario en «%2$s»"
-msgstr[1] "%1$s comentarios en «%2$s»"
+msgstr[0] "%1$s comentario en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentarios en &ldquo;%2$s&rdquo;"
 
 #: template-parts/comments.php:43
 msgid "Comment navigation"
@@ -1082,6 +1094,10 @@ msgid ""
 msgstr ""
 "Parece que no encontramos lo que estás buscando. Puede que una búsqueda te "
 "ayude."
+
+#: template-parts/custom-header.php:25
+msgid "Skip to content"
+msgstr "Ir al contenido"
 
 #: template-parts/searchform.php:28
 msgid "Find term"
