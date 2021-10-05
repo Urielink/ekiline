@@ -40,6 +40,8 @@ Ekiline includes support for Woocommerce.
 = 2.1 - Oct 2, 2021 =
 * Check wp 5.8.1 compatibility
 * Update: bootstrap v5.1.1 , completely reduce jquery dependency on methods, renamed handler.
+* improvement: new option to load styles and scripts.
+* language, update.
 
 = 2.0.2 - Aug 13, 2021 =
 * test branches.
