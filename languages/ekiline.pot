@@ -1,9 +1,11 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2021-10-04 21:42-0500\n"
-"PO-Revision-Date: 2021-10-04 21:47-0500\n"
+"POT-Creation-Date: 2021-10-04 21:41-0500\n"
+"PO-Revision-Date: 2021-10-04 21:41-0500\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,398 +17,384 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: es_ES\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:23
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "¡Vaya! No se puede encontrar esa página."
+msgstr ""
 
 #: 404.php:27
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Parece que no se encontró nada aquí. ¿Quieres probar uno de los enlaces de "
-"abajo o una búsqueda?"
 
 #: 404.php:39
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Intenta buscar en los archivos mensuales. %1$s"
+msgstr ""
 
 #: 404.php:43 template-parts/searchform.php:31
 msgid "Search"
-msgstr "Buscar"
+msgstr ""
 
 #: 404.php:63
 msgid "Most used categories"
-msgstr "Categorías mas usadas"
+msgstr ""
 
 #: footer.php:29
 #, php-format
 msgid "&copy; Copyright %1$s. "
-msgstr "&copy; Copyright %1$s. "
+msgstr ""
 
 #: footer.php:35
 #, php-format
 msgid "Proudly powered by %1$s and %2$s. "
-msgstr "Realizado con %1$s y %2$s. "
+msgstr ""
 
 #: footer.php:35 inc/info.php:98
 msgid "WordPress"
-msgstr "WordPress"
+msgstr ""
 
 #. Theme Name of the plugin/theme
 #: footer.php:35
 msgid "Ekiline"
-msgstr "Ekiline"
+msgstr ""
 
 #: footer.php:41
 msgid "Back"
-msgstr "Volver"
+msgstr ""
 
 #: functions.php:52
 msgid "Primary Menu"
-msgstr "Menú Primario"
+msgstr ""
 
 #: functions.php:83
 msgid "Left sidebar"
-msgstr "Sidebar izquierdo"
+msgstr ""
 
 #: functions.php:95
 msgid "Right sidebar"
-msgstr "Sidebar derecho"
+msgstr ""
 
 #: functions.php:108
 msgid "Bottom aside"
-msgstr "Sidebar inferior"
+msgstr ""
 
 #: functions.php:121 inc/theme-customcolors.php:113
 msgid "Footer"
-msgstr "Pie de página"
+msgstr ""
 
 #: functions.php:134
 msgid "Top before all content"
-msgstr "Superior (antes del contenido)"
+msgstr ""
 
 #: functions.php:147
 msgid "In page top content"
-msgstr "Superior al contenido en página"
+msgstr ""
 
 #: functions.php:159
 msgid "In page bottom content"
-msgstr "Inferior al contenido en página"
+msgstr ""
 
 #: functions.php:172
 msgid "In navbar"
-msgstr "Barra de navegación"
+msgstr ""
 
 #: functions.php:184
 msgid "In navbar menu"
-msgstr "Dentro de menú"
+msgstr ""
 
 #: functions.php:254
 msgid "No styles found, check file"
-msgstr "No se encontraron estilos, verifica el archivo"
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:23
 msgid "Show breadcrumb module (Ekiline)"
-msgstr "Mostrar módulo de ruta (Ekiline)"
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:25
 msgid "Breadcrumb Nav"
-msgstr "Ruta de navegación"
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:98
 msgid "Home"
-msgstr "Inicio"
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:184
 msgid "&not;&not;"
-msgstr "&not;&not;"
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:231
 msgid "Search "
-msgstr "Buscar "
+msgstr ""
 
 #: inc/class-ekiline-basic-breadcrumb.php:235
 msgid "Not found "
-msgstr "No encontrado"
+msgstr ""
 
 #: inc/class-ekiline-control-multiple-select.php:32
 msgid "Featured category"
-msgstr "Categorías destacadas"
+msgstr ""
 
 #: inc/class-ekiline-control-multiple-select.php:48
 msgid "All"
-msgstr "Todas"
+msgstr ""
 
 #: inc/customizer.php:39
 msgid "Navbar brand"
-msgstr "Logo en navegación"
+msgstr ""
 
 #: inc/customizer.php:40
 msgid "Show logo on menu (suggest 200x50px)"
-msgstr "Mostrar logo en menú (sugerido 200x50px)"
+msgstr ""
 
 #: inc/customizer.php:49 inc/customizer.php:54
 msgid "Select logo"
-msgstr "Seleccionar logo"
+msgstr ""
 
 #: inc/customizer.php:50
 msgid "Change logo"
-msgstr "Cambiar logo"
+msgstr ""
 
 #: inc/customizer.php:51
 msgid "Remove"
-msgstr "Remover"
+msgstr ""
 
 #: inc/customizer.php:52 inc/customizer.php:131 inc/customizer.php:154
 #: inc/customizer.php:270 inc/widget-options.php:114
 msgid "Default"
-msgstr "Default"
+msgstr ""
 
 #: inc/customizer.php:53
 msgid "No logo selected"
-msgstr "Sin logo seleccionado"
+msgstr ""
 
 #: inc/customizer.php:55
 msgid "Choose logo"
-msgstr "Elegir logo"
+msgstr ""
 
 #: inc/customizer.php:77
 msgid "Replace navbar brand with site icon in small devices"
 msgstr ""
-"Reemplace la marca de navegación por el icono del sitio en dispositivos "
-"pequeños"
 
 #: inc/customizer.php:102
 msgid "Custom signature"
-msgstr "Firma personalizada"
+msgstr ""
 
 #: inc/customizer.php:103
 msgid "Replace links in footer copyright."
-msgstr "Reemplace los enlaces de autoría al pie de página."
+msgstr ""
 
 #: inc/customizer.php:126
 msgid "Primary menu settings"
-msgstr "Configuración del menú principal"
+msgstr ""
 
 #: inc/customizer.php:127
 msgid "Assign positions to the menu: top, fixed or bottom"
-msgstr "Asignar posiciones al menú: superior, fijo o inferior"
+msgstr ""
 
 #: inc/customizer.php:132
 msgid "Fixed top"
-msgstr "Superior fijo"
+msgstr ""
 
 #: inc/customizer.php:133
 msgid "Fixed bottom"
-msgstr "Inferior fijo"
+msgstr ""
 
 #: inc/customizer.php:134
 msgid "Fixed with scroll"
-msgstr "Fijar al scroll"
+msgstr ""
 
 #: inc/customizer.php:155
 msgid "Right"
-msgstr "A la derecha"
+msgstr ""
 
 #: inc/customizer.php:156
 msgid "Centered"
-msgstr "Centrado"
+msgstr ""
 
 #: inc/customizer.php:157
 msgid "Centered between"
-msgstr "Centrado con espacios"
+msgstr ""
 
 #: inc/customizer.php:158
 msgid "Scroller"
-msgstr "Scroller"
+msgstr ""
 
 #: inc/customizer.php:159
 msgid "Offcanvas (responsive)"
-msgstr "Fuera de ventana (responsivo)"
+msgstr ""
 
 #: inc/customizer.php:160
 msgid "Top toggle"
-msgstr "Desplegable"
+msgstr ""
 
 #: inc/customizer.php:161 inc/widget-options.php:116
 msgid "Modal"
-msgstr "Modal"
+msgstr ""
 
 #: inc/customizer.php:162
 msgid "Modal from bottom"
-msgstr "Modal inferior"
+msgstr ""
 
 #: inc/customizer.php:163
 msgid "Modal from left"
-msgstr "Modal izquierdo"
+msgstr ""
 
 #: inc/customizer.php:164
 msgid "Modal from right"
-msgstr "Modal derecho"
+msgstr ""
 
 #: inc/customizer.php:179
 msgid "Site view"
-msgstr "Vista del sitio"
+msgstr ""
 
 #: inc/customizer.php:181
 msgid ""
 "Allow fullwidth of your website by content type: homepage, categories or "
 "single content"
 msgstr ""
-"Elige el ancho completo de su sitio web por tipo de contenido: página de "
-"inicio, categorías o contenido único"
 
 #: inc/customizer.php:189
 msgid "Home and blog page"
-msgstr "Home y página de entradas"
+msgstr ""
 
 #: inc/customizer.php:193
 msgid "Categories and archive pages"
-msgstr "Categorías y páginas de archivo"
+msgstr ""
 
 #: inc/customizer.php:197
 msgid "Entries and single pages"
-msgstr "Entradas y páginas"
+msgstr ""
 
 #: inc/customizer.php:205
 msgid "WooCommerce pages"
-msgstr "Páginas de WooCommerce"
+msgstr ""
 
 #: inc/customizer.php:226
 msgid "Enabled sidebars"
-msgstr "Sidebars habilitadas"
+msgstr ""
 
 #: inc/customizer.php:227
 msgid "Disable left"
-msgstr "Deshabilitar sidebar izquierda"
+msgstr ""
 
 #: inc/customizer.php:228
 msgid "Disable right"
-msgstr "Deshabilitar sidebar derecha"
+msgstr ""
 
 #: inc/customizer.php:229
 msgid "Disable both"
-msgstr "Deshabilitar sidebars"
+msgstr ""
 
 #: inc/customizer.php:246
 msgid "Show full width layout"
-msgstr "Ver a todo lo ancho"
+msgstr ""
 
 #: inc/customizer.php:266
 msgid "Columns"
-msgstr "Columnas"
+msgstr ""
 
 #: inc/customizer.php:267
 msgid "Show your lists in columns"
-msgstr "Muestra tus listados en columnas"
+msgstr ""
 
 #: inc/customizer.php:271
 msgid "2 columns"
-msgstr "2 columnas"
+msgstr ""
 
 #: inc/customizer.php:272
 msgid "3 columns"
-msgstr "3 columnas"
+msgstr ""
 
 #: inc/customizer.php:273
 msgid "4 columns"
-msgstr "4 columnas"
+msgstr ""
 
 #: inc/customizer.php:274
 msgid "Cards grid"
-msgstr "Cuadrícula de tarjetas"
+msgstr ""
 
 #: inc/customizer.php:292
 msgid "In page meta"
-msgstr "Página meta"
+msgstr ""
 
 #: inc/customizer.php:293
 msgid "Show meta data in pages, author, date, tags."
-msgstr "Mostrar metadatos en páginas, autor, fecha, etiquetas."
+msgstr ""
 
 #: inc/customizer.php:311
 msgid "In page pagination"
-msgstr "Paginación en página"
+msgstr ""
 
 #: inc/customizer.php:312
 msgid "Enable pagination between pages."
-msgstr "Habilite la paginación entre páginas."
+msgstr ""
 
 #: inc/info.php:26 inc/info.php:90
 msgid "About Ekiline"
-msgstr "Acerca de Ekiline"
+msgstr ""
 
 #: inc/info.php:45
 msgid "About Ekiline for WordPress"
-msgstr "Acerca de Ekiline para Wordpress"
+msgstr ""
 
 #: inc/info.php:51
 msgid "Thanks for using this theme!"
-msgstr "¡Gracias por utilizar este tema!"
+msgstr ""
 
 #: inc/info.php:54
 msgid "Find more information to improve your skills in customizing your site."
 msgstr ""
-"Encuentre más información para mejorar sus habilidades en la personalización "
-"de su sitio."
 
 #: inc/info.php:60
 msgid "Add an extra to the creation and delivery of your projects."
-msgstr "Agrega un extra a la creación y entrega de sus proyectos."
+msgstr ""
 
 #: inc/info.php:63
 msgid ""
 "Quick use guide in Keynote or Powerpoint to freely customize and deliver to "
 "your clients."
 msgstr ""
-"Guía de uso rápido en Keynote o Powerpoint para personalizar libremente y "
-"entregar a tus clientes."
 
 #: inc/info.php:65
 msgid "More design elements, CSS, HTML and JS available to grow your project."
 msgstr ""
-"Más elementos de diseño, CSS, HTML y JS disponible para crecer tu proyecto."
 
 #: inc/info.php:67
 msgid "Ekiline Blocks, plugin with carousel and more options in page editor."
 msgstr ""
-"Ekiline Blocks, plugin con carrusel y más opciones en editor de páginas."
 
 #: inc/info.php:69
 msgid "Complete clean theme, no warnings or messages."
-msgstr "Tema completo y limpio, sin avisos o mensajes."
+msgstr ""
 
 #: inc/info.php:72
 msgid "Buy and download"
-msgstr "Comprar y descargar"
+msgstr ""
 
 #: inc/info.php:73
 msgid "FundMe"
-msgstr "Fondeame"
+msgstr ""
 
 #: inc/info.php:79
 #, php-format
 msgid "%1$s with Ekiline and %2$s, %3$s."
-msgstr "%1$s con Ekiline y %2$s, %3$s."
+msgstr ""
 
 #: inc/info.php:80
 msgid "Make money"
-msgstr "Gana dinero"
+msgstr ""
 
 #: inc/info.php:81
 msgid "fund its development"
-msgstr "Fondea el desarrollo"
+msgstr ""
 
 #: inc/info.php:82
 msgid "discover how"
-msgstr "Descubra cómo"
+msgstr ""
 
 #: inc/info.php:91
 msgid ""
@@ -415,14 +403,10 @@ msgid ""
 "to facilitate the tasks of planning, design, development and optimization. "
 "For more information visit ekiline.com"
 msgstr ""
-"Ekiline simplifica la creación de un sitio web con WordPress, es un método "
-"de trabajo que reúne las prácticas estándar de la industria de internet, "
-"para facilitar las tareas de planeación, diseño, desarrollo y optimización. "
-"Para mayor información visita ekiline.com"
 
 #: inc/info.php:92
 msgid "About Uri Lazcano"
-msgstr "Acerca Uri Lazcano"
+msgstr ""
 
 #: inc/info.php:95
 msgid ""
@@ -430,48 +414,46 @@ msgid ""
 "and 10 more years of experience in graphic design for advertising. Check my "
 "career and work."
 msgstr ""
-"Diseñador Frontend, Establecido en la ciudad de México. 10 años "
-"desarrollando sitios web y 10 años diseñando para proyectos de publicidad."
 
 #: inc/info.php:99
 msgid "Github"
-msgstr "Github"
+msgstr ""
 
 #: inc/info.php:100
 msgid "Linkedin"
-msgstr "Linkedin"
+msgstr ""
 
 #: inc/info.php:101
 msgid "Behance"
-msgstr "Behance"
+msgstr ""
 
 #: inc/info.php:102 inc/info.php:153
 msgid "B I X N I A"
-msgstr "B I X N I A"
+msgstr ""
 
 #: inc/info.php:110
 msgid "Ekiline docs"
-msgstr "Documentos de Ekiline"
+msgstr ""
 
 #: inc/info.php:113
 msgid "Install"
-msgstr "Instalar"
+msgstr ""
 
 #: inc/info.php:114
 msgid "Customize"
-msgstr "Personalizar"
+msgstr ""
 
 #: inc/info.php:115
 msgid "Elements and blocks"
-msgstr "Elementos y bloques"
+msgstr ""
 
 #: inc/info.php:116
 msgid "Compatibility"
-msgstr "Compatibilidad"
+msgstr ""
 
 #: inc/info.php:137
 msgid "Limited liability:"
-msgstr "Responsabilidad limitada"
+msgstr ""
 
 #: inc/info.php:138
 msgid ""
@@ -481,631 +463,593 @@ msgid ""
 "products. The names, trademarks and logos of third parties are registered "
 "trademarks of their respective owners."
 msgstr ""
-"Como cortesía, proporcionamos información de cómo utilizar determinados "
-"productos de terceros, pero no respaldamos directamente su uso y no somos "
-"responsables de las funciones, fiabilidad o compatibilidad de dichos "
-"productos. Los nombres, marcas y logotipos de terceros son marcas "
-"registradas de sus respectivos propietarios."
 
 #: inc/info.php:150
 #, php-format
 msgid "&copy; Copyright %1$s Ekiline"
-msgstr "&copy; Copyright %1$s Ekiline"
+msgstr ""
 
 #: inc/info.php:152
 msgid "All rights reserved. Ekiline developed by"
-msgstr "Todos los derechos reservados. Ekiline desarrollado por"
+msgstr ""
 
 #: inc/theme-blockeditor.php:39
 msgid "Primary"
-msgstr "Primary (Azúl)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:44
 msgid "Secondary"
-msgstr "Secondary (Gris)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:49
 msgid "Success"
-msgstr "Success (Verde)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:54
 msgid "Danger"
-msgstr "Danger (Rojo)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:59
 msgid "Warning"
-msgstr "Warning (Amarilo)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:64
 msgid "Info"
-msgstr "Info (Cyan)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:69
 msgid "Light"
-msgstr "Light (Blanco)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:74
 msgid "Dark"
-msgstr "Dark (Negro)"
+msgstr ""
 
 #: inc/theme-blockeditor.php:84
 msgid "Vivid cyan blue to vivid purple"
-msgstr "Azul cian vivo a púrpura vivo"
+msgstr ""
 
 #: inc/theme-blockeditor.php:89
 msgid "Vivid green cyan to vivid cyan blue"
-msgstr "Cian verde intenso a azul cian intenso"
+msgstr ""
 
 #: inc/theme-blockeditor.php:94
 msgid "Light green cyan to vivid green cyan"
-msgstr "Cian verde claro a cian verde vivo"
+msgstr ""
 
 #: inc/theme-blockeditor.php:99
 msgid "Luminous vivid amber to luminous vivid orange"
-msgstr "Luminoso ámbar vivo a naranja vivo luminoso"
+msgstr ""
 
 #: inc/theme-blockeditor.php:104
 msgid "Luminous vivid orange to vivid red"
-msgstr "Luminoso naranja vivo a rojo vivo"
+msgstr ""
 
 #: inc/theme-blockeditor.php:114
 msgid "Small"
-msgstr "Pequeño"
+msgstr ""
 
 #: inc/theme-blockeditor.php:119
 msgid "Regular"
-msgstr "Regular"
+msgstr ""
 
 #: inc/theme-blockeditor.php:124
 msgid "Medium"
-msgstr "Medio"
+msgstr ""
 
 #: inc/theme-blockeditor.php:129
 msgid "Large"
-msgstr "Grande"
+msgstr ""
 
 #: inc/theme-blockeditor.php:134
 msgid "Huge"
-msgstr "Extra grande"
+msgstr ""
 
 #: inc/theme-blockeditor.php:140
 msgid "H1"
-msgstr "H1"
+msgstr ""
 
 #: inc/theme-blockeditor.php:145
 msgid "H2"
-msgstr "H2"
+msgstr ""
 
 #: inc/theme-blockeditor.php:150
 msgid "H3"
-msgstr "H3"
+msgstr ""
 
 #: inc/theme-blockeditor.php:155
 msgid "H4"
-msgstr "H4"
+msgstr ""
 
 #: inc/theme-blockeditor.php:160
 msgid "H5"
-msgstr "H5"
+msgstr ""
 
 #: inc/theme-blockeditor.php:165
 msgid "H6"
-msgstr "H6"
+msgstr ""
 
 #: inc/theme-blockeditor.php:171
 msgid "D1"
-msgstr "D1"
+msgstr ""
 
 #: inc/theme-blockeditor.php:176
 msgid "D2"
-msgstr "D2"
+msgstr ""
 
 #: inc/theme-blockeditor.php:181
 msgid "D3"
-msgstr "D3"
+msgstr ""
 
 #: inc/theme-blockeditor.php:186
 msgid "D4"
-msgstr "D4"
+msgstr ""
 
 #: inc/theme-customcolors.php:19 inc/theme-customheader.php:22
 msgid "Colors"
-msgstr "Colores"
+msgstr ""
 
 #: inc/theme-customcolors.php:20
 msgid ""
 "Customize the Bootstrap color palette and use the CSS classes set in your "
 "design. Or adjust the colors per item."
 msgstr ""
-"Personaliza la paleta de color de Bootstrap y utiliza las clases CSS "
-"establecidas en tu diseño. O bien ajusta los colores por elemento."
 
 #: inc/theme-customcolors.php:28
 msgid "Customize the Bootstrap color palette"
-msgstr "Personaliza la paleta de color de Bootstrap"
+msgstr ""
 
 #: inc/theme-customcolors.php:36
 msgid "Customize colors per item"
-msgstr "Personaliza colores por elemento"
+msgstr ""
 
 #: inc/theme-customcolors.php:47
 msgid "Background color and text"
-msgstr "Color de fondo y texto"
+msgstr ""
 
 #: inc/theme-customcolors.php:72
 msgid "Color on main container"
-msgstr "Color en contenedor principal"
+msgstr ""
 
 #: inc/theme-customcolors.php:80
 msgid "Navbar background"
-msgstr "Color de fondo barra de navegación"
+msgstr ""
 
 #: inc/theme-customcolors.php:89
 msgid "Bottom bar"
-msgstr "Barra inferior"
+msgstr ""
 
 #: inc/theme-customcolors.php:139
 msgid "Change Bootstrap color palette and use default classes"
 msgstr ""
-"Personaliza los colores básicos de Bootstrap y utiliza las clases CSS "
-"establecidas"
 
 #: inc/theme-customcolors.php:139
 msgid ""
 "<br><code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "primary</code>"
 msgstr ""
-"<br><code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
-"primary</code>"
 
 #: inc/theme-customcolors.php:147
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
 "secondary</code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-"
-"secondary</code>"
 
 #: inc/theme-customcolors.php:155
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-success</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-success</"
-"code>"
 
 #: inc/theme-customcolors.php:163
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-danger</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-danger</"
-"code>"
 
 #: inc/theme-customcolors.php:171
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-warning</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-warning</"
-"code>"
 
 #: inc/theme-customcolors.php:179
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-info</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-info</"
-"code>"
 
 #: inc/theme-customcolors.php:187
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-light</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-light</"
-"code>"
 
 #: inc/theme-customcolors.php:195
 msgid ""
 "<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-dark</"
 "code>"
 msgstr ""
-"<code style=\"float: right;margin: 6px 4px 0px 0px;width: 90px;\">*-dark</"
-"code>"
 
 #: inc/theme-customcolors.php:246
 msgid "Use light navbar"
-msgstr "Contraste claro en navegación"
+msgstr ""
 
 #: inc/theme-customheader.php:23
 msgid "Text color"
-msgstr "Color de texto"
+msgstr ""
 
 #: inc/theme-customheader.php:37
 msgid "Transparency color"
-msgstr "Color de transparencia"
+msgstr ""
 
 #: inc/theme-customheader.php:45
 msgid "Links color"
-msgstr "Color de enlaces"
+msgstr ""
 
 #: inc/theme-customheader.php:94
 msgid "If Post Page is assigned (Homepage Settings), show page title."
 msgstr ""
-"Si se asigna Página de entradas (Ajustes de la página de inicio), muestre el "
-"título de la página."
 
 #: inc/theme-customheader.php:115
 msgid "Narrow header (jumbotron)"
-msgstr "Cebecera estrecho (jumbotron)"
+msgstr ""
 
 #: inc/theme-customheader.php:139
 msgid "Header image height"
-msgstr "Altura de cabecera"
+msgstr ""
 
 #: inc/theme-customheader.php:140
 msgid "Extend the image to fill the entire screen"
-msgstr "Extienda la imagen para llenar toda la pantalla"
+msgstr ""
 
 #: inc/theme-customheader.php:163
 msgid "Front Page video"
-msgstr "Vídeo de la página principal"
+msgstr ""
 
 #: inc/theme-customheader.php:164
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
-"Formatos recomendados: MP4, WEBM or OGV, la imagen de cabecera se conserva "
-"como fondo del video"
 
 #: inc/theme-customheader.php:333 template-parts/content-article.php:56
 #: template-parts/content-card.php:33
 #, php-format
 msgid "Categories: %s"
-msgstr "Categorías: %s"
+msgstr ""
 
 #: inc/theme-customheader.php:339
 msgid "Categories:"
-msgstr "Categorías:"
+msgstr ""
 
 #: inc/theme-customheader.php:357 template-parts/content-article.php:63
 #, php-format
 msgid "Tags: %s"
-msgstr "Etiquetas: %s"
+msgstr ""
 
 #: inc/theme-customheader.php:363
 msgid "Tags:"
-msgstr "Etiquetas: %s"
+msgstr ""
 
 #: inc/theme-customheader.php:401 template-parts/content-article.php:22
 #, php-format
 msgctxt "post authors"
 msgid "Written by %s"
-msgstr "Escrito por %s"
+msgstr ""
 
 #: inc/theme-customheader.php:423 template-parts/content-headline.php:70
 #, php-format
 msgid "%s results found."
-msgstr "%s resultados encontrados."
+msgstr ""
 
 #: inc/theme-customheader.php:425 template-parts/content-headline.php:64
 #: template-parts/searchform.php:24
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Resultados para: %s"
+msgstr ""
 
 #: inc/theme-customheader.php:429
 msgid "It looks like nothing was found at this location."
-msgstr "Parece que no encontramos nada en esta ubicación."
+msgstr ""
 
 #: inc/theme-customheader.php:430
 msgid "Maybe try one of the links below or a search?"
 msgstr ""
-"¿Qué tal si pruebas con los links que aparecen abajo o haz una búsqueda?"
 
 #: inc/theme-elements.php:20
 msgid "Simple page"
-msgstr "Página simple"
+msgstr ""
 
 #: inc/theme-elements.php:21
 msgid "No sidebars"
-msgstr "Sin sidebars"
+msgstr ""
 
 #: inc/theme-elements.php:22
 msgid "Blank page"
-msgstr "Página en blanco"
+msgstr ""
 
 #: inc/theme-elements.php:31 inc/theme-elements.php:168
 #, php-format
 msgid "Continue reading: %s"
-msgstr "Continuar leyendo %s"
+msgstr ""
 
 #: inc/theme-elements.php:31
 msgid "Read more"
-msgstr "Leer mas"
+msgstr ""
 
 #: inc/theme-elements.php:230
 msgid "Continue reading: "
-msgstr "Continuar leyendo:"
+msgstr ""
 
 #: inc/theme-elements.php:259
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
 msgstr ""
-"Este contenido está protegido con contraseña. Para verlo, ingrese su "
-"contraseña a continuación:"
 
 #: inc/theme-elements.php:260
 msgid "Password:"
-msgstr "Contraseña:"
+msgstr ""
 
 #: inc/theme-elements.php:262
 msgctxt "post password form"
 msgid "Enter"
-msgstr "Ingresar"
+msgstr ""
 
 #: inc/theme-elements.php:330
 msgid "&larr; Previous"
-msgstr "&larr; Anterior"
+msgstr ""
 
 #: inc/theme-elements.php:331
 msgid "Next &rarr;"
-msgstr "Siguiente &rarr;"
+msgstr ""
 
 #: inc/theme-meta.php:36
 #, php-format
 msgid "There are %1$s entries related to %2$s"
-msgstr "Hay%1$s entradas relacionadas con%2$s"
+msgstr ""
 
 #: inc/theme-navbars.php:160 inc/theme-navbars.php:169
 msgid "Toggle navigation"
-msgstr "Cambiar modo de Navegación"
+msgstr ""
 
 #: inc/theme-navbars.php:249 inc/theme-navbars.php:258
 msgid "Close"
-msgstr "Cerrar"
+msgstr ""
 
 #: inc/theme-navbars.php:254
 msgid "Modal size"
-msgstr "Tamaño modal"
+msgstr ""
 
 #: inc/theme-navbars.php:311
 msgid "Assign a menu!"
-msgstr "¡Asigna un menú!"
+msgstr ""
 
 #: inc/theme-navbars.php:314
 msgid "Login"
-msgstr "Iniciar sesión"
+msgstr ""
 
 #: inc/theme-navbars.php:325
 msgid "Theme help"
-msgstr "Ayuda en tema"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:26
 msgid "Something go wrong, check theme file."
-msgstr "Algo va mal, revisa el archivo del tema."
+msgstr ""
 
 #: inc/theme-optimizescripts.php:45
 msgid "Sort Scripts "
-msgstr "Ordenar scripts"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:47
 msgid "Choose and copy handlers in customizer \"Ekiline Sort Scripts\" option"
 msgstr ""
-"Elija y copie controladores en la opción \"Ekiline Organizar Scripts\" del "
-"personalizador"
 
 #: inc/theme-optimizescripts.php:48
 msgid "Styles: "
-msgstr "Estilos:"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:49
 msgid "Scripts: "
-msgstr "Scripts: "
+msgstr ""
 
 #: inc/theme-optimizescripts.php:67
 msgid "Ekiline Sort Scripts"
-msgstr "Ekiline Organizar Scripts"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:69
 msgid "Sort your CSS Styles and JS Scripts"
-msgstr "Ordena tus estilos CSS y scripts JS"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:85
 msgid "Move all scripts at end of page"
-msgstr "Mover todos los scripts al final de la página"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:100
 #, php-format
 msgid "Comma separated %1$s handlers"
-msgstr "Controladores %1$s separados por comas"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:128 inc/theme-optimizescripts.php:135
 msgid "No changes"
-msgstr "Sin cambios"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:129 inc/theme-optimizescripts.php:139
 msgid "javascript load"
-msgstr "carga javascript"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:130 inc/theme-optimizescripts.php:140
 msgid "after scroll load"
-msgstr "después de Scroll"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:136
 msgid "async"
-msgstr "async"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:137
 msgid "defer"
-msgstr "defer"
+msgstr ""
 
 #: inc/theme-optimizescripts.php:138
 msgid "defer & async"
-msgstr "defer & async"
+msgstr ""
 
 #: inc/widget-options.php:33
 msgid "CSS custom class (Ekiline)"
-msgstr "Clase personalizada CSS (Ekiline)"
+msgstr ""
 
 #: inc/widget-options.php:111
 msgid "Format (Ekiline)"
-msgstr "Formato (Ekiline)"
+msgstr ""
 
 #: inc/widget-options.php:115
 msgid "Dropdown"
-msgstr "Desplegable"
+msgstr ""
 
 #: template-parts/comments.php:21
 msgid "Hide comments"
-msgstr "Ocultar comentarios"
+msgstr ""
 
 #: template-parts/comments.php:30
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s comentario en &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s comentarios en &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: template-parts/comments.php:43
 msgid "Comment navigation"
-msgstr "Navegación de comentarios"
+msgstr ""
 
 #: template-parts/comments.php:46
 msgid "Older Comments"
-msgstr "Comentarios anteriores"
+msgstr ""
 
 #: template-parts/comments.php:47
 msgid "Newer Comments"
-msgstr "Comentarios nuevos"
+msgstr ""
 
 #: template-parts/comments.php:77
 msgid "Comments are closed"
-msgstr "Comentarios cerrados"
+msgstr ""
 
 #: template-parts/comments.php:186
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
-msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dice:</span>"
+msgstr ""
 
 #: template-parts/comments.php:190
 msgid "Your comment is awaiting moderation."
-msgstr "Tu comentario espera aprobación."
+msgstr ""
 
 #: template-parts/comments.php:205
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s a %2$s"
+msgstr ""
 
 #: template-parts/comments.php:211
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr ""
 
 #: template-parts/comments.php:249
 msgid "Write a comment"
-msgstr "Escribe un comentario"
+msgstr ""
 
 #: template-parts/comments.php:251
 msgid "Comment"
-msgstr "Comentar"
+msgstr ""
 
 #: template-parts/comments.php:259
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #: template-parts/comments.php:263
 msgid "Email"
-msgstr "Correo"
+msgstr ""
 
 #: template-parts/comments.php:267
 msgid "Website"
-msgstr "Sitio Web"
+msgstr ""
 
 #: template-parts/comments.php:272
 msgid "By commenting you accept the"
-msgstr "Al comentar acepta la"
+msgstr ""
 
 #: template-parts/comments.php:273
 msgid "Privacy Policy"
-msgstr "Politica de Privacidad"
+msgstr ""
 
 #: template-parts/content-article.php:27
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr "Publicado en %s"
+msgstr ""
 
 #: template-parts/content-article.php:27 template-parts/content-article.php:32
 msgid "F j, Y"
-msgstr "F j, Y"
+msgstr ""
 
 #: template-parts/content-article.php:32
 #, php-format
 msgid "Updated on %s"
-msgstr "Actualizado el %s"
+msgstr ""
 
 #: template-parts/content-article.php:36
 msgid "No comments yet"
-msgstr "No hay comentarios"
+msgstr ""
 
 #: template-parts/content-article.php:36
 msgid "1 Comment"
-msgstr "1 Comentario"
+msgstr ""
 
 #: template-parts/content-article.php:36
 msgid "% Comments"
-msgstr "% Comentarios"
+msgstr ""
 
 #: template-parts/content-article.php:36
 msgid "Comments are closed."
-msgstr "Comentarios cerrados."
+msgstr ""
 
 #: template-parts/content-headline.php:46
 msgid "User: "
-msgstr "Usuario:"
+msgstr ""
 
 #: template-parts/content-headline.php:47
 msgid "Email: "
-msgstr "Email: "
+msgstr ""
 
 #: template-parts/content-headline.php:48
 msgid "Web: "
-msgstr "Web:"
+msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr "Nada encontrado"
+msgstr ""
 
 #: template-parts/content-none.php:20
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Lo sentimos, nada se ha encontrado con tus términos. Intenta con otras "
-"palabras."
 
 #: template-parts/content-none.php:25
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Parece que no encontramos lo que estás buscando. Puede que una búsqueda te "
-"ayude."
 
 #: template-parts/custom-header.php:25
 msgid "Skip to content"
-msgstr "Ir al contenido"
+msgstr ""
 
 #: template-parts/searchform.php:28
 msgid "Find term"
-msgstr "Encontrar término"
+msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "http://www.ekiline.com/"
-msgstr "http://www.ekiline.com/"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -1113,14 +1057,11 @@ msgid ""
 "facilitate website creation. Includes optimization (SEO) functions. "
 "Documentation: http://www.ekiline.com"
 msgstr ""
-"Desarrollado con Bootstrap 5 y HTML5. Múltiples áreas de widgets y widgets "
-"para facilitar la creación de sitios web. Incluye funciones de optimización "
-"(SEO). Documentación: http://www.ekiline.com"
 
 #. Author of the plugin/theme
 msgid "Uri Lazcano (Urielink)"
-msgstr "Uri Lazcano (Urielink)"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://profiles.wordpress.org/urielink/"
-msgstr "https://profiles.wordpress.org/urielink/"
+msgstr ""
