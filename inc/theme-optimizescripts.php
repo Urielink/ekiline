@@ -119,6 +119,7 @@ function ekiline_reload_libraries( $wp_customize ) {
 		);
 
 		// Opciones por cada manejador registrado.
+		// Mejora: nueva opcion de carga (after scroll load).
 		$libraries = ekiline_ctmzr_array_handlers( $kind );
 
 		if ( $libraries ) {
@@ -126,6 +127,7 @@ function ekiline_reload_libraries( $wp_customize ) {
 			$choices = array(
 				'0' => __( 'No changes', 'ekiline' ),
 				'1' => __( 'javascript load', 'ekiline' ),
+				'2' => __( 'after scroll load', 'ekiline' ),
 			);
 
 			if ( 'js' === $kind ) {
@@ -135,6 +137,7 @@ function ekiline_reload_libraries( $wp_customize ) {
 					'2' => __( 'defer', 'ekiline' ),
 					'3' => __( 'defer & async', 'ekiline' ),
 					'4' => __( 'javascript load', 'ekiline' ),
+					'5' => __( 'after scroll load', 'ekiline' ),
 				);
 			}
 
@@ -233,7 +236,8 @@ if ( get_theme_mod( 'ekiline_css_handler_array' ) ) {
  */
 function ekiline_change_css_tag( $tag, $handle, $src ) {
 	foreach ( ekiline_ctmzr_handlers_options( 'css' ) as $pre_style ) {
-		if ( $pre_style['handler'] === $handle && '1' === $pre_style['option'] ) {
+		// Mejora: nueva opcion de carga.
+		if ( $pre_style['handler'] === $handle && ( '1' === $pre_style['option'] || '2' === $pre_style['option'] ) ) {
 			$tag = '<link rel="preload" as="style" href="' . esc_url( $src ) . '">' . "\n";
 		}
 	}
@@ -261,11 +265,13 @@ function ekiline_styles_localize() {
 			// Fix: sobrescribir url de cada CSS en caso de solo ser relativa al sistema.
 			$src_url = ekiline_check_fix_url( $css_src->src );
 
-			if ( '1' === $theoption ) {
+			// Mejora: nueva opcion de carga.
+			if ( '1' === $theoption || '2' === $theoption ) {
 				$the_styles[] = array(
 					'id'    => $thehandler,
 					'src'   => $src_url,
 					'media' => $css_src->args,
+					'load'  => $theoption,
 				);
 			}
 		}
@@ -291,22 +297,37 @@ function ekiline_load_all_csstojs() {
 	}
 	// Carga de estilos CSS nativo.
 	function ekiline_loadStylesNativo( styles ){
+		// Ubicar etiquetas para montar estilos css.
 		var head = document.querySelector('head');
 		var wpcss = head.querySelector('#ekiline-style-inline-css');
 		var cssinline = head.getElementsByTagName('style')[head.getElementsByTagName('style').length - 1];
+		// Loop, diferenciar el metodo de carga de estilos [load].
 		styles.forEach(function(value, key){
-			var linkCss = document.createElement('link');
-				linkCss.id    = value.id;
-				linkCss.rel   = 'stylesheet';
-				linkCss.href  = value.src;
-				linkCss.media  = (!value.media)?'all':value.media;
-			if (wpcss){
-				wpcss.insertAdjacentElement('beforebegin', linkCss);
-			} else if (cssinline){
-				cssinline.insertAdjacentElement('beforebegin', linkCss);
-			}else{
-				head.appendChild(linkCss);
+
+			// Condicion, diferenciar el metodo de carga de estilos [load].
+			if ( value.load === '1' ){
+				setupScriptsCss(value);
+			} else if ( value.load === '2' ){
+				window.addEventListener('scroll', function() {
+					setupScriptsCss(value);
+				},{ once: true });
 			}
+
+			function setupScriptsCss(obj){
+				var linkCss = document.createElement('link');
+					linkCss.id    = obj.id;
+					linkCss.rel   = 'stylesheet';
+					linkCss.href  = obj.src;
+					linkCss.media  = (!obj.media)?'all':obj.media;
+				if (wpcss){
+					wpcss.insertAdjacentElement('beforebegin', linkCss);
+				} else if (cssinline){
+					cssinline.insertAdjacentElement('beforebegin', linkCss);
+				}else{
+					head.appendChild(linkCss);
+				}
+			}
+
 		});
 	}
 	</script>
@@ -373,11 +394,12 @@ function ekiline_scripts_localize() {
 			// Fix: sobrescribir url de cada CSS en caso de solo ser relativa al sistema.
 			$src_url = ekiline_check_fix_url( $js_src->src );
 
-			// Crear diccionario.
-			if ( '4' === $theoption ) {
+			// Crear diccionario, opcion de carga.
+			if ( '4' === $theoption || '5' === $theoption ) {
 				$the_scripts[] = array(
-					'id'  => $thehandler,
-					'src' => $src_url,
+					'id'   => $thehandler,
+					'src'  => $src_url,
+					'load' => $theoption,
 				);
 			}
 			/**
@@ -409,7 +431,8 @@ function ekiline_change_js_tag( $tag, $handle, $src ) {
 	$precomm_erase = preg_replace( '/<!--(.|\s)*?-->/', '', $tag );
 
 	foreach ( $load_jss_from as $pre_script ) {
-		if ( $pre_script['handler'] === $handle && '4' === $pre_script['option'] ) {
+		// Nueva opcion de carga.
+		if ( $pre_script['handler'] === $handle && ( '4' === $pre_script['option'] || '5' === $pre_script['option'] ) ) {
 			$tagwrd   = 'script';
 			$patterns = array( '/<' . $tagwrd . ' src=/', '/><\/' . $tagwrd . '>/' );
 			$tag      = preg_replace( $patterns, $rplcs_preload, $tag );
@@ -417,7 +440,6 @@ function ekiline_change_js_tag( $tag, $handle, $src ) {
 	}
 
 	return $tag;
-
 }
 
 /**
@@ -431,33 +453,29 @@ function ekiline_load_all_jstojs() {
 	var ekiline_all_jss = <?php ekiline_scripts_localize(); ?>;
 	if ( ekiline_all_jss !== null ) {
 		window.addEventListener( 'DOMContentLoaded', function () {
-			ekiline_loadScriptsOrderedNative( ekiline_all_jss , 0 );
+			ekiline_loadScriptsNative( ekiline_all_jss );
 		} );
 	}
-	// Carga a discrecion nativo.
+	// Append segun el orden de arreglo.
 	function ekiline_loadScriptsNative(scripts){
+		// Loop, diferenciar el metodo de carga de estilos [load].
 		scripts.forEach(function(value, key){
-			var script = document.createElement('script');
-				script.src = value.src;
+
+			if ( value.load === '4' ){
+				setupScriptsJs(value);
+			} else if ( value.load === '5' ){
+				window.addEventListener('scroll', function() {
+					setupScriptsJs(value);
+				},{ once: true });
+			}
+
+			function setupScriptsJs(obj){
+				var script = document.createElement('script');
+				script.src = obj.src;
 				document.body.appendChild(script);
+			}
+
 		} );
-	}
-
-	// Carga ordenada nativo 2 funciones.
-	function ekiline_getScriptNative(scriptUrl, callback) {
-		var script = document.createElement('script');
-		script.src = scriptUrl;
-		script.onload = callback;
-		document.body.appendChild(script);
-	}
-
-	function ekiline_loadScriptsOrderedNative(scripts,i) {
-		if (i<scripts.length){
-			ekiline_getScriptNative( scripts[i].src, function () {
-				i++;
-				ekiline_loadScriptsOrderedNative(scripts,i);
-			});
-		}
 	}
 	</script>
 	<?php
