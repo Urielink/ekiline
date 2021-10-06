@@ -37,14 +37,15 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.1.1 - Oct 6, 2021 =
+* fix: Widgets (breadcrumb and options) class custom css.
+
 = 2.1 - Oct 2, 2021 =
 * Check wp 5.8.1 compatibility
 * Update: bootstrap v5.1.1 , completely reduce jquery dependency on methods, renamed handler.
 * improvement: new option to load styles and scripts.
 * language, update.
-
-= 2.0.2 - Aug 13, 2021 =
-* test branches.
 
 = 2.0.2 - July 23, 2021 =
 * improvement: organization of css styles in block editor. Child theme support.
