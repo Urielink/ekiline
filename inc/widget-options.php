@@ -51,7 +51,9 @@ function ekiline_in_widget_form( $input, $return, $instance ) {
  * @param string $old_instance .
  */
 function ekiline_in_widget_form_update( $instance, $new_instance, $old_instance ) {
-	$instance['css_style'] = wp_strip_all_tags( $new_instance['css_style'] );
+	if ( isset( $instance['css_style'] ) ) {
+		$instance['css_style'] = wp_strip_all_tags( $new_instance['css_style'] );
+	}
 	return $instance;
 }
 
@@ -128,10 +130,10 @@ add_action( 'in_widget_form', 'ekiline_widget_view', 5, 3 );
  * @param string $old_instance .
  */
 function ekiline_widget_view_save( $instance, $new_instance, $old_instance ) {
-
-	$instance['viewFormat'] = $new_instance['viewFormat'];
+	if ( isset( $instance['viewFormat'] ) ) {
+		$instance['viewFormat'] = $new_instance['viewFormat'];
+	}
 	return $instance;
-
 }
 add_filter( 'widget_update_callback', 'ekiline_widget_view_save', 5, 3 );
 
