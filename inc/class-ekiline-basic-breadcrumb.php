@@ -32,22 +32,23 @@ class Ekiline_Basic_Breadcrumb extends WP_Widget {
 	 * @param array $instance the widget.
 	 */
 	public function widget( $args, $instance ) {
+
 		/**
 		 * Para sobrescribir un widget, en este caso ekiline, agrega opciones css y tipo de mestreo,
 		 * entonces es necesario llamar un widget, obteniendo su id y llamando el dato que necesitamos.
 		 */
-		global $wp_registered_widgets;
-		$widget_id  = $args['widget_id'];
-		$widget_obj = $wp_registered_widgets[ $widget_id ];
-		$widget_opt = get_option( $widget_obj['callback'][0]->option_name );
-		$widget_num = $widget_obj['params'][0]['number'];
-		$css_style  = $widget_opt[ $widget_num ]['css_style'];
-
-		$args = array(
-			'before_widget' => '<nav id="' . $args['widget_id'] . '" class="' . $css_style . ' widget ' . $args['widget_id'] . '">',
-			'after_widget'  => '</nav>',
-		);
-
+		if ( isset( $args['widget_id'] ) ) {
+			global $wp_registered_widgets;
+			$widget_id  = $args['widget_id'];
+			$widget_obj = $wp_registered_widgets[ $widget_id ];
+			$widget_opt = get_option( $widget_obj['callback'][0]->option_name );
+			$widget_num = $widget_obj['params'][0]['number'];
+			$css_style  = $widget_opt[ $widget_num ]['css_style'];
+			$args       = array(
+				'before_widget' => '<nav id="' . $widget_id . '" class="' . $css_style . ' widget ' . $widget_id . '">',
+				'after_widget'  => '</nav>',
+			);
+		}
 		// Widget con nuevos datos.
 		echo wp_kses_post( $args['before_widget'] );
 		echo wp_kses_post( ekiline_create_breadcrumb() );
