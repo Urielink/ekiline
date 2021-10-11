@@ -212,15 +212,17 @@
    .modal .navbar-collapse .scroll-menu.show .dropdown-menu{display: block;overflow: auto;flex-direction: column;}
    .modal .navbar-collapse .scroll-menu.dropdown.show .dropdown,.modal .navbar-collapse .scroll-menu.dropdown.show .dropright{display: block;}
  /*mega-menu*/
- .navbar-collapse:not(.order-first) .mega-menu.show.dropdown, .navbar-collapse:not(.order-first) .mega-menu.show.dropup{position: inherit;}
- .navbar-collapse:not(.order-first) .mega-menu.show > .dropdown-menu{max-width: 1120px;left: 0;right: 0;margin: 0 auto;border-radius: 0px;display:flex;flex-wrap: wrap;}
- .navbar-collapse:not(.order-first) .mega-menu.show > .dropdown-menu > li {width: 20%;}
- .navbar-collapse:not(.order-first) .mega-menu.show .dropdown a, .navbar-collapse:not(.order-first) .mega-menu.show .dropright a {display: block;}
- .navbar-collapse:not(.order-first) .mega-menu.show > .dropdown-menu > li > ul.dropdown-menu {display: block;position: static;border-bottom:none;}
- .navbar-collapse:not(.order-first) .mega-menu.show > .dropdown-menu > .menu-item > a.dropdown-item:first-child{text-transform: uppercase;font-size: .875rem;white-space: normal;}
- .navbar-collapse:not(.order-first) .mega-menu.show.dropdown .sub-menu .dropdown-toggle-split {position: absolute;top: 0px;right: 0;}
+ .navbar-collapse:not(.order-first) .mega-menu a {display: block;}
+ .navbar-collapse:not(.order-first) .mega-menu .dropdown-toggle-split{background-color: initial !important;}
+ .navbar-collapse:not(.order-first) .mega-menu.dropdown, .navbar-collapse:not(.order-first) .mega-menu.dropup{position: inherit;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show{max-width: 1120px;left: 0;right: 0;margin: 0 auto;border-radius: 0px;display:flex;flex-wrap: wrap;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li {width: 20%;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li ul.dropdown-menu {display: block;position: static;border-bottom:none;margin: 0px;padding: 0px;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > .menu-item > a.dropdown-item:first-child{text-transform: uppercase;font-size: .875rem;white-space: normal;}
+ .navbar-collapse:not(.order-first) .mega-menu .dropdown-menu.show .dropdown-toggle-split {position: absolute;top: 0px;right: 0;cursor: pointer;}
  /*en caso de modal D: */
- .modal .navbar-collapse:not(.order-first) .mega-menu.show > .dropdown-menu > li {width: 100%;}
+ .modal .navbar-collapse:not(.order-first) .mega-menu a { display: inline-block; }
+ .modal .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li {width: 100%;}
  /*off-canvas-nav nav*/
  .navbar-collapse.off-canvas-nav{ background-color: transparent !important; }
 }
