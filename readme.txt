@@ -111,11 +111,11 @@ Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
 Ekiline for WordPress Theme bundles the following third-party resources:
 
-Bootstrap Bootstrap v4.6.0 (https://getbootstrap.com), Copyright 2011-2018 Twitter, Inc.
-Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-Source: https://getbootstrap.com
+Bootstrap v5.1.1 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
+Source: https://getbootstrap.com/.
 
-Digital art by Uri Lazcano ( ekiline-media.png, ekiline-patron.png ).
+Digital art by Uri Lazcano (ekiline-media.png, ekiline-patron.png).
 License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
 
 Image for theme screenshot, Copyright Uri Lazcano
