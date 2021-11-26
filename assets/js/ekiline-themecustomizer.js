@@ -321,7 +321,7 @@ function construirCssGeneral(){
 	let cssall = '';
 	/*General*/
 	cssall += 'body{color:var(--bs-body-color);background-color:var(--bs-body-bg);-webkit-tap-highlight-color:rgba(var(--bs-black-rgb),0);}\n';
-	cssall += 'mark,.mark{background-color:var(--bs-warning-mark);}\n';
+	cssall += 'mark,.mark{background-color:var(--bs-warning-table-bg);}\n';
 	cssall += 'a{color:var(--bs-primary);}\n';
 	cssall += 'a:hover{color:var(--bs-primary-link-hover);}\n';
 	cssall += 'code{color:var(--bs-pink);}\n';

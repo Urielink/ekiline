@@ -251,10 +251,11 @@ function ekiline_above_fold_styles() {
 	$data = preg_replace( '#/\*.*?\*/#s', '', $data );
 	// Quitar saltos de linea y convertir en un string.
 	$data = wp_strip_all_tags( $data, true );
-	$data = ( ! $data ) ? '/*' . __( 'No styles found, check file', 'ekiline' ) . '*/' : $data;
 	wp_register_style( 'ekiline-atf', false, '', '2.0', 'all' );
 	wp_enqueue_style( 'ekiline-atf' );
-	wp_add_inline_style( 'ekiline-atf', $data );
+	if ( $data ) {
+		wp_add_inline_style( 'ekiline-atf', $data );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'ekiline_above_fold_styles', 0 );
 
