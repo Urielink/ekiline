@@ -35,6 +35,8 @@ add_filter( 'the_content_more_link', 'ekiline_override_read_more_link' );
 /**
  * Widgets en footer
  * Footer widgets
+ * 12/21/20021: Disabled.
+ * affect: footer.php
  *
  * @param string $widget_area identifica que sidebar se ocupa.
  */

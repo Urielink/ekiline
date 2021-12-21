@@ -43,7 +43,7 @@ class Ekiline_Basic_Breadcrumb extends WP_Widget {
 			$widget_obj = $wp_registered_widgets[ $widget_id ];
 			$widget_opt = get_option( $widget_obj['callback'][0]->option_name );
 			$widget_num = $widget_obj['params'][0]['number'];
-			$css_style  = $widget_opt[ $widget_num ]['css_style'];
+			$css_style  = ( ! isset( $widget_opt[ $widget_num ]['css_style'] ) ) ? '' : $widget_opt[ $widget_num ]['css_style'];
 			$args       = array(
 				'before_widget' => '<nav id="' . $widget_id . '" class="' . $css_style . ' widget ' . $widget_id . '">',
 				'after_widget'  => '</nav>',
