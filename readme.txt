@@ -38,9 +38,10 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 = 2.2.2 - Dic 21, 2021 =
-* Update: Widgets. In previous versions, we enabled a wrapper for widgets to adapt their appearance, with the arrival of blocks this has become obsolete. 
+* Disable feature. In previous versions, we enabled a wrapper for widgets to adapt their appearance, with the arrival of blocks this has become obsolete.
 * The breadcrum, located in legacy widgets, remains functional.
 * Fix: Navbar, css styles.
+* Disable feature. In previous versions, we enabled a condition for group widgets as columns in footer, with the arrival of blocks this has become obsolete.
 
 = 2.2.1 - Nov 25, 2021 =
 * Update: Theme customizer. Update MARK background-color.
