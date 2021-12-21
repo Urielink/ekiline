@@ -326,7 +326,6 @@ add_action( 'wp_head', 'ekiline_inline_css_tag', 100 );
 require get_template_directory() . '/inc/class-ekiline-nav-menu.php';
 require get_template_directory() . '/inc/class-ekiline-control-multiple-select.php';
 require get_template_directory() . '/inc/class-ekiline-basic-breadcrumb.php';
-require get_template_directory() . '/inc/widget-options.php';
 /* Ekiline modificadores de tema */
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/theme-customcolors.php';

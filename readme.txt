@@ -37,6 +37,11 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+= 2.2.2 - Dic 21, 2021 =
+* Update: Widgets. In previous versions, we enabled a wrapper for widgets to adapt their appearance, with the arrival of blocks this has become obsolete. 
+* The breadcrum, located in legacy widgets, remains functional.
+* Fix: Navbar, css styles.
+
 = 2.2.1 - Nov 25, 2021 =
 * Update: Theme customizer. Update MARK background-color.
 * Clean the ekiline css styles from (assets/css/style-atf.css). if you need you can use it with your own css rules.
