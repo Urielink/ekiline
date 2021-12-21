@@ -77,10 +77,10 @@ function ekiline_navbar_menu( $nav_position ) {
 	// Clases css por estilo de menu.
 	switch ( $styles ) {
 		case 0:
-			$nav_align = ' mr-auto';
+			$nav_align = ' me-auto';
 			break;
 		case 1:
-			$nav_align = ' ml-auto';
+			$nav_align = ' ms-auto';
 			break;
 		case 2:
 			$nav_help  = ' justify-content-md-center';
@@ -99,7 +99,7 @@ function ekiline_navbar_menu( $nav_position ) {
 			break;
 		case 5:
 			$nav_help  = ' off-canvas-nav ' . $nav_inverse;
-			$nav_align = ' ml-auto';
+			$nav_align = ' ms-auto';
 			break;
 		case 6:
 			$nav_help = ' order-first';
@@ -321,7 +321,7 @@ function ekiline_nav_fallback() {
 			<a class="nav-link" href="<?php echo esc_url( $link ); ?>"><?php echo esc_html( $text ); ?></a>
 		</li>
 	</ul>
-	<div class="navbar-text ml-auto">
+	<div class="navbar-text ms-auto">
 		<a target="_blank" class="btn btn-sm btn-outline-warning" href="<?php echo esc_url( 'https://ekiline.com/' ); ?>"><?php esc_html_e( 'Theme help', 'ekiline' ); ?></a>
 	</div>
 
