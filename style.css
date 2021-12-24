@@ -126,10 +126,10 @@
   }
   .bg-deep,.wp-block-cover.bg-deep{background-size:180vh;}
 }
-/* Navbar options */
-body.has-navbar-static-top{margin-top: initial;}
-body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top: 50px;}
-body.has-navbar-fixed-bottom{margin-bottom: 50px;}
+/* Navbar options, combine rules with header */
+body.has-navbar-static-top, body.has-navbar-fixed-top.has-custom-header-full-view, body.has-navbar-fixed-top-sticky.has-custom-header-full-view{margin-top:initial;}
+body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top:50px;}
+body.has-navbar-fixed-bottom{margin-bottom:50px;}
 
  /* ------------------------------------------------
   * 2) Ekiline: CUSTOM STYLES tus estilos || write here your styles

@@ -39,6 +39,9 @@ Ekiline includes support for Woocommerce.
 == Changelog ==
 = 2.2.3 - Dic 23, 2021 =
 * Update: Navbar options, added new css rules. Top and bottom margin in body when use fixed navbar.
+* Fix: new CSS rules for using menu and heading.
+* Next developments: improve the code, optimize and simplify some PHP functions, replace or eliminate some features due to the arrival of the use of blocks in widgets.
+New: Plugin development for the Ekiline theme.
 
 = 2.2.2 - Dic 21, 2021 =
 * Disable feature. In previous versions, we enabled a wrapper for widgets to adapt their appearance, with the arrival of blocks this has become obsolete.

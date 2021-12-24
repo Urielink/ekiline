@@ -242,11 +242,9 @@ add_action( 'group_inline_css', 'ekiline_custom_header_style', 4 );
  * @param string $classes add new css class to body.
  */
 function ekiline_custom_header_css( $classes ) {
-	if ( ! get_header_image() ) {
-		return $classes;
+	if ( get_header_image() ) {
+		$classes[] = ( 100 === get_theme_mod( 'ekiline_range_header' ) ) ? 'has-custom-header-full-view' : 'has-custom-header' ;
 	}
-	global $post;
-	$classes[] = 'has-custom-header';
 	return $classes;
 }
 add_filter( 'body_class', 'ekiline_custom_header_css' );
