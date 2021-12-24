@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
- Version: 2.2.2
+ Version: 2.2.3
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -83,7 +83,6 @@
  /* ------------------------------------------------
   * 1.2) WIDGETS
   * ----------------------------------------------*/
-
  /* Widget de galeria */
  .gallery[class*="gallery-columns"]:not([class*="gallery-columns-1"]){display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;}
  .gallery[class*="gallery-columns"] .gallery-item {-ms-flex-preferred-size: 0;flex-basis: 0;-ms-flex-positive: 1;flex-grow: 1;max-width: 100%;text-align: center;}
@@ -91,12 +90,10 @@
  /* ------------------------------------------------
   * 1.3) PLUGINS
   * ----------------------------------------------*/
-
 /* JetPack */
 .infinite-scroll #page-navigation{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
 .infinite-scroll #infinite-handle{text-align: center;margin: 1rem auto; width: 100%;}
 .infinite-scroll #infinite-handle span button{font-size:1rem;}
-
 /*WooCommerce Checkout*/
 .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1{max-width: inherit;}
 .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{max-width: inherit;}
@@ -105,10 +102,9 @@
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{max-width: 100%;}
 
  /* ------------------------------------------------
-  * 1.4) Ekiline THEME OPTIONS: Custom header
+  * 1.4) Ekiline THEME OPTIONS:
   * ----------------------------------------------*/
-
-/* THEME OPTIONS: Custom header */
+/* Custom header */
 .bg-deep,.wp-block-cover.bg-deep div{background-size:1px;background-repeat:no-repeat;-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
 #custom_header_module .wp-block-cover,#custom_header_module .wp-block-cover.has-background-dim::before{display:flex;align-items:flex-end;}
 #custom_header_module > .alignfull{margin-left:calc(-101vw / 2 + 100% / 2);margin-right:calc(-101vw / 2 + 100% / 2);width:100vw;}
@@ -130,8 +126,10 @@
   }
   .bg-deep,.wp-block-cover.bg-deep{background-size:180vh;}
 }
-
-
+/* Navbar options */
+body.has-navbar-static-top{margin-top: initial;}
+body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top: 50px;}
+body.has-navbar-fixed-bottom{margin-bottom: 50px;}
 
  /* ------------------------------------------------
   * 2) Ekiline: CUSTOM STYLES tus estilos || write here your styles
@@ -145,6 +143,7 @@
 @keyframes doBlink {
   50% { opacity: 0; }
 }
+
   /**
   * Iconos de redes sociales ocupa dashicons.
   * opt1: nombrar menu como "Social"

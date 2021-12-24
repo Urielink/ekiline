@@ -6,6 +6,31 @@
  */
 
 /**
+ * Clases CSS de apoyo en body_class().
+ *
+ * @param string $classes add new css class to body.
+ */
+function ekiline_top_navbar_aux_body_css( $classes ) {
+	$opciones = get_theme_mod( 'ekiline_primarymenuSettings' );
+	switch ( $opciones ) {
+		case 0:
+			$classes[] = 'has-navbar-static-top';
+			break;
+		case 1:
+			$classes[] = 'has-navbar-fixed-top';
+			break;
+		case 2:
+			$classes[] = 'has-navbar-fixed-bottom';
+			break;
+		case 3:
+			$classes[] = 'has-navbar-fixed-top-sticky';
+			break;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'ekiline_top_navbar_aux_body_css' );
+
+/**
  * Agregar logotipo a menu
  * Adding logo image to navbar-brand:
  */
