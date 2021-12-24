@@ -40,7 +40,7 @@
 			}
 			?>
 		</span>
-		<a class="smooth float-right" href="#primary"><span>&uarr;</span><?php esc_html_e( 'Back', 'ekiline' ); ?></a>
+		<a class="smooth float-end" href="#primary"><span>&uarr;</span><?php esc_html_e( 'Back', 'ekiline' ); ?></a>
 	</p>
 </div>
 </footer><!-- .site-footer -->
