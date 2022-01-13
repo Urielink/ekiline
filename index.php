@@ -49,7 +49,11 @@ get_header();
 
 		<?php dynamic_sidebar( 'content-w2' ); ?>
 
-		<?php comments_template( '/template-parts/comments.php' ); ?>
+		<?php
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
+		?>
 
 	</main><!-- #primary -->
 

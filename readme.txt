@@ -37,6 +37,10 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.2.4 - Jan 13, 2022 =
+* Fix: Restoration, the comments.php template has been moved to the root of theme folder. To respect inheritance and compatibility with Sensei LMS and other plugins.
+
 = 2.2.3 - Dic 23, 2021 =
 * Update: Navbar options, added new css rules. Top and bottom margin in body when use fixed navbar.
 * Fix: new CSS rules for using menu and heading.
