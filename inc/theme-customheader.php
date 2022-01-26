@@ -363,7 +363,8 @@ function ekiline_custom_header_content( $content_type = null ) {
 					<div class="dropdown-menu" aria-labelledby="dropdownNavTags">
 						' . get_the_tag_list( '<ul><li>', '</li><li>', '</li></ul>' ) . '
 					</div>
-				</div>'
+				</div>',
+				null
 			);
 		}
 	}
@@ -402,7 +403,7 @@ function ekiline_custom_header_content( $content_type = null ) {
 
 		$custom_header_title = get_the_title();
 		$add_categories      = ( ! is_page() ) ? ' <br> ' . $categories_list : '';
-		$custom_header_text  = $author_item . $add_categories;
+		$custom_header_text  = $author_item . $add_categories; // O agregar etiquetas con $tags_list.
 	}
 
 	if ( is_archive() || is_category() ) {

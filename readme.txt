@@ -1,7 +1,7 @@
 === Ekiline ===
 Contributors: urielink
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
@@ -37,6 +37,10 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.2.5 - Jan 25, 2022 =
+* Update: Wordpress Update, works fine.
+* Fix: set function, declare attribute in custom header file.
 
 = 2.2.4 - Jan 13, 2022 =
 * Fix: Restoration, the comments.php template has been moved to the root of theme folder. To respect inheritance and compatibility with Sensei LMS and other plugins.
