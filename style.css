@@ -150,7 +150,7 @@ body.has-navbar-fixed-bottom{margin-bottom:50px;}
   * opt2: agregar clases por enlace con opcion "menu-social icon-only"
   */
  [class*="menu-social"] a{text-decoration: none;}
- [class*="menu-social"] a:before{font-family:'dashicons';display:inline-block;line-height:1;font-weight:400;font-style:normal;speak:never;text-decoration:inherit;text-transform:none;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:20px;height:20px;font-size:20px;vertical-align:top;text-align:center;transition:color .1s ease-in;}
+ [class*="menu-social"] a:before{font-family:'dashicons';display:inline-block;line-height:1;font-weight:400;font-style:normal;text-decoration:inherit;text-transform:none;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:20px;height:20px;font-size:20px;vertical-align:top;text-align:center;transition:color .1s ease-in;}
  .icon-only a{font-size:0px;}
  [class*="menu-social"] a[href*="twitter"]:before {content:"\f301";}
  [class*="menu-social"] a[href*="facebook"]:before {content:"\f304";}
