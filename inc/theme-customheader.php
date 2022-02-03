@@ -79,6 +79,34 @@ function ekiline_custom_header_controls( $wp_customize ) {
 		);
 	}
 
+	/**
+	 * Diseño, alinear texto en imagen de cabecera.
+	 * Header image text align.
+	 */
+	$wp_customize->add_setting(
+		'ekiline_headerTextAlign',
+		array(
+			'default'           => '0',
+			'sanitize_callback' => 'ekiline_sanitize_select',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerTextAlign',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'Header text', 'ekiline' ),
+			'description' => __( 'Assign text position', 'ekiline' ),
+			'section'     => 'header_image',
+			'priority'    => 30,
+			'choices'     => array(
+				'0' => __( 'Bottom left (default)', 'ekiline' ),
+				'1' => __( 'Bottom center', 'ekiline' ),
+				'2' => __( 'Center', 'ekiline' ),
+			),
+		)
+	);
+
 	// Mostrar datos Home/Blog.
 	$wp_customize->add_setting(
 		'ekiline_headerCustomText',
@@ -95,6 +123,27 @@ function ekiline_custom_header_controls( $wp_customize ) {
 			'description' => '',
 			'section'     => 'header_image',
 			'settings'    => 'ekiline_headerCustomText',
+			'type'        => 'checkbox',
+			'priority'    => 30,
+		)
+	);
+
+	// Ocultar texto complementario.
+	$wp_customize->add_setting(
+		'ekiline_headerHideText',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerHideText',
+		array(
+			'label'       => __( 'Hide intro and meta text', 'ekiline' ),
+			'description' => '',
+			'section'     => 'header_image',
+			'settings'    => 'ekiline_headerHideText',
 			'type'        => 'checkbox',
 			'priority'    => 30,
 		)
@@ -168,7 +217,6 @@ function ekiline_custom_header_controls( $wp_customize ) {
 			)
 		)
 	);
-
 }
 add_action( 'customize_register', 'ekiline_custom_header_controls' );
 
@@ -524,3 +572,16 @@ function ekiline_hide_title( $title ) {
 	return $title;
 }
 add_filter( 'the_title', 'ekiline_hide_title' );
+
+/**
+ * Maniular el marcado CSS, alinear el texto dentro Header.
+ * Header image text align.
+ *
+ * @return string css class.
+ */
+function ekiline_header_text_position_css() {
+	$options       = get_theme_mod( 'ekiline_headerTextAlign' );
+	$text_position = ( '0' < $options ) ? ' text-center' : '';
+	$text_position = ( '2' === $options ) ? $text_position . ' align-self-center' : $text_position;
+	return $text_position;
+}

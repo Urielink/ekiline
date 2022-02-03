@@ -38,6 +38,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.2.6 - Feb 3, 2022 =
+* Improve: New header options in customizer.
+
 = 2.2.5 - Jan 25, 2022 =
 * Update: Wordpress Update, works fine.
 * Fix: set function, declare attribute in custom header file.
