@@ -16,7 +16,7 @@
 	<div class="wp-block-cover has-background-dim-20 has-background-dim has-parallax bg-deep<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' jumbotron'; ?>" style="background-image:url( '<?php echo esc_url( ekiline_header_image() ); ?>' );">
 
 	<?php if ( get_theme_mod( 'ekiline_video' ) && is_front_page() ) { ?>
-		<video class="wp-block-cover__video-background" autoplay="" muted="" loop="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" poster="<?php echo esc_url( ekiline_header_image() ); ?>"></video>
+		<video class="wp-block-cover__video-background intrinsic-ignore" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
 	<?php } ?>
 
 		<div class="headline<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? ' container' : ' w-100'; ?><?php echo esc_attr( ekiline_header_text_position_css() ); ?>">

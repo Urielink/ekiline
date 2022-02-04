@@ -143,6 +143,8 @@ body.has-navbar-fixed-bottom{margin-bottom:50px;}
 @keyframes doBlink {
   50% { opacity: 0; }
 }
+/*Ocultar titulos si existe custom-header*/
+.has-custom-header h1.entry-title, .has-custom-header h1.archive-title{display:none;}
 
   /**
   * Iconos de redes sociales ocupa dashicons.
