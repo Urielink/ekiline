@@ -19,7 +19,7 @@
 		<video class="wp-block-cover__video-background intrinsic-ignore" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
 	<?php } ?>
 
-		<div class="headline<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? ' container' : ' w-100'; ?><?php echo esc_attr( ekiline_header_text_position_css() ); ?>">
+		<div class="headline<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? ' container' : ' w-100'; ?><?php echo esc_html( ekiline_header_text_position_css() ); ?>">
 
 			<div class="title display-3">
 				<?php echo wp_kses_post( ekiline_custom_header_content( 'title' ) ); ?>
