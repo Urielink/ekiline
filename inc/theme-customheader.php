@@ -559,19 +559,20 @@ function ekiline_hide_thumbnail( $html ) {
 add_filter( 'post_thumbnail_html', 'ekiline_hide_thumbnail', 10, 3 );
 
 /**
+ * 3-02-2022 Deprecated, update post structure.
  * Manipular el marcado, ocultar el titulo.
  * Hide content title.
  *
  * @param string $title content.
+ * function ekiline_hide_title( $title ) {
+ *  if ( get_header_image() && ( is_singular() && in_the_loop() ) ) {
+ *   $title = '';
+ *   remove_filter( 'the_title', 'ekiline_hide_title' );
+ *  }
+ *  return $title;
+ * }
+ * add_filter( 'the_title', 'ekiline_hide_title' );
  */
-function ekiline_hide_title( $title ) {
-	if ( get_header_image() && ( is_singular() && in_the_loop() ) ) {
-		$title = '';
-		remove_filter( 'the_title', 'ekiline_hide_title' );
-	}
-	return $title;
-}
-add_filter( 'the_title', 'ekiline_hide_title' );
 
 /**
  * Maniular el marcado CSS, alinear el texto dentro Header.
