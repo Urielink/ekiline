@@ -427,16 +427,11 @@ function ekiline_custom_header_content( $content_type = null ) {
 		if ( get_theme_mod( 'ekiline_headerCustomText' ) ) {
 			$custom_header_title = get_the_title( get_option( 'page_for_posts', true ) );
 			$contentfield        = get_post_field( 'post_content', get_option( 'page_for_posts' ) );
-			$custom_header_text  = wp_trim_words( $contentfield, 24 );
-			// Si existe un punto antes cortar.
-			$punto = strpos( $custom_header_text, '.' );
-			if ( $punto ) {
-				$custom_header_text = substr( $custom_header_text, 0, strpos( $custom_header_text, '.' ) ) . '.';
-			}
+			$custom_header_text = $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
 		} else {
-			$custom_header_title = '<a href="' . esc_url( get_the_permalink() ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
-			$custom_header_text  = ekiline_content_out_the_loop() . '<br>';
-			$custom_header_text .= $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
+			if ( ! is_front_page() ){
+				$custom_header_text  = get_the_title( get_option( 'page_for_posts', true ) ) . '<br>';
+			}
 		}
 	}
 
