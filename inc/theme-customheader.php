@@ -427,10 +427,10 @@ function ekiline_custom_header_content( $content_type = null ) {
 		if ( get_theme_mod( 'ekiline_headerCustomText' ) ) {
 			$custom_header_title = get_the_title( get_option( 'page_for_posts', true ) );
 			$contentfield        = get_post_field( 'post_content', get_option( 'page_for_posts' ) );
-			$custom_header_text = $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
+			$custom_header_text  = $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
 		} else {
-			if ( ! is_front_page() ){
-				$custom_header_text  = get_the_title( get_option( 'page_for_posts', true ) ) . '<br>';
+			if ( ! is_front_page() ) {
+				$custom_header_text = get_the_title( get_option( 'page_for_posts', true ) ) . '<br>';
 			}
 		}
 	}
