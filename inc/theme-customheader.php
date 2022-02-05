@@ -149,6 +149,27 @@ function ekiline_custom_header_controls( $wp_customize ) {
 		)
 	);
 
+	// Ocultar nuevo logotipo.
+	$wp_customize->add_setting(
+		'ekiline_headerHideLogo',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerHideLogo',
+		array(
+			'label'       => __( 'Hide custom logo', 'ekiline' ),
+			'description' => '',
+			'section'     => 'header_image',
+			'settings'    => 'ekiline_headerHideLogo',
+			'type'        => 'checkbox',
+			'priority'    => 30,
+		)
+	);
+
 	// Controlar el ancho del header.
 	$wp_customize->add_setting(
 		'ekiline_headerCustomWidth',
@@ -270,8 +291,9 @@ function ekiline_custom_header_style() {
 	$hdr_bgc    = get_option( 'chdr_color', '#000000' );
 	$hdr_lkc    = get_option( 'chdrlks_color', '#FFFFFF' );
 	$range_head = get_theme_mod( 'ekiline_range_header', '40' );
+	$new_coltxt = ( 'blank' !== get_header_textcolor() ) ? '#' . esc_attr( get_header_textcolor() ) : $hdr_lkc;
 	$hdr_style  = '#custom_header_module .wp-block-cover, #custom_header_module .wp-block-cover.has-background-dim::before{ background-color:' . esc_attr( $hdr_bgc ) . ';min-height:' . $range_head . 'vh; }';
-	$hdr_style .= ( 'blank' !== get_header_textcolor() ) ? '#custom_header_module .headline{color:#' . esc_attr( get_header_textcolor() ) . ';}' : '';
+	$hdr_style .= '#custom_header_module .headline{color:' . $new_coltxt . ';}';
 	$hdr_style .= '#custom_header_module .headline a{color:' . esc_attr( $hdr_lkc ) . ';}';
 	$hdr_style .= '@media only screen and (min-width:960px){#custom_header_module .wp-block-cover{background-image:url("' . ekiline_header_image( 'full' ) . '") !important;}}';
 

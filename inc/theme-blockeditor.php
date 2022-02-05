@@ -24,6 +24,12 @@ function ekiline_block_editor_setup() {
 	// Unidades de medida.
 	add_theme_support( 'custom-units', 'rem', 'em', 'px' );
 
+	// Nuevo soporte de bloques: responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Nuevo soporte de bloques: padding en bloques de grupo.
+	add_theme_support( 'custom-spacing' );
+
 	// Estilos de apoyo, llamar siempre al tema padre.
 	add_theme_support( 'editor-styles' );
 	$block_styles = array(
