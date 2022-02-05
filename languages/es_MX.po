@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2021-10-04 21:43-0500\n"
-"PO-Revision-Date: 2021-10-04 21:47-0500\n"
+"POT-Creation-Date: 2022-02-05 13:43-0600\n"
+"PO-Revision-Date: 2022-02-05 13:45-0600\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: 404.php:39
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Intenta buscar en los archivos mensuales. %1$s"
+msgstr "Intenta buscar en nuestro archivo mensual. %1$s"
 
 #: 404.php:43 template-parts/searchform.php:31
 msgid "Search"
@@ -45,94 +45,164 @@ msgstr "Buscar"
 msgid "Most used categories"
 msgstr "Categorías mas usadas"
 
-#: footer.php:29
+#: comments.php:21
+msgid "Hide comments"
+msgstr "Ocultar comentarios"
+
+#: comments.php:30
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s comentario en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentarios en &ldquo;%2$s&rdquo;"
+
+#: comments.php:43
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: comments.php:46
+msgid "Older Comments"
+msgstr "Comentarios anteriores"
+
+#: comments.php:47
+msgid "Newer Comments"
+msgstr "Comentarios nuevos"
+
+#: comments.php:77
+msgid "Comments are closed"
+msgstr "Comentarios cerrados"
+
+#: comments.php:186
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dice:</span>"
+
+#: comments.php:190
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario espera aprobación."
+
+#: comments.php:205
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: comments.php:211
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: comments.php:249
+msgid "Write a comment"
+msgstr "Escribe un comentario"
+
+#: comments.php:251
+msgid "Comment"
+msgstr "Comentar"
+
+#: comments.php:259
+msgid "Name"
+msgstr "Nombre"
+
+#: comments.php:263
+msgid "Email"
+msgstr "Correo"
+
+#: comments.php:267
+msgid "Website"
+msgstr "Sitio Web"
+
+#: comments.php:272
+msgid "By commenting you accept the"
+msgstr "Al comentar acepta la"
+
+#: comments.php:273
+msgid "Privacy Policy"
+msgstr "Politica de Privacidad"
+
+#: footer.php:31
 #, php-format
 msgid "&copy; Copyright %1$s. "
 msgstr "&copy; Copyright %1$s. "
 
-#: footer.php:35
+#: footer.php:37
 #, php-format
 msgid "Proudly powered by %1$s and %2$s. "
 msgstr "Realizado con %1$s y %2$s. "
 
-#: footer.php:35 inc/info.php:98
+#: footer.php:37 inc/info.php:98
 msgid "WordPress"
 msgstr "WordPress"
 
 #. Theme Name of the plugin/theme
-#: footer.php:35
+#: footer.php:37
 msgid "Ekiline"
 msgstr "Ekiline"
 
-#: footer.php:41
+#: footer.php:43
 msgid "Back"
-msgstr "Volver"
+msgstr "Reverso (parte trasera)"
 
 #: functions.php:52
 msgid "Primary Menu"
 msgstr "Menú Primario"
 
-#: functions.php:83
+#: functions.php:93
 msgid "Left sidebar"
 msgstr "Sidebar izquierdo"
 
-#: functions.php:95
+#: functions.php:105
 msgid "Right sidebar"
 msgstr "Sidebar derecho"
 
-#: functions.php:108
+#: functions.php:118
 msgid "Bottom aside"
 msgstr "Sidebar inferior"
 
-#: functions.php:121 inc/theme-customcolors.php:113
+#: functions.php:131 inc/theme-customcolors.php:113
 msgid "Footer"
 msgstr "Pie de página"
 
-#: functions.php:134
+#: functions.php:144
 msgid "Top before all content"
 msgstr "Superior (antes del contenido)"
 
-#: functions.php:147
+#: functions.php:157
 msgid "In page top content"
 msgstr "Superior al contenido en página"
 
-#: functions.php:159
+#: functions.php:169
 msgid "In page bottom content"
 msgstr "Inferior al contenido en página"
 
-#: functions.php:172
+#: functions.php:182
 msgid "In navbar"
 msgstr "Barra de navegación"
 
-#: functions.php:184
+#: functions.php:194
 msgid "In navbar menu"
-msgstr "Dentro de menú"
-
-#: functions.php:254
-msgid "No styles found, check file"
-msgstr "No se encontraron estilos, verifica el archivo"
+msgstr "Dentro de navegación"
 
 #: inc/class-ekiline-basic-breadcrumb.php:23
 msgid "Show breadcrumb module (Ekiline)"
-msgstr "Mostrar módulo de ruta (Ekiline)"
+msgstr "Mostrar módulo de navegación (Ekiline)"
 
 #: inc/class-ekiline-basic-breadcrumb.php:25
 msgid "Breadcrumb Nav"
 msgstr "Ruta de navegación"
 
-#: inc/class-ekiline-basic-breadcrumb.php:98
+#: inc/class-ekiline-basic-breadcrumb.php:99
 msgid "Home"
 msgstr "Inicio"
 
-#: inc/class-ekiline-basic-breadcrumb.php:184
+#: inc/class-ekiline-basic-breadcrumb.php:185
 msgid "&not;&not;"
 msgstr "&not;&not;"
 
-#: inc/class-ekiline-basic-breadcrumb.php:231
+#: inc/class-ekiline-basic-breadcrumb.php:232
 msgid "Search "
 msgstr "Buscar "
 
-#: inc/class-ekiline-basic-breadcrumb.php:235
+#: inc/class-ekiline-basic-breadcrumb.php:236
 msgid "Not found "
 msgstr "No encontrado"
 
@@ -165,7 +235,7 @@ msgid "Remove"
 msgstr "Remover"
 
 #: inc/customizer.php:52 inc/customizer.php:131 inc/customizer.php:154
-#: inc/customizer.php:270 inc/widget-options.php:114
+#: inc/customizer.php:270 inc/deprecated-widget-options.php:116
 msgid "Default"
 msgstr "Default"
 
@@ -235,7 +305,7 @@ msgstr "Fuera de ventana (responsivo)"
 msgid "Top toggle"
 msgstr "Desplegable"
 
-#: inc/customizer.php:161 inc/widget-options.php:116
+#: inc/customizer.php:161 inc/deprecated-widget-options.php:118
 msgid "Modal"
 msgstr "Modal"
 
@@ -339,6 +409,18 @@ msgstr "Paginación en página"
 msgid "Enable pagination between pages."
 msgstr "Habilite la paginación entre páginas."
 
+#: inc/deprecated-widget-options.php:33
+msgid "CSS custom class (Ekiline)"
+msgstr "Clase personalizada CSS (Ekiline)"
+
+#: inc/deprecated-widget-options.php:113
+msgid "Format (Ekiline)"
+msgstr "Formato (Ekiline)"
+
+#: inc/deprecated-widget-options.php:117
+msgid "Dropdown"
+msgstr "Desplegable"
+
 #: inc/info.php:26 inc/info.php:90
 msgid "About Ekiline"
 msgstr "Acerca de Ekiline"
@@ -389,7 +471,7 @@ msgstr "Comprar y descargar"
 
 #: inc/info.php:73
 msgid "FundMe"
-msgstr "Fondeame"
+msgstr "Fondéame"
 
 #: inc/info.php:79
 #, php-format
@@ -402,7 +484,7 @@ msgstr "Gana dinero"
 
 #: inc/info.php:81
 msgid "fund its development"
-msgstr "Fondea el desarrollo"
+msgstr "fondea el desarrollo"
 
 #: inc/info.php:82
 msgid "discover how"
@@ -496,115 +578,115 @@ msgstr "&copy; Copyright %1$s Ekiline"
 msgid "All rights reserved. Ekiline developed by"
 msgstr "Todos los derechos reservados. Ekiline desarrollado por"
 
-#: inc/theme-blockeditor.php:39
+#: inc/theme-blockeditor.php:45
 msgid "Primary"
 msgstr "Primary (Azúl)"
 
-#: inc/theme-blockeditor.php:44
+#: inc/theme-blockeditor.php:50
 msgid "Secondary"
 msgstr "Secondary (Gris)"
 
-#: inc/theme-blockeditor.php:49
+#: inc/theme-blockeditor.php:55
 msgid "Success"
 msgstr "Success (Verde)"
 
-#: inc/theme-blockeditor.php:54
+#: inc/theme-blockeditor.php:60
 msgid "Danger"
 msgstr "Danger (Rojo)"
 
-#: inc/theme-blockeditor.php:59
+#: inc/theme-blockeditor.php:65
 msgid "Warning"
 msgstr "Warning (Amarilo)"
 
-#: inc/theme-blockeditor.php:64
+#: inc/theme-blockeditor.php:70
 msgid "Info"
 msgstr "Info (Cyan)"
 
-#: inc/theme-blockeditor.php:69
+#: inc/theme-blockeditor.php:75
 msgid "Light"
 msgstr "Light (Blanco)"
 
-#: inc/theme-blockeditor.php:74
+#: inc/theme-blockeditor.php:80
 msgid "Dark"
 msgstr "Dark (Negro)"
 
-#: inc/theme-blockeditor.php:84
+#: inc/theme-blockeditor.php:90
 msgid "Vivid cyan blue to vivid purple"
 msgstr "Azul cian vivo a púrpura vivo"
 
-#: inc/theme-blockeditor.php:89
+#: inc/theme-blockeditor.php:95
 msgid "Vivid green cyan to vivid cyan blue"
 msgstr "Cian verde intenso a azul cian intenso"
 
-#: inc/theme-blockeditor.php:94
+#: inc/theme-blockeditor.php:100
 msgid "Light green cyan to vivid green cyan"
 msgstr "Cian verde claro a cian verde vivo"
 
-#: inc/theme-blockeditor.php:99
+#: inc/theme-blockeditor.php:105
 msgid "Luminous vivid amber to luminous vivid orange"
 msgstr "Luminoso ámbar vivo a naranja vivo luminoso"
 
-#: inc/theme-blockeditor.php:104
+#: inc/theme-blockeditor.php:110
 msgid "Luminous vivid orange to vivid red"
 msgstr "Luminoso naranja vivo a rojo vivo"
 
-#: inc/theme-blockeditor.php:114
+#: inc/theme-blockeditor.php:120
 msgid "Small"
 msgstr "Pequeño"
 
-#: inc/theme-blockeditor.php:119
+#: inc/theme-blockeditor.php:125
 msgid "Regular"
 msgstr "Regular"
 
-#: inc/theme-blockeditor.php:124
+#: inc/theme-blockeditor.php:130
 msgid "Medium"
 msgstr "Medio"
 
-#: inc/theme-blockeditor.php:129
+#: inc/theme-blockeditor.php:135
 msgid "Large"
 msgstr "Grande"
 
-#: inc/theme-blockeditor.php:134
+#: inc/theme-blockeditor.php:140
 msgid "Huge"
 msgstr "Extra grande"
 
-#: inc/theme-blockeditor.php:140
+#: inc/theme-blockeditor.php:146
 msgid "H1"
 msgstr "H1"
 
-#: inc/theme-blockeditor.php:145
+#: inc/theme-blockeditor.php:151
 msgid "H2"
 msgstr "H2"
 
-#: inc/theme-blockeditor.php:150
+#: inc/theme-blockeditor.php:156
 msgid "H3"
 msgstr "H3"
 
-#: inc/theme-blockeditor.php:155
+#: inc/theme-blockeditor.php:161
 msgid "H4"
 msgstr "H4"
 
-#: inc/theme-blockeditor.php:160
+#: inc/theme-blockeditor.php:166
 msgid "H5"
 msgstr "H5"
 
-#: inc/theme-blockeditor.php:165
+#: inc/theme-blockeditor.php:171
 msgid "H6"
 msgstr "H6"
 
-#: inc/theme-blockeditor.php:171
+#: inc/theme-blockeditor.php:177
 msgid "D1"
 msgstr "D1"
 
-#: inc/theme-blockeditor.php:176
+#: inc/theme-blockeditor.php:182
 msgid "D2"
 msgstr "D2"
 
-#: inc/theme-blockeditor.php:181
+#: inc/theme-blockeditor.php:187
 msgid "D3"
 msgstr "D3"
 
-#: inc/theme-blockeditor.php:186
+#: inc/theme-blockeditor.php:192
 msgid "D4"
 msgstr "D4"
 
@@ -730,76 +812,104 @@ msgstr "Color de transparencia"
 msgid "Links color"
 msgstr "Color de enlaces"
 
-#: inc/theme-customheader.php:94
+#: inc/theme-customheader.php:98
+msgid "Header text"
+msgstr "Texto de la cabecera"
+
+#: inc/theme-customheader.php:99
+msgid "Assign text position"
+msgstr "Asignar posición de texto"
+
+#: inc/theme-customheader.php:103
+msgid "Bottom left (default)"
+msgstr "Abajo a la izquierda (predeterminado)"
+
+#: inc/theme-customheader.php:104
+msgid "Bottom center"
+msgstr "Parte inferior central"
+
+#: inc/theme-customheader.php:105
+msgid "Center"
+msgstr "Centrado"
+
+#: inc/theme-customheader.php:122
 msgid "If Post Page is assigned (Homepage Settings), show page title."
 msgstr ""
-"Si se asigna Página de entradas (Ajustes de la página de inicio), muestre el "
+"Si se asigna Página de Entradas (Ajustes de la página de inicio), muestre el "
 "título de la página."
 
-#: inc/theme-customheader.php:115
-msgid "Narrow header (jumbotron)"
-msgstr "Cebecera estrecho (jumbotron)"
+#: inc/theme-customheader.php:143
+msgid "Hide intro and meta text"
+msgstr "Ocultar introducción y metatexto"
 
-#: inc/theme-customheader.php:139
+#: inc/theme-customheader.php:164
+msgid "Hide custom logo"
+msgstr "Ocultar logotipo personalizado"
+
+#: inc/theme-customheader.php:185
+msgid "Narrow header (jumbotron)"
+msgstr "Cabecera estrecho (jumbotron)"
+
+#: inc/theme-customheader.php:209
 msgid "Header image height"
 msgstr "Altura de cabecera"
 
-#: inc/theme-customheader.php:140
+#: inc/theme-customheader.php:210
 msgid "Extend the image to fill the entire screen"
 msgstr "Extienda la imagen para llenar toda la pantalla"
 
-#: inc/theme-customheader.php:163
+#: inc/theme-customheader.php:233
 msgid "Front Page video"
 msgstr "Vídeo de la página principal"
 
-#: inc/theme-customheader.php:164
+#: inc/theme-customheader.php:234
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
 "Formatos recomendados: MP4, WEBM or OGV, la imagen de cabecera se conserva "
 "como fondo del video"
 
-#: inc/theme-customheader.php:333 template-parts/content-article.php:56
+#: inc/theme-customheader.php:401 template-parts/content-article.php:53
 #: template-parts/content-card.php:33
 #, php-format
 msgid "Categories: %s"
 msgstr "Categorías: %s"
 
-#: inc/theme-customheader.php:339
+#: inc/theme-customheader.php:407
 msgid "Categories:"
 msgstr "Categorías:"
 
-#: inc/theme-customheader.php:357 template-parts/content-article.php:63
+#: inc/theme-customheader.php:425 template-parts/content-article.php:60
 #, php-format
 msgid "Tags: %s"
 msgstr "Etiquetas: %s"
 
-#: inc/theme-customheader.php:363
+#: inc/theme-customheader.php:431
 msgid "Tags:"
 msgstr "Etiquetas: %s"
 
-#: inc/theme-customheader.php:401 template-parts/content-article.php:22
+#: inc/theme-customheader.php:465
 #, php-format
 msgctxt "post authors"
 msgid "Written by %s"
 msgstr "Escrito por %s"
 
-#: inc/theme-customheader.php:423 template-parts/content-headline.php:70
+#: inc/theme-customheader.php:487 template-parts/content-headline.php:70
 #, php-format
 msgid "%s results found."
 msgstr "%s resultados encontrados."
 
-#: inc/theme-customheader.php:425 template-parts/content-headline.php:64
+#: inc/theme-customheader.php:489 template-parts/content-headline.php:64
 #: template-parts/searchform.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultados para: %s"
 
-#: inc/theme-customheader.php:429
+#: inc/theme-customheader.php:493
 msgid "It looks like nothing was found at this location."
 msgstr "Parece que no encontramos nada en esta ubicación."
 
-#: inc/theme-customheader.php:430
+#: inc/theme-customheader.php:494
 msgid "Maybe try one of the links below or a search?"
 msgstr ""
 "¿Qué tal si pruebas con los links que aparecen abajo o haz una búsqueda?"
@@ -816,7 +926,7 @@ msgstr "Sin sidebars"
 msgid "Blank page"
 msgstr "Página en blanco"
 
-#: inc/theme-elements.php:31 inc/theme-elements.php:168
+#: inc/theme-elements.php:31 inc/theme-elements.php:170
 #, php-format
 msgid "Continue reading: %s"
 msgstr "Continuar leyendo %s"
@@ -825,11 +935,11 @@ msgstr "Continuar leyendo %s"
 msgid "Read more"
 msgstr "Leer mas"
 
-#: inc/theme-elements.php:230
+#: inc/theme-elements.php:232
 msgid "Continue reading: "
 msgstr "Continuar leyendo:"
 
-#: inc/theme-elements.php:259
+#: inc/theme-elements.php:261
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
@@ -837,20 +947,20 @@ msgstr ""
 "Este contenido está protegido con contraseña. Para verlo, ingrese su "
 "contraseña a continuación:"
 
-#: inc/theme-elements.php:260
+#: inc/theme-elements.php:262
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: inc/theme-elements.php:262
+#: inc/theme-elements.php:264
 msgctxt "post password form"
 msgid "Enter"
 msgstr "Ingresar"
 
-#: inc/theme-elements.php:330
+#: inc/theme-elements.php:332
 msgid "&larr; Previous"
 msgstr "&larr; Anterior"
 
-#: inc/theme-elements.php:331
+#: inc/theme-elements.php:333
 msgid "Next &rarr;"
 msgstr "Siguiente &rarr;"
 
@@ -859,27 +969,27 @@ msgstr "Siguiente &rarr;"
 msgid "There are %1$s entries related to %2$s"
 msgstr "Hay%1$s entradas relacionadas con%2$s"
 
-#: inc/theme-navbars.php:160 inc/theme-navbars.php:169
+#: inc/theme-navbars.php:185 inc/theme-navbars.php:194
 msgid "Toggle navigation"
 msgstr "Cambiar modo de Navegación"
 
-#: inc/theme-navbars.php:249 inc/theme-navbars.php:258
+#: inc/theme-navbars.php:274 inc/theme-navbars.php:283
 msgid "Close"
 msgstr "Cerrar"
 
-#: inc/theme-navbars.php:254
+#: inc/theme-navbars.php:279
 msgid "Modal size"
 msgstr "Tamaño modal"
 
-#: inc/theme-navbars.php:311
+#: inc/theme-navbars.php:336
 msgid "Assign a menu!"
 msgstr "¡Asigna un menú!"
 
-#: inc/theme-navbars.php:314
+#: inc/theme-navbars.php:339
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: inc/theme-navbars.php:325
+#: inc/theme-navbars.php:350
 msgid "Theme help"
 msgstr "Ayuda en tema"
 
@@ -946,122 +1056,42 @@ msgstr "defer"
 msgid "defer & async"
 msgstr "defer & async"
 
-#: inc/widget-options.php:33
-msgid "CSS custom class (Ekiline)"
-msgstr "Clase personalizada CSS (Ekiline)"
-
-#: inc/widget-options.php:111
-msgid "Format (Ekiline)"
-msgstr "Formato (Ekiline)"
-
-#: inc/widget-options.php:115
-msgid "Dropdown"
-msgstr "Desplegable"
-
-#: template-parts/comments.php:21
-msgid "Hide comments"
-msgstr "Ocultar comentarios"
-
-#: template-parts/comments.php:30
-#, php-format
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s comentario en &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s comentarios en &ldquo;%2$s&rdquo;"
-
-#: template-parts/comments.php:43
-msgid "Comment navigation"
-msgstr "Navegación de comentarios"
-
-#: template-parts/comments.php:46
-msgid "Older Comments"
-msgstr "Comentarios anteriores"
-
-#: template-parts/comments.php:47
-msgid "Newer Comments"
-msgstr "Comentarios nuevos"
-
-#: template-parts/comments.php:77
-msgid "Comments are closed"
-msgstr "Comentarios cerrados"
-
-#: template-parts/comments.php:186
-#, php-format
-msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
-msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dice:</span>"
-
-#: template-parts/comments.php:190
-msgid "Your comment is awaiting moderation."
-msgstr "Tu comentario espera aprobación."
-
-#: template-parts/comments.php:205
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s a %2$s"
-
-#: template-parts/comments.php:211
-msgid "(Edit)"
-msgstr "(Editar)"
-
-#: template-parts/comments.php:249
-msgid "Write a comment"
-msgstr "Escribe un comentario"
-
-#: template-parts/comments.php:251
-msgid "Comment"
-msgstr "Comentar"
-
-#: template-parts/comments.php:259
-msgid "Name"
-msgstr "Nombre"
-
-#: template-parts/comments.php:263
-msgid "Email"
-msgstr "Correo"
-
-#: template-parts/comments.php:267
-msgid "Website"
-msgstr "Sitio Web"
-
-#: template-parts/comments.php:272
-msgid "By commenting you accept the"
-msgstr "Al comentar acepta la"
-
-#: template-parts/comments.php:273
-msgid "Privacy Policy"
-msgstr "Politica de Privacidad"
-
-#: template-parts/content-article.php:27
+#: template-parts/content-article.php:24
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Publicado en %s"
 
-#: template-parts/content-article.php:27 template-parts/content-article.php:32
+#: template-parts/content-article.php:24 template-parts/content-article.php:28
 msgid "F j, Y"
 msgstr "F j, Y"
 
-#: template-parts/content-article.php:32
+#: template-parts/content-article.php:28
 #, php-format
 msgid "Updated on %s"
 msgstr "Actualizado el %s"
 
-#: template-parts/content-article.php:36
+#: template-parts/content-article.php:31
 msgid "No comments yet"
 msgstr "No hay comentarios"
 
-#: template-parts/content-article.php:36
+#: template-parts/content-article.php:31
 msgid "1 Comment"
 msgstr "1 Comentario"
 
-#: template-parts/content-article.php:36
+#: template-parts/content-article.php:31
 msgid "% Comments"
 msgstr "% Comentarios"
 
-#: template-parts/content-article.php:36
+#: template-parts/content-article.php:31
 msgid "Comments are closed."
 msgstr "Comentarios cerrados."
+
+#: template-parts/content-article.php:45
+#, php-format
+msgctxt "post authors"
+msgid "Written by: %s"
+msgstr "Escrito por: %s"
 
 #: template-parts/content-headline.php:46
 msgid "User: "
@@ -1095,7 +1125,7 @@ msgstr ""
 "Parece que no encontramos lo que estás buscando. Puede que una búsqueda te "
 "ayude."
 
-#: template-parts/custom-header.php:25
+#: template-parts/custom-header.php:32
 msgid "Skip to content"
 msgstr "Ir al contenido"
 
