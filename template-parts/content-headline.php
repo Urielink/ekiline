@@ -12,9 +12,9 @@
 
 <?php if ( ! is_singular() && ! is_search() ) { ?>
 
-	<h1 class="archive-title headline">
-		<?php echo wp_kses_post( ( is_home() && ! is_front_page() ) ? get_the_title( get_option( 'page_for_posts', true ) ) : get_the_archive_title() ); ?>
-	</h1>
+		<h1 class="archive-title headline">
+			<?php echo wp_kses_post( ( is_home() && ! is_front_page() ) ? get_the_title( get_option( 'page_for_posts', true ) ) : get_the_archive_title() ); ?>
+		</h1>
 
 		<?php if ( is_home() && ! is_front_page() ) { ?>
 

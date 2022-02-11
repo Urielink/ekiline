@@ -38,6 +38,18 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.2.8 - Feb 11, 2022 =
+* Block CSS Fix: Block-Code get the correct css styles, text and background color.
+* Fix: Language update.
+
+= 2.2.6 - Feb 8, 2022 =
+* Update: Bootstrap update (v5.1.3).
+* Improve: New custom-header options in customizer.
+* Improve: New template "No header".
+* Improve: New custom-logo added, it shows in header, hide option in customizer (functions.php, style.css, theme-customheader.php, custom-header.php).
+* Improve: New block support: responsive-embeds, custom-spacing (theme-blockeditor.php).
+* Deprecated text in custom-header, keep essential titles and first paragraph.
+
 = 2.2.5 - Jan 25, 2022 =
 * Update: Wordpress Update, works fine.
 * Fix: set function, declare attribute in custom header file.
@@ -139,7 +151,7 @@ Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
 Ekiline for WordPress Theme bundles the following third-party resources:
 
-Bootstrap v5.1.1 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+Bootstrap v5.1.3 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
 Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
 Source: https://getbootstrap.com/.
 

@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
- Version: 2.2.5
+ Version: 2.2.8
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -23,9 +23,9 @@
  Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
  Ekiline for WordPress Theme bundles the following third-party resources:
- Bootstrap Bootstrap v4.5.0 (https://getbootstrap.com), Copyright 2011-2018 Twitter, Inc.
- Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- Source: https://getbootstrap.com
+ Bootstrap v5.1.3 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+ Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
+ Source: https://getbootstrap.com/.
  */
 
 /**
@@ -79,6 +79,7 @@
  .has-display-2-font-size {font-size: 5.5rem;}
  .has-display-3-font-size {font-size: 4.5rem;}
  .has-display-4-font-size {font-size: 3.5rem;}
+ .wp-block-code.has-text-color > code{color: inherit;}
 
  /* ------------------------------------------------
   * 1.2) WIDGETS
@@ -131,7 +132,7 @@ body.has-navbar-static-top, body.has-navbar-fixed-top.has-custom-header-full-vie
 body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top:50px;}
 body.has-navbar-fixed-bottom{margin-bottom:50px;}
 
- /* ------------------------------------------------
+/* ------------------------------------------------
   * 2) Ekiline: CUSTOM STYLES tus estilos || write here your styles
   * ----------------------------------------------*/
  main{word-wrap: break-word;overflow-wrap: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto;}
@@ -142,6 +143,11 @@ body.has-navbar-fixed-bottom{margin-bottom:50px;}
 .blink{ animation: doBlink 2s linear infinite; }
 @keyframes doBlink {
   50% { opacity: 0; }
+}
+/*Update: Custom-logo*/
+.custom-header .custom-logo {
+  max-width: 100%;
+  height: auto;
 }
 
   /**

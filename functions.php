@@ -52,9 +52,19 @@ function ekiline_setup() {
 			'primary' => esc_html__( 'Primary Menu', 'ekiline' ),
 		)
 	);
+
+	// Nuevo soporte logotipo.
+	$logo_args = array(
+		'height'               => 50,
+		'width'                => 200,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => false,
+	);
+	add_theme_support( 'custom-logo', $logo_args );
 }
 add_action( 'after_setup_theme', 'ekiline_setup' );
-
 
 /**
  * Establecer el ancho de objetos (imagenes).

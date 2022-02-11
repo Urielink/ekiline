@@ -79,6 +79,34 @@ function ekiline_custom_header_controls( $wp_customize ) {
 		);
 	}
 
+	/**
+	 * Diseño, alinear texto en imagen de cabecera.
+	 * Header image text align.
+	 */
+	$wp_customize->add_setting(
+		'ekiline_headerTextAlign',
+		array(
+			'default'           => '0',
+			'sanitize_callback' => 'ekiline_sanitize_select',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerTextAlign',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'Header text', 'ekiline' ),
+			'description' => __( 'Assign text position', 'ekiline' ),
+			'section'     => 'header_image',
+			'priority'    => 30,
+			'choices'     => array(
+				'0' => __( 'Bottom left (default)', 'ekiline' ),
+				'1' => __( 'Bottom center', 'ekiline' ),
+				'2' => __( 'Center', 'ekiline' ),
+			),
+		)
+	);
+
 	// Mostrar datos Home/Blog.
 	$wp_customize->add_setting(
 		'ekiline_headerCustomText',
@@ -95,6 +123,48 @@ function ekiline_custom_header_controls( $wp_customize ) {
 			'description' => '',
 			'section'     => 'header_image',
 			'settings'    => 'ekiline_headerCustomText',
+			'type'        => 'checkbox',
+			'priority'    => 30,
+		)
+	);
+
+	// Ocultar texto complementario.
+	$wp_customize->add_setting(
+		'ekiline_headerHideText',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerHideText',
+		array(
+			'label'       => __( 'Hide intro and meta text', 'ekiline' ),
+			'description' => '',
+			'section'     => 'header_image',
+			'settings'    => 'ekiline_headerHideText',
+			'type'        => 'checkbox',
+			'priority'    => 30,
+		)
+	);
+
+	// Ocultar nuevo logotipo.
+	$wp_customize->add_setting(
+		'ekiline_headerHideLogo',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_headerHideLogo',
+		array(
+			'label'       => __( 'Hide custom logo', 'ekiline' ),
+			'description' => '',
+			'section'     => 'header_image',
+			'settings'    => 'ekiline_headerHideLogo',
 			'type'        => 'checkbox',
 			'priority'    => 30,
 		)
@@ -168,7 +238,6 @@ function ekiline_custom_header_controls( $wp_customize ) {
 			)
 		)
 	);
-
 }
 add_action( 'customize_register', 'ekiline_custom_header_controls' );
 
@@ -222,8 +291,9 @@ function ekiline_custom_header_style() {
 	$hdr_bgc    = get_option( 'chdr_color', '#000000' );
 	$hdr_lkc    = get_option( 'chdrlks_color', '#FFFFFF' );
 	$range_head = get_theme_mod( 'ekiline_range_header', '40' );
+	$new_coltxt = ( 'blank' !== get_header_textcolor() ) ? '#' . esc_attr( get_header_textcolor() ) : $hdr_lkc;
 	$hdr_style  = '#custom_header_module .wp-block-cover, #custom_header_module .wp-block-cover.has-background-dim::before{ background-color:' . esc_attr( $hdr_bgc ) . ';min-height:' . $range_head . 'vh; }';
-	$hdr_style .= ( 'blank' !== get_header_textcolor() ) ? '#custom_header_module .headline{color:#' . esc_attr( get_header_textcolor() ) . ';}' : '';
+	$hdr_style .= '#custom_header_module .headline{color:' . $new_coltxt . ';}';
 	$hdr_style .= '#custom_header_module .headline a{color:' . esc_attr( $hdr_lkc ) . ';}';
 	$hdr_style .= '@media only screen and (min-width:960px){#custom_header_module .wp-block-cover{background-image:url("' . ekiline_header_image( 'full' ) . '") !important;}}';
 
@@ -379,16 +449,11 @@ function ekiline_custom_header_content( $content_type = null ) {
 		if ( get_theme_mod( 'ekiline_headerCustomText' ) ) {
 			$custom_header_title = get_the_title( get_option( 'page_for_posts', true ) );
 			$contentfield        = get_post_field( 'post_content', get_option( 'page_for_posts' ) );
-			$custom_header_text  = wp_trim_words( $contentfield, 24 );
-			// Si existe un punto antes cortar.
-			$punto = strpos( $custom_header_text, '.' );
-			if ( $punto ) {
-				$custom_header_text = substr( $custom_header_text, 0, strpos( $custom_header_text, '.' ) ) . '.';
-			}
+			$custom_header_text  = $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
 		} else {
-			$custom_header_title = '<a href="' . esc_url( get_the_permalink() ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
-			$custom_header_text  = ekiline_content_out_the_loop() . '<br>';
-			$custom_header_text .= $categories_list . ( ( get_the_tag_list() ) ? $tags_list : '' );
+			if ( ! is_front_page() ) {
+				$custom_header_text = get_the_title( get_option( 'page_for_posts', true ) ) . '<br>';
+			}
 		}
 	}
 
@@ -511,16 +576,30 @@ function ekiline_hide_thumbnail( $html ) {
 add_filter( 'post_thumbnail_html', 'ekiline_hide_thumbnail', 10, 3 );
 
 /**
+ * 3-02-2022 Deprecated, update post structure.
  * Manipular el marcado, ocultar el titulo.
  * Hide content title.
  *
  * @param string $title content.
+ * function ekiline_hide_title( $title ) {
+ *  if ( get_header_image() && ( is_singular() && in_the_loop() ) ) {
+ *   $title = '';
+ *   remove_filter( 'the_title', 'ekiline_hide_title' );
+ *  }
+ *  return $title;
+ * }
+ * add_filter( 'the_title', 'ekiline_hide_title' );
  */
-function ekiline_hide_title( $title ) {
-	if ( get_header_image() && ( is_singular() && in_the_loop() ) ) {
-		$title = '';
-		remove_filter( 'the_title', 'ekiline_hide_title' );
-	}
-	return $title;
+
+/**
+ * Maniular el marcado CSS, alinear el texto dentro Header.
+ * Header image text align.
+ *
+ * @return string css class.
+ */
+function ekiline_header_text_position_css() {
+	$options       = get_theme_mod( 'ekiline_headerTextAlign' );
+	$text_position = ( '0' < $options ) ? ' text-center' : '';
+	$text_position = ( '2' === $options ) ? $text_position . ' align-self-center' : $text_position;
+	return $text_position;
 }
-add_filter( 'the_title', 'ekiline_hide_title' );
