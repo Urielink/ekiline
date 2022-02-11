@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ekiline\n"
 "POT-Creation-Date: 2022-02-05 13:42-0600\n"
-"PO-Revision-Date: 2022-02-05 13:45-0600\n"
+"PO-Revision-Date: 2022-02-11 12:12-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -140,7 +140,7 @@ msgstr "Ekiline"
 
 #: footer.php:43
 msgid "Back"
-msgstr "Reverso (parte trasera)"
+msgstr "Volver"
 
 #: functions.php:52
 msgid "Primary Menu"

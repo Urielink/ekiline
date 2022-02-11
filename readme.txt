@@ -38,6 +38,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.2.7 - Feb 11, 2022 =
+* Fix: Language update.
+
 = 2.2.6 - Feb 8, 2022 =
 * Update: Bootstrap update (v5.1.3).
 * Improve: New custom-header options in customizer.
