@@ -38,7 +38,8 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 2.2.7 - Feb 11, 2022 =
+= 2.2.8 - Feb 11, 2022 =
+* Block CSS Fix: Block-Code get the correct css styles, text and background color.
 * Fix: Language update.
 
 = 2.2.6 - Feb 8, 2022 =
