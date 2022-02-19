@@ -38,7 +38,7 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 2.2.8.1 - Feb 11, 2022 =
+= 2.2.9 - Feb 11, 2022 =
 * CSS Fix: Block-Code style, disable border and border radius.
 * CSS Fix: disable default hypens styling, instead it has been added as a css class (.text-hypens).
 * CSS Fix: Add bootstrap font heading sizes (style.css).
