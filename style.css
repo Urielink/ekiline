@@ -79,7 +79,9 @@
  .has-display-2-font-size {font-size: 5.5rem;}
  .has-display-3-font-size {font-size: 4.5rem;}
  .has-display-4-font-size {font-size: 3.5rem;}
+ .wp-block-code.has-text-color > code {border: none;border-radius: 0px;}
  .wp-block-code.has-text-color > code{color: inherit;}
+
 
  /* ------------------------------------------------
   * 1.2) WIDGETS
