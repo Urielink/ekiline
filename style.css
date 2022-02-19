@@ -79,6 +79,12 @@
  .has-display-2-font-size {font-size: 5.5rem;}
  .has-display-3-font-size {font-size: 4.5rem;}
  .has-display-4-font-size {font-size: 3.5rem;}
+ .has-heading-1-font-size {font-size: 2.5rem;}
+ .has-heading-2-font-size {font-size: 2rem;}
+ .has-heading-3-font-size {font-size: 1.75rem;}
+ .has-heading-4-font-size {font-size: 1.5rem;}
+ .has-heading-5-font-size {font-size: 1.25rem;}
+ .has-heading-6-font-size {font-size: 1rem;}
  .wp-block-code.has-text-color > code {border: none;border-radius: 0px;}
  .wp-block-code.has-text-color > code{color: inherit;}
 
@@ -137,7 +143,7 @@ body.has-navbar-fixed-bottom{margin-bottom:50px;}
 /* ------------------------------------------------
   * 2) Ekiline: CUSTOM STYLES tus estilos || write here your styles
   * ----------------------------------------------*/
- main{word-wrap: break-word;overflow-wrap: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto;}
+ .text-hyphens{word-wrap: break-word;overflow-wrap: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto;}
  /* Clearfix en articulos */
  article::after{content: "";clear: both;display: table;}
  article footer, article .page-links{clear: both;}
