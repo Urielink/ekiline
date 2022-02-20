@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-		<button class="btn btn-link btn-sm text-secondary float-right" data-bs-toggle="collapse" data-bs-target="#comments-activity">
+		<button class="btn btn-link btn-sm text-secondary float-end" data-bs-toggle="collapse" data-bs-target="#comments-activity">
 			<?php esc_html_e( 'Hide comments', 'ekiline' ); ?> <span>&dtrif;</span>
 		</button>
 
@@ -245,29 +245,36 @@ function ekiline_comments_extended( $comment, $args, $depth ) {
  * @link https://developer.wordpress.org/reference/functions/comment_form/
  * @link https://premium.wpmudev.org/blog/customizing-wordpress-comment-form/
  */
-$args = array(
-	'title_reply'   => __( 'Write a comment', 'ekiline' ),
-	'comment_field' => '<div class="form-group">' .
-							'<label for="comment">' . __( 'Comment', 'ekiline' ) . '</label>' .
-							'<textarea id="comment" name="comment" class="form-control mb-2"></textarea>' .
-						'</div>',
+$comment_notes_required_indicator = ' <span class="required" aria-hidden="true">*</span>';
+/* translators: %s: Asterisk symbol (*). */
+$comment_notes_required_text = sprintf( ' <span class="required-field-message" aria-hidden="true">' . __( 'Required fields are marked %s', 'ekiline' ) . '</span>', trim( $comment_notes_required_indicator ) );
+$comment_notes_text_before   = sprintf( '<p class="comment-notes small">%s%s</p>', sprintf( '<span id="email-notes">%s</span>', __( 'Your email address will not be published.', 'ekiline' ) ), $comment_notes_required_text );
 
-	'fields'        => apply_filters(
+$args = array(
+	'title_reply_before'   => '<h4 id="reply-title" class="comment-reply-title">',
+	'title_reply_after'    => '</h4>',
+	'comment_notes_before' => $comment_notes_text_before,
+	'title_reply'          => __( 'Write a comment', 'ekiline' ),
+	'comment_field'        => '<div class="form-group">' .
+								'<label for="comment" class="form-label">' . __( 'Comment', 'ekiline' ) . '</label>' .
+								'<textarea id="comment" name="comment" class="form-control"></textarea>' .
+							'</div>',
+	'fields'               => apply_filters(
 		'comment_form_default_fields',
 		array(
 			'author'  => '<div class="form-group">' .
-							'<label for="author">' . __( 'Name', 'ekiline' ) . '*</label> ' .
+							'<label for="author" class="form-label">' . __( 'Name', 'ekiline' ) . '*</label> ' .
 							'<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"/>' .
 						'</div>',
 			'email'   => '<div class="form-group">' .
-							'<label for="email">' . __( 'Email', 'ekiline' ) . '*</label> ' .
+							'<label for="email" class="form-label">' . __( 'Email', 'ekiline' ) . '*</label> ' .
 							'<input id="email" name="email" type="text" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"/>' .
 						'</div>',
 			'url'     => '<div class="form-group">' .
-							'<label for="url">' . __( 'Website', 'ekiline' ) . '</label>' .
+							'<label for="url" class="form-label">' . __( 'Website', 'ekiline' ) . '</label>' .
 							'<input id="url" name="url" type="text" class="form-control" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"/>' .
 						'</div>',
-			'cookies' => '<div class="form-check">' .
+			'cookies' => '<div class="form-check py-2">' .
 							'<input class="form-check-input" type="checkbox" id="agree" required>' .
 							'<label class="form-check-label" for="agree">' . __( 'By commenting you accept the', 'ekiline' ) .
 								'<a href="' . get_privacy_policy_url() . '"> ' . __( 'Privacy Policy', 'ekiline' ) . '</a>' .
@@ -277,8 +284,9 @@ $args = array(
 		)
 	),
 	/* las clases de manera independiente: */
-	'class_form'    => 'comment-form form',
-	'class_submit'  => 'submit btn btn-sm btn-secondary float-right mb-2',
+	'class_form'           => 'comment-form form',
+	'class_submit'         => 'submit btn btn-primary',
+	'submit_field'         => '<p class="form-submit text-end d-grid gap-2 d-md-block">%1$s %2$s</p>',
 );
 
 	comment_form( $args );

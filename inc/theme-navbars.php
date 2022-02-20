@@ -275,7 +275,7 @@ function ekiline_modal_menu_bottom( $nav_position ) {
 			</div>
 			<div class="modal-body navbar-light bg-light">
 
-				<div class="btn-group float-right">
+				<div class="btn-group float-end">
 					<button type="button" class="modal-resize btn btn-sm btn-outline-secondary" aria-label="<?php esc_attr_e( 'Modal size', 'ekiline' ); ?>">
 						<span>&leftarrow;</span>
 						<span>&rightarrow;</span>

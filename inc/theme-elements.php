@@ -229,7 +229,7 @@ function ekiline_link_pages() {
 	}
 
 	$args = array(
-		'before'         => '<p class="page-links border-bottom p-2 text-right"><i class="float-left">' . esc_html__( 'Continue reading: ', 'ekiline' ) . '</i>',
+		'before'         => '<p class="page-links border-bottom p-2 text-right"><i class="float-start">' . esc_html__( 'Continue reading: ', 'ekiline' ) . '</i>',
 		'after'          => '</p>',
 		'link_before'    => '<span class="btn btn-sm btn-primary">',
 		'link_after'     => '</span>',

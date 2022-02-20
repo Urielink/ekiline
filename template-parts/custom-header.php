@@ -11,7 +11,7 @@
 
 <?php if ( get_header_image() ) { ?>
 
-<div id="custom_header_module" class="custom-header<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' container px-0'; ?>">
+<div id="custom_header_module" class="custom-header mb-3<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' container px-0'; ?>">
 
 	<div class="wp-block-cover has-background-dim-20 has-background-dim has-parallax bg-deep<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' jumbotron'; ?>" style="background-image:url( '<?php echo esc_url( ekiline_header_image() ); ?>' );">
 
