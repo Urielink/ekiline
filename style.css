@@ -87,7 +87,7 @@
  .has-heading-6-font-size {font-size: 1rem;}
  .wp-block-code.has-text-color > code {border: none;border-radius: 0px;}
  .wp-block-code.has-text-color > code{color: inherit;}
-
+ .has-text-color a{color:inherit;}
 
  /* ------------------------------------------------
   * 1.2) WIDGETS
