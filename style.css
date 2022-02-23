@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
- Version: 2.2.9
+ Version: 2.3
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -55,7 +55,7 @@
  .wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
  .wp-video{margin:0 auto;}
  .wp-video .mejs-container,[class*="wp-image"]{max-width:100%;height:auto;margin:inherit;}
- .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
+ .screen-reader-text, .has-custom-header h1{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
  .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:0.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000;}
  .sticky{display:block;}
  .bypostauthor{display:block;}

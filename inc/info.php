@@ -37,7 +37,10 @@ add_action( 'admin_menu', 'ekiline_theme_page' );
 function ekiline_theme_html_page() { ?>
 <style>
 	.ekiline-notice, .ekiline-notice h4, .ekiline-notice ul, .ekiline-notice ul li{ margin:0px 5px 0px 0px !important; padding-bottom:0px !important; display: inline-block; }
-	.ekiline-notice ul li{ display:none;}
+	.ekiline-notice ul li, .welcome-panel::before{ display:none;}
+	.welcome-panel-header{box-sizing:border-box;margin-left:auto;margin-right:auto;max-width:1500px;width:100%;padding:40px;}
+	.welcome-panel-column {display: block;}
+	.welcome-panel .welcome-panel-column-container {margin-top: 0px;}
 </style>
 <div class="wrap">
 	<h1>
@@ -48,11 +51,13 @@ function ekiline_theme_html_page() { ?>
 	<div id="welcome-panel" class="welcome-panel">
 		<div class="welcome-panel-content">
 
-			<h2><?php esc_html_e( 'Thanks for using this theme!', 'ekiline' ); ?></h2>
-			<hr>
-			<p class="about-description">
-				<?php esc_html_e( 'Find more information to improve your skills in customizing your site.', 'ekiline' ); ?>
-			</p>
+			<div class="welcome-panel-header">
+				<span style="float:right;"><?php echo ( function_exists( 'get_avatar' ) ) ? get_avatar( 'uriel@bixnia.com', $size = '100', $default = '' ) : ''; ?></span>
+				<h2><?php esc_html_e( 'Thanks for using this theme!', 'ekiline' ); ?></h2>
+				<p class="about-description">
+					<?php esc_html_e( 'Find more information to improve your skills in customizing your site.', 'ekiline' ); ?>
+				</p>
+			</div>
 
 			<div class="welcome-panel-column-container">
 				<div class="welcome-panel-column">
@@ -157,7 +162,7 @@ function ekiline_theme_html_page() { ?>
 <script type='text/javascript'>
 	jQuery(document).ready(function($){
 		var random = Math.floor(Math.random() * 5) + 1;
-		$('.ekiline-notice ul li:nth-child('+random+')').delay(3000).show(100);
+		$('.ekiline-notice ul li:nth-child('+random+')').delay(2000).show(100);
 	});
 </script>
 	<?php

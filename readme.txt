@@ -38,10 +38,12 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 2.3 - Feb 19, 2022 =
+= 2.3 - Feb 23, 2022 =
 * Style improvement: distances between items, margins and padding.
 * Improve: comments.php form markup update.
-* CSS Fix: Text color, reset color in links.
+* CSS Fix: inherit text color in links when occupying in a block.
+* CSS Fix: hide title (h1) with CSS styles (.screen-reader) when custom header is enabled.
+* Admin fix: ekiline_theme_page update content and styles.
 
 = 2.2.9 - Feb 11, 2022 =
 * CSS Fix: Block-Code style, disable border and border radius.
