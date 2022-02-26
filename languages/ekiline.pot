@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2022-02-19 18:56-0600\n"
-"PO-Revision-Date: 2022-02-19 18:32-0600\n"
+"POT-Creation-Date: 2022-02-25 20:20-0600\n"
+"PO-Revision-Date: 2022-02-25 20:20-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Proudly powered by %1$s and %2$s. "
 msgstr ""
 
-#: footer.php:37 inc/info.php:98
+#: footer.php:37 inc/info.php:103
 msgid "WordPress"
 msgstr ""
 
@@ -424,70 +424,70 @@ msgstr ""
 msgid "Dropdown"
 msgstr ""
 
-#: inc/info.php:26 inc/info.php:90
+#: inc/info.php:26 inc/info.php:95
 msgid "About Ekiline"
 msgstr ""
 
-#: inc/info.php:45
+#: inc/info.php:48
 msgid "About Ekiline for WordPress"
 msgstr ""
 
-#: inc/info.php:51
+#: inc/info.php:56
 msgid "Thanks for using this theme!"
 msgstr ""
 
-#: inc/info.php:54
+#: inc/info.php:58
 msgid "Find more information to improve your skills in customizing your site."
 msgstr ""
 
-#: inc/info.php:60
+#: inc/info.php:65
 msgid "Add an extra to the creation and delivery of your projects."
 msgstr ""
 
-#: inc/info.php:63
+#: inc/info.php:68
 msgid ""
 "Quick use guide in Keynote or Powerpoint to freely customize and deliver to "
 "your clients."
 msgstr ""
 
-#: inc/info.php:65
+#: inc/info.php:70
 msgid "More design elements, CSS, HTML and JS available to grow your project."
 msgstr ""
 
-#: inc/info.php:67
+#: inc/info.php:72
 msgid "Ekiline Blocks, plugin with carousel and more options in page editor."
 msgstr ""
 
-#: inc/info.php:69
+#: inc/info.php:74
 msgid "Complete clean theme, no warnings or messages."
 msgstr ""
 
-#: inc/info.php:72
+#: inc/info.php:77
 msgid "Buy and download"
 msgstr ""
 
-#: inc/info.php:73
+#: inc/info.php:78
 msgid "FundMe"
 msgstr ""
 
-#: inc/info.php:79
+#: inc/info.php:84
 #, php-format
 msgid "%1$s with Ekiline and %2$s, %3$s."
 msgstr ""
 
-#: inc/info.php:80
+#: inc/info.php:85
 msgid "Make money"
 msgstr ""
 
-#: inc/info.php:81
+#: inc/info.php:86
 msgid "fund its development"
 msgstr ""
 
-#: inc/info.php:82
+#: inc/info.php:87
 msgid "discover how"
 msgstr ""
 
-#: inc/info.php:91
+#: inc/info.php:96
 msgid ""
 "Ekiline simplifies the creation of a website with WordPress, it is a working "
 "method that brings together the standard practices of the internet industry, "
@@ -495,58 +495,58 @@ msgid ""
 "For more information visit ekiline.com"
 msgstr ""
 
-#: inc/info.php:92
+#: inc/info.php:97
 msgid "About Uri Lazcano"
 msgstr ""
 
-#: inc/info.php:95
+#: inc/info.php:100
 msgid ""
 "Frontend designer established in Mexico City. 10 years developing websites "
 "and 10 more years of experience in graphic design for advertising. Check my "
 "career and work."
 msgstr ""
 
-#: inc/info.php:99
+#: inc/info.php:104
 msgid "Github"
 msgstr ""
 
-#: inc/info.php:100
+#: inc/info.php:105
 msgid "Linkedin"
 msgstr ""
 
-#: inc/info.php:101
+#: inc/info.php:106
 msgid "Behance"
 msgstr ""
 
-#: inc/info.php:102 inc/info.php:153
+#: inc/info.php:107 inc/info.php:158
 msgid "B I X N I A"
 msgstr ""
 
-#: inc/info.php:110
+#: inc/info.php:115
 msgid "Ekiline docs"
 msgstr ""
 
-#: inc/info.php:113
+#: inc/info.php:118
 msgid "Install"
 msgstr ""
 
-#: inc/info.php:114
+#: inc/info.php:119
 msgid "Customize"
 msgstr ""
 
-#: inc/info.php:115
+#: inc/info.php:120
 msgid "Elements and blocks"
 msgstr ""
 
-#: inc/info.php:116
+#: inc/info.php:121
 msgid "Compatibility"
 msgstr ""
 
-#: inc/info.php:137
+#: inc/info.php:142
 msgid "Limited liability:"
 msgstr ""
 
-#: inc/info.php:138
+#: inc/info.php:143
 msgid ""
 "As a courtesy, we provide information on how to use certain third-party "
 "products, but we do not directly support their use and we are not "
@@ -555,12 +555,12 @@ msgid ""
 "trademarks of their respective owners."
 msgstr ""
 
-#: inc/info.php:150
+#: inc/info.php:155
 #, php-format
 msgid "&copy; Copyright %1$s Ekiline"
 msgstr ""
 
-#: inc/info.php:152
+#: inc/info.php:157
 msgid "All rights reserved. Ekiline developed by"
 msgstr ""
 
@@ -811,67 +811,71 @@ msgid "Hide custom logo"
 msgstr ""
 
 #: inc/theme-customheader.php:185
+msgid "Set transparency in navbar."
+msgstr ""
+
+#: inc/theme-customheader.php:206
 msgid "Narrow header (jumbotron)"
 msgstr ""
 
-#: inc/theme-customheader.php:209
+#: inc/theme-customheader.php:230
 msgid "Header image height"
 msgstr ""
 
-#: inc/theme-customheader.php:210
+#: inc/theme-customheader.php:231
 msgid "Extend the image to fill the entire screen"
 msgstr ""
 
-#: inc/theme-customheader.php:233
+#: inc/theme-customheader.php:254
 msgid "Front Page video"
 msgstr ""
 
-#: inc/theme-customheader.php:234
+#: inc/theme-customheader.php:255
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
 
-#: inc/theme-customheader.php:401 template-parts/content-article.php:53
+#: inc/theme-customheader.php:422 template-parts/content-article.php:53
 #: template-parts/content-card.php:33
 #, php-format
 msgid "Categories: %s"
 msgstr ""
 
-#: inc/theme-customheader.php:407
+#: inc/theme-customheader.php:428
 msgid "Categories:"
 msgstr ""
 
-#: inc/theme-customheader.php:425 template-parts/content-article.php:60
+#: inc/theme-customheader.php:446 template-parts/content-article.php:60
 #, php-format
 msgid "Tags: %s"
 msgstr ""
 
-#: inc/theme-customheader.php:431
+#: inc/theme-customheader.php:452
 msgid "Tags:"
 msgstr ""
 
-#: inc/theme-customheader.php:465
+#: inc/theme-customheader.php:486
 #, php-format
 msgctxt "post authors"
 msgid "Written by %s"
 msgstr ""
 
-#: inc/theme-customheader.php:487 template-parts/content-headline.php:70
+#: inc/theme-customheader.php:508 template-parts/content-headline.php:70
 #, php-format
 msgid "%s results found."
 msgstr ""
 
-#: inc/theme-customheader.php:489 template-parts/content-headline.php:64
+#: inc/theme-customheader.php:510 template-parts/content-headline.php:64
 #: template-parts/searchform.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/theme-customheader.php:493
+#: inc/theme-customheader.php:514
 msgid "It looks like nothing was found at this location."
 msgstr ""
 
-#: inc/theme-customheader.php:494
+#: inc/theme-customheader.php:515
 msgid "Maybe try one of the links below or a search?"
 msgstr ""
 

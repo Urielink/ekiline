@@ -1,15 +1,13 @@
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2022-02-19 18:34-0600\n"
-"PO-Revision-Date: 2022-02-19 18:56-0600\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-02-25 20:21-0600\n"
+"PO-Revision-Date: 2022-02-25 20:25-0600\n"
 "Language-Team: \n"
-"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -17,6 +15,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: es\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -138,7 +138,7 @@ msgstr "&copy; Copyright %1$s. "
 msgid "Proudly powered by %1$s and %2$s. "
 msgstr "Realizado con %1$s y %2$s. "
 
-#: footer.php:37 inc/info.php:98
+#: footer.php:37 inc/info.php:103
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -430,29 +430,29 @@ msgstr "Formato (Ekiline)"
 msgid "Dropdown"
 msgstr "Desplegable"
 
-#: inc/info.php:26 inc/info.php:90
+#: inc/info.php:26 inc/info.php:95
 msgid "About Ekiline"
 msgstr "Acerca de Ekiline"
 
-#: inc/info.php:45
+#: inc/info.php:48
 msgid "About Ekiline for WordPress"
 msgstr "Acerca de Ekiline para Wordpress"
 
-#: inc/info.php:51
+#: inc/info.php:56
 msgid "Thanks for using this theme!"
 msgstr "¡Gracias por utilizar este tema!"
 
-#: inc/info.php:54
+#: inc/info.php:58
 msgid "Find more information to improve your skills in customizing your site."
 msgstr ""
 "Encuentre más información para mejorar sus habilidades en la personalización "
 "de su sitio."
 
-#: inc/info.php:60
+#: inc/info.php:65
 msgid "Add an extra to the creation and delivery of your projects."
 msgstr "Agrega un extra a la creación y entrega de sus proyectos."
 
-#: inc/info.php:63
+#: inc/info.php:68
 msgid ""
 "Quick use guide in Keynote or Powerpoint to freely customize and deliver to "
 "your clients."
@@ -460,46 +460,46 @@ msgstr ""
 "Guía de uso rápido en Keynote o Powerpoint para personalizar libremente y "
 "entregar a tus clientes."
 
-#: inc/info.php:65
+#: inc/info.php:70
 msgid "More design elements, CSS, HTML and JS available to grow your project."
 msgstr ""
 "Más elementos de diseño, CSS, HTML y JS disponible para crecer tu proyecto."
 
-#: inc/info.php:67
+#: inc/info.php:72
 msgid "Ekiline Blocks, plugin with carousel and more options in page editor."
 msgstr ""
 "Ekiline Blocks, plugin con carrusel y más opciones en editor de páginas."
 
-#: inc/info.php:69
+#: inc/info.php:74
 msgid "Complete clean theme, no warnings or messages."
 msgstr "Tema completo y limpio, sin avisos o mensajes."
 
-#: inc/info.php:72
+#: inc/info.php:77
 msgid "Buy and download"
 msgstr "Comprar y descargar"
 
-#: inc/info.php:73
+#: inc/info.php:78
 msgid "FundMe"
 msgstr "Fondéame"
 
-#: inc/info.php:79
+#: inc/info.php:84
 #, php-format
 msgid "%1$s with Ekiline and %2$s, %3$s."
 msgstr "%1$s con Ekiline y %2$s, %3$s."
 
-#: inc/info.php:80
+#: inc/info.php:85
 msgid "Make money"
 msgstr "Gana dinero"
 
-#: inc/info.php:81
+#: inc/info.php:86
 msgid "fund its development"
 msgstr "fondea el desarrollo"
 
-#: inc/info.php:82
+#: inc/info.php:87
 msgid "discover how"
 msgstr "Descubra cómo"
 
-#: inc/info.php:91
+#: inc/info.php:96
 msgid ""
 "Ekiline simplifies the creation of a website with WordPress, it is a working "
 "method that brings together the standard practices of the internet industry, "
@@ -511,11 +511,11 @@ msgstr ""
 "para facilitar las tareas de planeación, diseño, desarrollo y optimización. "
 "Para mayor información visita ekiline.com"
 
-#: inc/info.php:92
+#: inc/info.php:97
 msgid "About Uri Lazcano"
 msgstr "Acerca Uri Lazcano"
 
-#: inc/info.php:95
+#: inc/info.php:100
 msgid ""
 "Frontend designer established in Mexico City. 10 years developing websites "
 "and 10 more years of experience in graphic design for advertising. Check my "
@@ -524,47 +524,47 @@ msgstr ""
 "Diseñador Frontend, Establecido en la ciudad de México. 10 años "
 "desarrollando sitios web y 10 años diseñando para proyectos de publicidad."
 
-#: inc/info.php:99
+#: inc/info.php:104
 msgid "Github"
 msgstr "Github"
 
-#: inc/info.php:100
+#: inc/info.php:105
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: inc/info.php:101
+#: inc/info.php:106
 msgid "Behance"
 msgstr "Behance"
 
-#: inc/info.php:102 inc/info.php:153
+#: inc/info.php:107 inc/info.php:158
 msgid "B I X N I A"
 msgstr "B I X N I A"
 
-#: inc/info.php:110
+#: inc/info.php:115
 msgid "Ekiline docs"
 msgstr "Documentos de Ekiline"
 
-#: inc/info.php:113
+#: inc/info.php:118
 msgid "Install"
 msgstr "Instalar"
 
-#: inc/info.php:114
+#: inc/info.php:119
 msgid "Customize"
 msgstr "Personalizar"
 
-#: inc/info.php:115
+#: inc/info.php:120
 msgid "Elements and blocks"
 msgstr "Elementos y bloques"
 
-#: inc/info.php:116
+#: inc/info.php:121
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: inc/info.php:137
+#: inc/info.php:142
 msgid "Limited liability:"
 msgstr "Responsabilidad limitada"
 
-#: inc/info.php:138
+#: inc/info.php:143
 msgid ""
 "As a courtesy, we provide information on how to use certain third-party "
 "products, but we do not directly support their use and we are not "
@@ -578,12 +578,12 @@ msgstr ""
 "productos. Los nombres, marcas y logotipos de terceros son marcas "
 "registradas de sus respectivos propietarios."
 
-#: inc/info.php:150
+#: inc/info.php:155
 #, php-format
 msgid "&copy; Copyright %1$s Ekiline"
 msgstr "&copy; Copyright %1$s Ekiline"
 
-#: inc/info.php:152
+#: inc/info.php:157
 msgid "All rights reserved. Ekiline developed by"
 msgstr "Todos los derechos reservados. Ekiline desarrollado por"
 
@@ -856,69 +856,73 @@ msgid "Hide custom logo"
 msgstr "Ocultar logotipo personalizado"
 
 #: inc/theme-customheader.php:185
+msgid "Set transparency in navbar."
+msgstr "Establezca la transparencia en la barra de navegación."
+
+#: inc/theme-customheader.php:206
 msgid "Narrow header (jumbotron)"
 msgstr "Cabecera estrecho (jumbotron)"
 
-#: inc/theme-customheader.php:209
+#: inc/theme-customheader.php:230
 msgid "Header image height"
 msgstr "Altura de cabecera"
 
-#: inc/theme-customheader.php:210
+#: inc/theme-customheader.php:231
 msgid "Extend the image to fill the entire screen"
 msgstr "Extienda la imagen para llenar toda la pantalla"
 
-#: inc/theme-customheader.php:233
+#: inc/theme-customheader.php:254
 msgid "Front Page video"
 msgstr "Vídeo de la página principal"
 
-#: inc/theme-customheader.php:234
+#: inc/theme-customheader.php:255
 msgid ""
 "Recommended formats: MP4, WEBM or OGV, your header image conserves as poster"
 msgstr ""
 "Formatos recomendados: MP4, WEBM or OGV, la imagen de cabecera se conserva "
 "como fondo del video"
 
-#: inc/theme-customheader.php:401 template-parts/content-article.php:53
+#: inc/theme-customheader.php:422 template-parts/content-article.php:53
 #: template-parts/content-card.php:33
 #, php-format
 msgid "Categories: %s"
 msgstr "Categorías: %s"
 
-#: inc/theme-customheader.php:407
+#: inc/theme-customheader.php:428
 msgid "Categories:"
 msgstr "Categorías:"
 
-#: inc/theme-customheader.php:425 template-parts/content-article.php:60
+#: inc/theme-customheader.php:446 template-parts/content-article.php:60
 #, php-format
 msgid "Tags: %s"
 msgstr "Etiquetas: %s"
 
-#: inc/theme-customheader.php:431
+#: inc/theme-customheader.php:452
 msgid "Tags:"
 msgstr "Etiquetas: %s"
 
-#: inc/theme-customheader.php:465
+#: inc/theme-customheader.php:486
 #, php-format
 msgctxt "post authors"
 msgid "Written by %s"
 msgstr "Escrito por %s"
 
-#: inc/theme-customheader.php:487 template-parts/content-headline.php:70
+#: inc/theme-customheader.php:508 template-parts/content-headline.php:70
 #, php-format
 msgid "%s results found."
 msgstr "%s resultados encontrados."
 
-#: inc/theme-customheader.php:489 template-parts/content-headline.php:64
+#: inc/theme-customheader.php:510 template-parts/content-headline.php:64
 #: template-parts/searchform.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultados para: %s"
 
-#: inc/theme-customheader.php:493
+#: inc/theme-customheader.php:514
 msgid "It looks like nothing was found at this location."
 msgstr "Parece que no encontramos nada en esta ubicación."
 
-#: inc/theme-customheader.php:494
+#: inc/theme-customheader.php:515
 msgid "Maybe try one of the links below or a search?"
 msgstr ""
 "¿Qué tal si pruebas con los links que aparecen abajo o haz una búsqueda?"

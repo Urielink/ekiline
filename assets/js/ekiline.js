@@ -3,6 +3,7 @@ window.onload = function() {
 
 	ekiline_smoothNavigation('.smooth');
 	ekiline_navBar_behavior();
+	ekiline_js_style_navbar('.has-navbar-opacity #primarySiteNavigation',300);
 	ekiline_navModal_behavior();
 	ekiline_nestedDropdowns('.dropdown-menu a.dropdown-toggle');
 	ekiline_transformarCarrusel('.carousel-multiple');
@@ -86,6 +87,27 @@ function ekiline_navBar_behavior(){
 		}
 	}, true);
 
+}
+
+/* Opacidad en menu navbar */
+function ekiline_js_style_navbar( selector = null, height = 0 ){
+	// Validar selector.
+	let navFx = document.querySelector( selector );
+	if ( navFx ){
+		// Agregar clase css default.
+		navFx.classList.add('nav-opacity');
+		// Listener.
+		window.addEventListener('scroll',
+			function() {
+				let scroll_top = this.scrollY;
+				if( scroll_top > height ) {
+					navFx.classList.remove('nav-opacity');
+				} else {
+					navFx.classList.add('nav-opacity');
+				}
+			}
+		);
+	}
 }
 
 /* Animar el boton del menu modal */

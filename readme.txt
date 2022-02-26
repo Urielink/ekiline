@@ -38,6 +38,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.3.1 - Feb 25, 2022 =
+* Improve: Add transparency option to navbar (customizer, js, and css).
+
 = 2.3 - Feb 23, 2022 =
 * Style improvement: distances between items, margins and padding.
 * Improve: comments.php form markup update.

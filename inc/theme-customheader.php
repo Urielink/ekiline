@@ -170,6 +170,27 @@ function ekiline_custom_header_controls( $wp_customize ) {
 		)
 	);
 
+	// New transparency option (checkbox).
+	$wp_customize->add_setting(
+		'ekiline_navTransparency',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_navTransparency',
+		array(
+			'label'       => __( 'Set transparency in navbar.', 'ekiline' ),
+			'description' => '',
+			'section'     => 'header_image',
+			'settings'    => 'ekiline_navTransparency',
+			'type'        => 'checkbox',
+			'priority'    => 30,
+		)
+	);
+
 	// Controlar el ancho del header.
 	$wp_customize->add_setting(
 		'ekiline_headerCustomWidth',
@@ -603,3 +624,17 @@ function ekiline_header_text_position_css() {
 	$text_position = ( '2' === $options ) ? $text_position . ' align-self-center' : $text_position;
 	return $text_position;
 }
+
+/**
+ * 25022022 New feature, add transparency in navbar.
+ * Opciones de opacidad navbar clases CSS de apoyo en body_class().
+ *
+ * @param string $classes add new css class to body.
+ */
+function ekiline_navbar_set_trans_css( $classes ) {
+	if ( get_header_image() && get_theme_mod( 'ekiline_navTransparency' ) ) {
+		$classes[] = 'has-navbar-opacity';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'ekiline_navbar_set_trans_css' );
