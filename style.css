@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
- Version: 2.3.1
+ Version: 2.3.2
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -55,8 +55,8 @@
  .wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
  .wp-video{margin:0 auto;}
  .wp-video .mejs-container,[class*="wp-image"]{max-width:100%;height:auto;margin:inherit;}
- .screen-reader-text, .has-custom-header h1{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
- .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:0.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000;}
+ .screen-reader-text, .has-custom-header h1[class*="title"]{position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;clip-path: inset(0% 100% 100% 0%);}
+ .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip-path: revert !important;color:#21759b;display:block;font-size:14px;font-size:0.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000;}
  .sticky{display:block;}
  .bypostauthor{display:block;}
  #user_switching_switch_on{position:fixed;left:0;padding:0.4rem;margin:0px;bottom:0px;z-index:3000;background-color:#343A40;font-size:0.8rem;}
@@ -74,20 +74,48 @@
  .hentry .alignfull iframe,.hentry .alignwide iframe{width: 100%;height: calc(100vw / 3);min-height: 400px;}
  .hentry .alignfull video,.hentry .alignwide video{width: 100%;min-height: 400px;}
  /* Coincidencias con bootstrap || Bootstrap coincidences */
- .has-display-1-font-size, .has-display-2-font-size, .has-display-3-font-size, .has-display-4-font-size {font-weight: 300;line-height: 1.2;}
- .has-display-1-font-size {font-size: 6rem;}
- .has-display-2-font-size {font-size: 5.5rem;}
- .has-display-3-font-size {font-size: 4.5rem;}
- .has-display-4-font-size {font-size: 3.5rem;}
- .has-heading-1-font-size {font-size: 2.5rem;}
- .has-heading-2-font-size {font-size: 2rem;}
- .has-heading-3-font-size {font-size: 1.75rem;}
- .has-heading-4-font-size {font-size: 1.5rem;}
- .has-heading-5-font-size {font-size: 1.25rem;}
- .has-heading-6-font-size {font-size: 1rem;}
  .wp-block-code.has-text-color > code {border: none;border-radius: 0px;}
  .wp-block-code.has-text-color > code{color: inherit;}
  .has-text-color a{color:inherit;}
+ /* Nuevos tamaños de texto */
+.has-display-1-font-size, .has-display-2-font-size, .has-display-3-font-size,.has-display-4-font-size, .has-display-5-font-size, .has-display-6-font-size {font-weight: 300;line-height: 1.2;}
+.has-display-1-font-size{font-size:calc(1.625rem + 4.5vw);}
+.has-display-2-font-size{font-size:calc(1.575rem + 3.9vw);}
+.has-display-3-font-size{font-size:calc(1.525rem + 3.3vw);}
+.has-display-4-font-size{font-size:calc(1.475rem + 2.7vw);}
+.has-display-5-font-size{font-size:calc(1.425rem + 2.1vw);}
+.has-display-6-font-size{font-size:calc(1.375rem + 1.5vw);}
+@media (min-width:1200px){
+.has-display-1-font-size{font-size:5rem;}
+.has-display-2-font-size{font-size:4.5rem;}
+.has-display-3-font-size{font-size:4rem;}
+.has-display-4-font-size{font-size:3.5rem;}
+.has-display-5-font-size{font-size:3rem;}
+.has-display-6-font-size{font-size:2.5rem;}
+}
+.has-heading-1-font-size, .has-heading-2-font-size, .has-heading-3-font-size,.has-heading-4-font-size, .has-heading-5-font-size, .has-heading-6-font-size{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+.has-heading-1-font-size{font-size:calc(1.375rem + 1.5vw);}
+.has-heading-2-font-size{font-size:calc(1.325rem + .9vw);}
+.has-heading-3-font-size{font-size:calc(1.3rem + .6vw);}
+.has-heading-4-font-size{font-size:calc(1.275rem + .3vw);}
+@media (min-width:1200px){
+.has-heading-1-font-size{font-size:2.5rem;}
+.has-heading-2-font-size{font-size:2rem;}
+.has-heading-3-font-size{font-size:1.75rem;}
+.has-heading-4-font-size{font-size:1.5rem;}
+}
+.has-heading-5-font-size{font-size:1.25rem;}
+.has-heading-6-font-size{font-size:1rem;}
+ /* Fondo de botones */
+.has-primary-background-color:hover{background-color:var(--bs-primary-btn-hover);border-color:var(--bs-primary-btn-active);}
+.has-secondary-background-color:hover{background-color:var(--bs-secondary-btn-hover);border-color:var(--bs-secondary-btn-active);}
+.has-success-background-color:hover{background-color:var(--bs-success-btn-hover);border-color:var(--bs-success-btn-active);}
+.has-warning-background-color:hover{background-color:var(--bs-warning-btn-hover);border-color:var(--bs-warning-btn-active);}
+.has-danger-background-color:hover{background-color:var(--bs-danger-btn-hover);border-color:var(--bs-danger-btn-active);}
+.has-info-background-color:hover{background-color:var(--bs-info-btn-hover);border-color:var(--bs-info-btn-active);}
+.has-light-background-color:hover{background-color:var(--bs-light-btn-hover);border-color:var(--bs-light-btn-active);}
+.has-dark-background-color:hover{background-color:var(--bs-dark-btn-hover);border-color:var(--bs-dark-btn-active);}
+
 
  /* ------------------------------------------------
   * 1.2) WIDGETS

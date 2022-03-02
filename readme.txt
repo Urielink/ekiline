@@ -38,6 +38,10 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.3.2 - Mar 2, 2022 =
+* Improve: Add new css bootstrap style in block font options (.display-1 to 6).
+* Improve: Css inheritance, button color with hover.
+
 = 2.3.1 - Feb 25, 2022 =
 * Improve: Add transparency option to navbar (customizer, js, and css).
 

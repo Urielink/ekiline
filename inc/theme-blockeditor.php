@@ -175,23 +175,33 @@ function ekiline_block_editor_setup() {
 		// Bootstrap display.
 		array(
 			'name' => __( 'D1', 'ekiline' ),
-			'size' => 100,
+			'size' => 80,
 			'slug' => 'display-1',
 		),
 		array(
 			'name' => __( 'D2', 'ekiline' ),
-			'size' => 90,
+			'size' => 72,
 			'slug' => 'display-2',
 		),
 		array(
 			'name' => __( 'D3', 'ekiline' ),
-			'size' => 80,
+			'size' => 64,
 			'slug' => 'display-3',
 		),
 		array(
 			'name' => __( 'D4', 'ekiline' ),
-			'size' => 70,
+			'size' => 56,
 			'slug' => 'display-4',
+		),
+		array(
+			'name' => __( 'D5', 'ekiline' ),
+			'size' => 48,
+			'slug' => 'display-5',
+		),
+		array(
+			'name' => __( 'D6', 'ekiline' ),
+			'size' => 42,
+			'slug' => 'display-6',
 		),
 
 	);
