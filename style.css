@@ -86,36 +86,51 @@
 .has-display-5-font-size{font-size:calc(1.425rem + 2.1vw);}
 .has-display-6-font-size{font-size:calc(1.375rem + 1.5vw);}
 @media (min-width:1200px){
-.has-display-1-font-size{font-size:5rem;}
-.has-display-2-font-size{font-size:4.5rem;}
-.has-display-3-font-size{font-size:4rem;}
-.has-display-4-font-size{font-size:3.5rem;}
-.has-display-5-font-size{font-size:3rem;}
-.has-display-6-font-size{font-size:2.5rem;}
+ .has-display-1-font-size{font-size:5rem;}
+ .has-display-2-font-size{font-size:4.5rem;}
+ .has-display-3-font-size{font-size:4rem;}
+ .has-display-4-font-size{font-size:3.5rem;}
+ .has-display-5-font-size{font-size:3rem;}
+ .has-display-6-font-size{font-size:2.5rem;}
 }
 .has-heading-1-font-size, .has-heading-2-font-size, .has-heading-3-font-size,.has-heading-4-font-size, .has-heading-5-font-size, .has-heading-6-font-size{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;}
 .has-heading-1-font-size{font-size:calc(1.375rem + 1.5vw);}
 .has-heading-2-font-size{font-size:calc(1.325rem + .9vw);}
 .has-heading-3-font-size{font-size:calc(1.3rem + .6vw);}
 .has-heading-4-font-size{font-size:calc(1.275rem + .3vw);}
-@media (min-width:1200px){
-.has-heading-1-font-size{font-size:2.5rem;}
-.has-heading-2-font-size{font-size:2rem;}
-.has-heading-3-font-size{font-size:1.75rem;}
-.has-heading-4-font-size{font-size:1.5rem;}
-}
 .has-heading-5-font-size{font-size:1.25rem;}
 .has-heading-6-font-size{font-size:1rem;}
- /* Fondo de botones */
-.has-primary-background-color:hover{background-color:var(--bs-primary-btn-hover);border-color:var(--bs-primary-btn-active);}
-.has-secondary-background-color:hover{background-color:var(--bs-secondary-btn-hover);border-color:var(--bs-secondary-btn-active);}
-.has-success-background-color:hover{background-color:var(--bs-success-btn-hover);border-color:var(--bs-success-btn-active);}
-.has-warning-background-color:hover{background-color:var(--bs-warning-btn-hover);border-color:var(--bs-warning-btn-active);}
-.has-danger-background-color:hover{background-color:var(--bs-danger-btn-hover);border-color:var(--bs-danger-btn-active);}
-.has-info-background-color:hover{background-color:var(--bs-info-btn-hover);border-color:var(--bs-info-btn-active);}
-.has-light-background-color:hover{background-color:var(--bs-light-btn-hover);border-color:var(--bs-light-btn-active);}
-.has-dark-background-color:hover{background-color:var(--bs-dark-btn-hover);border-color:var(--bs-dark-btn-active);}
-
+@media (min-width:1200px){
+ .has-heading-1-font-size{font-size:2.5rem;}
+ .has-heading-2-font-size{font-size:2rem;}
+ .has-heading-3-font-size{font-size:1.75rem;}
+ .has-heading-4-font-size{font-size:1.5rem;}
+}
+/* Fondo de botones */
+.has-primary-background-color.wp-block-button__link:hover{background-color:var(--bs-primary-btn-hover);}
+.has-secondary-background-color.wp-block-button__link:hover{background-color:var(--bs-secondary-btn-hover);}
+.has-success-background-color.wp-block-button__link:hover{background-color:var(--bs-success-btn-hover);}
+.has-warning-background-color.wp-block-button__link:hover{background-color:var(--bs-warning-btn-hover);}
+.has-danger-background-color.wp-block-button__link:hover{background-color:var(--bs-danger-btn-hover);}
+.has-info-background-color.wp-block-button__link:hover{background-color:var(--bs-info-btn-hover);}
+.has-light-background-color.wp-block-button__link:hover{background-color:var(--bs-light-btn-hover);}
+.has-dark-background-color.wp-block-button__link:hover{background-color:var(--bs-dark-btn-hover);}
+.has-primary-background-color.wp-block-button__link:active{background-color: var(--bs-primary-btn-active);}
+.has-secondary-background-color.wp-block-button__link:active{background-color: var(--bs-secondary-btn-active);}
+.has-success-background-color.wp-block-button__link:active{background-color: var(--bs-success-btn-active);}
+.has-warning-background-color.wp-block-button__link:active{background-color: var(--bs-warning-btn-active);}
+.has-danger-background-color.wp-block-button__link:active{background-color: var(--bs-danger-btn-active);}
+.has-info-background-color.wp-block-button__link:active{background-color: var(--bs-info-btn-active);}
+.has-light-background-color.wp-block-button__link:active{background-color: var(--bs-light-btn-active);}
+.has-dark-background-color.wp-block-button__link:active{background-color: var(--bs-dark-btn-active);}
+.has-primary-color.wp-block-button__link:hover{color:var(--bs-primary-btn-hover);}
+.has-secondary-color.wp-block-button__link:hover{color:var(--bs-secondary-btn-hover);}
+.has-success-color.wp-block-button__link:hover{color:var(--bs-success-btn-hover);}
+.has-warning-color.wp-block-button__link:hover{color:var(--bs-warning-btn-hover);}
+.has-danger-color.wp-block-button__link:hover{color:var(--bs-danger-btn-hover);}
+.has-info-color.wp-block-button__link:hover{color:var(--bs-info-btn-hover);}
+.has-light-color.wp-block-button__link:hover{color:var(--bs-light-btn-hover);}
+.has-dark-color.wp-block-button__link:hover{color:var(--bs-dark-btn-hover);}
 
  /* ------------------------------------------------
   * 1.2) WIDGETS
