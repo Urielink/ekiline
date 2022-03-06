@@ -205,11 +205,11 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   height: auto;
 }
 
-  /**
-  * Iconos de redes sociales ocupa dashicons.
-  * opt1: nombrar menu como "Social"
-  * opt2: agregar clases por enlace con opcion "menu-social icon-only"
-  */
+/**
+* Iconos de redes sociales ocupa dashicons.
+* opt1: nombrar menu como "Social"
+* opt2: agregar clases por enlace con opcion "menu-social icon-only"
+*/
  [class*="menu-social"] a{text-decoration: none;}
  [class*="menu-social"] a:before{font-family:'dashicons';display:inline-block;line-height:1;font-weight:400;font-style:normal;text-decoration:inherit;text-transform:none;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:20px;height:20px;font-size:20px;vertical-align:top;text-align:center;transition:color .1s ease-in;}
  .icon-only a{font-size:0px;}
@@ -244,10 +244,8 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
  * 2.1) Ekiline Extend B4 Navigation
  * Estilos que amplian el uso de Bootstrap.
  * ----------------------------------------------------------------------------------------------*/
-
 /* Animaciones || Animations */
 .navbar, .navbar .navbar-brand, .navbar-nav li a, a:hover, .btn:hover, .icon-bar{-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
-
 /* Animacion de toggle btn en menu || Toggle navbar btn animation */
 .navbar-toggler .icon-bar{background-color:#888;display:block;width:22px;height:2px;border-radius:1px;margin:4px 0px;}
 .navbar-toggler .icon-bar:nth-child(1){-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);position:relative;top:6px;}
@@ -256,17 +254,14 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .navbar-toggler.collapsed .icon-bar:nth-child(1){-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);position:relative;top:0px;}
 .navbar-toggler.collapsed .icon-bar:nth-child(2){width:22px;opacity:1;}
 .navbar-toggler.collapsed .icon-bar:nth-child(3){-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);position:relative;top:0px;}
-
 /* Enlace descripcion || Nav link description */
 .link-description {display: inline-block;text-transform: initial;white-space: normal;}
-
 /* Enlaces con submenu || Submenu links */
 .navbar .dropdown a,.navbar .dropright a, .navbar .dropup a{display:inline-block;width: auto;}
 .navbar a.dropdown-toggle-split{float: right;}
   .navbar .scroll-menu.show .dropup a.dropdown-toggle-split,
   .modal .navbar a.dropdown-toggle-split{position: absolute;right: 0;}
     .navbar .dropright .dropdown-menu {margin-left: .25rem;}
-
 /* Flecha en submenu ajustes || Subnav arrow position */
   .modal .navbar .dropright a.dropdown-toggle-split::after,
   .modal .navbar .dropup a.dropdown-toggle-split::after,
@@ -277,18 +272,15 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   @media only screen and (max-width : 768px) {
     .navbar .dropright a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   }
-
 /* Ajustes de submenu anidado(probable agregar) {position:static;float:none;} */
 .navbar-nav .dropdown-menu .dropdown-menu{border-left:0px;border-radius:0px;border-right:0px;}
   .navbar-nav .dropup .dropdown-menu .dropdown-menu{position: static;}
-
 /* Sticky navbar */
 .navbar-sticky.scrolled-down{ transform:translateY(-100%); transition: all 0.3s ease-in-out; }
 .navbar-sticky.scrolled-up{ transform:translateY(0); transition: all 0.3s ease-in-out; }
  /* Modal + Sticky navbar */
  .modal-open .navbar-sticky{z-index: 1100;}
  .modal-open .navbar-sticky.scrolled-down, .modal-open .navbar-sticky.scrolled-up{transform: none;top: -100px;}
-
 /* Estilos de navegación que solo necesitan ejecutarse en desktop */
 @media only screen and (min-width : 768px) {
  /*Links con dropdown, dropup */
@@ -321,14 +313,13 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 /* ------------------------------------------------------------------------------------------------
  * 2.2) Ekiline Extend B4 Carousel
  * ----------------------------------------------------------------------------------------------*/
-
 /* Carousel base */
 .carousel,.carousel-item{min-height:480px;}
 .carousel .carousel-item{overflow:hidden;}
-/* .carousel-caption.no-image{position:relative;left:0;right:0;bottom:0px;z-index:initial;} */
+.carousel-item .carousel-media{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;padding:0;width:100%;height:100%;max-width:none;max-height:none;-o-object-fit:cover;object-fit:cover;outline:none;border:none;box-shadow:none;}
 /* Carousel multiple */
-.carousel-multiple {height: inherit;}
-.carousel-multiple .carousel-item {height: inherit;}
+.carousel-multiple,.carousel-multiple .carousel-item {height: inherit;}
+.carousel-multiple .carousel-item.active,.carousel-multiple .carousel-item-next,.carousel-multiple .carousel-item-prev{display:flex;}
 /* Efectos para carrusel: fade y vertical || Carousel effects: fade and vertical */
 .carousel-fade .carousel-item {opacity:0;transition-duration:.6s;transition-property:opacity;}
 .carousel-fade .carousel-item.active,.carousel-fade .carousel-item-next.carousel-item-start,.carousel-fade .carousel-item-prev.carousel-item-end {opacity:1;}
@@ -347,17 +338,10 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .carousel-vertical .carousel-inner > .active,.carousel-vertical .carousel-inner > .carousel-item-next.carousel-item-start,.carousel-vertical .carousel-inner > .carousel-item-prev.carousel-item-end{top:0}
 .carousel-vertical .carousel-inner > .carousel-item-prev,.carousel-vertical .carousel-inner > .active.carousel-item-start{left:0;top:-100%}
 .carousel-vertical .carousel-inner > .carousel-item-next,.carousel-vertical .carousel-inner > .active.carousel-item-end{left:0;top:100%}
-/* Carousel con minuaturas, multiples. || Thumbnails in crausel multiples*/
-.carousel-thumbs{height:auto;}
-.carousel-thumbs .thumbnails.list{margin:0px;}
-.carousel-thumbs .carousel-item{height:auto;background-color:transparent;}
-.carousel-thumbs .carousel-inner > .carousel-item{background-color:transparent;}
-.carousel-thumbs .carousel-control-prev{left:0;}
-.carousel-thumbs .carousel-control-next{right:0;}
 /* Regla general: posición de objetos || Rule: object position */
 .carousel-multiple .carousel-inner .active.carousel-item-start,.carousel-multiple .carousel-inner .active.carousel-item-end{left:0%;-webkit-transition:all .6s ease 0s;-moz-transition:all .6s ease 0s;-o-transition:all .6s ease 0s;-ms-transition:all .6s ease 0s;transition:all .6s ease 0s;}
-/* .carousel-multiple .carousel-caption {z-index: 0;} */
-.carousel-multiple .carousel-inner .carousel-item > *{float:left;min-height:480px;position:relative;margin-bottom: 0px;overflow: hidden;}
+.carousel-multiple .carousel-caption {z-index: 1;}
+.carousel-multiple .carousel-inner .carousel-item >*{float:left;position:relative;margin-bottom: 0px;overflow: hidden;}
 /* variable por 2 thumbs (col-sm-6) || 2 thumbs */
 .carousel-multiple.x2 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-50%,0,0);-moz-transform:translate3d(-50%,0,0);-ms-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0);}
 .carousel-multiple.x2 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(50%,0,0);-moz-transform:translate3d(50%,0,0);-ms-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0);}
@@ -381,7 +365,7 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 /* Regla general: posición de objetos, después del clic || Objects after clic */
 .carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start{left:0%;}
 .carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end{left:0%;}
-.carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start > *{opacity:0;}
+.carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start >*{opacity:0;}
 .carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start >*:last-child{opacity:1;}
 .carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*{opacity:0;}
 .carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*:first-child{opacity:1;}
@@ -394,49 +378,12 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .col-lg-1a7,.col-sm-1a7,.col-xs-1a7{width:14.285714285714285714285714285714%;width:14.285714285714285714285714285714%;}
 .col-lg-1a8,.col-sm-1a8,.col-xs-1a8{width:12.5%;width:12.5%;}
 .col-lg-1a9,.col-sm-1a9,.col-xs-1a9{width:11.1111111%;width:11.1111111%;}
-/* Varibales nuevas carrrusel */
-/*
-.cover-carousel .carousel-caption{z-index:1;}
-.cover-carousel .carousel,.cover-carousel .carousel-item,.cover-carousel .carousel-multiple .carousel-item > *{min-height:100vh;}
-@media only screen and (max-width:576px){.cover-carousel .carousel-multiple .carousel-item > *{float:none;}}
-.cover-carousel .carousel-item img,.cover-carousel .carousel-item video{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;padding:0;width:100%;height:100%;max-width:none;max-height:none;-o-object-fit:cover;object-fit:cover;outline:none;border:none;box-shadow:none;}
-*/
-.carousel-item img, .carousel-item video{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  -o-object-fit: cover;
-  object-fit: cover;
-  outline: none;
-  border: none;
-  box-shadow: none;
-  z-index: -1;
-}
-.carousel-multiple .carousel-item.active,
-.carousel-multiple .carousel-item-next,
-.carousel-multiple .carousel-item-prev {
-  display: flex;
-}
-/* .carousel-multiple .carousel-caption{z-index:1;} */
-
-@media only screen and (max-width:576px){
-  .carousel-multiple .carousel-inner .carousel-item > * {position:initial;}
-}
-
-
+/* Extras carrusel */
+.carousel-dark .carousel-indicators [data-bs-target] {background-color: rgba(var(--bs-black-rgb),1) !important;}
 
 /* ------------------------------------------------------------------------------------------------
  * 2.3) Ekiline Extend B4 Modulo: Modal || Modals
  * ----------------------------------------------------------------------------------------------*/
-
 /* Effectos || Effects: zoom, newspaper, move-horizontal, move-from-bottom, unfold-3d, zoom-out */
 .modal.zoom .modal-dialog{-webkit-transition:all 0.5s ease-in-out;-o-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out;transform:scale(0.6);}
 .modal.zoom.show .modal-dialog{-webkit-transition:all 0.4s ease-in-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;transform:scale(1);}
@@ -485,7 +432,6 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 /* ------------------------------------------------------------------------------------------------
  * 2.4) Ekiline Extend B4 Grid de tarjetas
  * ----------------------------------------------------------------------------------------------*/
-
 /* Utilidades para grid de listados */
 .col-divider{width: 100%;padding-top: 1px;}
 .card-columns{-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}
@@ -502,14 +448,12 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
  * 2.5) CSS RESPONSIVO: Método Escritorio a movil || Desktop First Method
  * 2.5.1) PRIMER CAMBIO: Bootstrap container 1200/992 ( Monitores )
  * ----------------------------------------------------------------------------------------------*/
-
 @media only screen and (max-width : 1200px) {
  /* Contenedor */
  .cover-container{width: 100%;}
   /* Contenedor con comportamiento liquido,  */
   .container { max-width: 100%;}
   .container > .hentry .alignwide{margin-left: calc( -100vw / 2 + 100% / 2 - 8px);margin-right: calc( -100vw / 2 + 100% / 2 - 8px);width: 100vw;}
-
  /*Utilidades para grid de listados*/
  .card-columns{-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}
   /*En caso de habilitar sidebars 2 o 1*/
@@ -528,13 +472,10 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 /* ------------------------------------------------------------------------------------------------
  * 2.5.2) SEGUNDO CAMBIO: Bootstrap container 768/480 ( tablet/smarphone-hor )
  * ----------------------------------------------------------------------------------------------*/
-
 @media only screen and (max-width : 768px) {
-
 /*Flecha dropdown*/
 .navbar-collapse a.dropdown-toggle-split,
 .navbar-collapse.show a.dropdown-toggle-split{position: absolute;right: 0;top: 0px;width: 40px;z-index: 100;text-align: center;}
-
 /*Menu off-canvas-nav (solo responsivo)*/
 .navbar-collapse.off-canvas-nav{position:fixed;z-index:1100;top:0;bottom:0;left:100%;width:100%;padding:1rem;overflow-y:auto;visibility:hidden;transition-timing-function:ease-in-out;transition-duration:.2s;transition-property:left,visibility;}
 .navbar-collapse.off-canvas-nav .navbar-toggler{margin-left: calc(100% - 50px);display: block;}
@@ -543,43 +484,34 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   .fixed-bottom .navbar-collapse.off-canvas-nav{top:0;bottom:0;}
  /* off-canvas-nav + Sticky navbar */
  .navbar-sticky .navbar-collapse.off-canvas-nav.show{min-height: 100vh;}
-
 /* Scroller nav */
  .nav-scroller {line-height: 2;width: 100%;}
  .nav-scroller .nav {-ms-flex-wrap: nowrap;flex-wrap: nowrap;overflow-x: auto;white-space: nowrap;-webkit-overflow-scrolling: touch;}
  .nav-scroller .nav-link:not(.dropdown-toggle-split) {padding: .5rem;padding-right: 2rem;}
-
 /* Carrusel extendido || Carousel extended */
+ .carousel-multiple .carousel-inner .carousel-item >* {position:initial;}
  .carousel-multiple .carousel-item > *:nth-child(n+2){display:none;}
  .carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start >*, .carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*{opacity:1;}
  .carousel-multiple.x2 .carousel-inner .active.carousel-item-start,.carousel-multiple.x3 .carousel-inner .active.carousel-item-start,.carousel-multiple.x4 .carousel-inner .active.carousel-item-start,.carousel-multiple.x6 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-100%,0,0);-moz-transform:translate3d(-100%,0,0);-ms-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);}
  .carousel-multiple.x2 .carousel-inner .active.carousel-item-end,.carousel-multiple.x3 .carousel-inner .active.carousel-item-end,.carousel-multiple.x4 .carousel-inner .active.carousel-item-end,.carousel-multiple.x6 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(100%,0,0);-moz-transform:translate3d(100%,0,0);-ms-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);}
  .col-sm-1a5,.col-xs-1a5,.col-sm-1a7,.col-xs-1a7,.col-sm-1a8,.col-xs-1a8,.col-sm-1a9,.col-xs-1a9{width:100%;width:100%;}
-
  /*full modal específicos,image,iframe*/
  .modal-full .window-image .modal-body img,.modal-full .window-image .modal-body img.img-fluid{max-width:inherit;}
  .modal-full .window-image,.modal-full .window-image .modal-dialog,.modal-full .window-image .modal-content,.modal-full .window-image .modal-body{height:100%;}
-
  /*Utilidades para grid de listados*/
  .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
    /*En caso de habilitar fullwith*/
    .container-fluid .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
     /*En caso de habilitar sidebars 2 o 1 con fullwidth*/
     .container-fluid .col-md-6.order-md-2 .card-columns,.container-fluid .col-md-9 .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
-
 }
 
 /* ------------------------------------------------------------------------------------------------
  * 2.5.3) TERCER CAMBIO: Bootstrap col-sm 576 ( tablet-ver/smarphone-hor )
  * ----------------------------------------------------------------------------------------------*/
-
 @media only screen and (max-width: 576px) {
 /* Contenedor principal */
-   .container > .hentry .alignwide {
-     margin-left: -15px;
-     margin-right: -15px;
-     width: auto;
-   }
+ .container > .hentry .alignwide{margin-left:-15px;margin-right:-15px;width:auto;}
 /*Utilidades para grid de listados*/
 .card-columns{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
   /*En caso de habilitar sidebars 2 o 1*/
