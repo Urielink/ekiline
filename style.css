@@ -323,9 +323,9 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
  * ----------------------------------------------------------------------------------------------*/
 
 /* Carousel base */
-.carousel,.carousel-item{min-height:200px;}
+.carousel,.carousel-item{min-height:480px;}
 .carousel .carousel-item{overflow:hidden;}
-.no-thumb .carousel-caption{position:relative;left:0;right:0;bottom:0px;z-index: initial;}
+/* .carousel-caption.no-image{position:relative;left:0;right:0;bottom:0px;z-index:initial;} */
 /* Carousel multiple */
 .carousel-multiple {height: inherit;}
 .carousel-multiple .carousel-item {height: inherit;}
@@ -356,8 +356,8 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .carousel-thumbs .carousel-control-next{right:0;}
 /* Regla general: posición de objetos || Rule: object position */
 .carousel-multiple .carousel-inner .active.carousel-item-start,.carousel-multiple .carousel-inner .active.carousel-item-end{left:0%;-webkit-transition:all .6s ease 0s;-moz-transition:all .6s ease 0s;-o-transition:all .6s ease 0s;-ms-transition:all .6s ease 0s;transition:all .6s ease 0s;}
-.carousel-multiple .carousel-caption {z-index: 0;}
-.carousel-multiple .carousel-inner .carousel-item > *{float:left;min-height:200px;position:relative;}
+/* .carousel-multiple .carousel-caption {z-index: 0;} */
+.carousel-multiple .carousel-inner .carousel-item > *{float:left;min-height:480px;position:relative;margin-bottom: 0px;overflow: hidden;}
 /* variable por 2 thumbs (col-sm-6) || 2 thumbs */
 .carousel-multiple.x2 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-50%,0,0);-moz-transform:translate3d(-50%,0,0);-ms-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0);}
 .carousel-multiple.x2 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(50%,0,0);-moz-transform:translate3d(50%,0,0);-ms-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0);}
@@ -394,6 +394,44 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .col-lg-1a7,.col-sm-1a7,.col-xs-1a7{width:14.285714285714285714285714285714%;width:14.285714285714285714285714285714%;}
 .col-lg-1a8,.col-sm-1a8,.col-xs-1a8{width:12.5%;width:12.5%;}
 .col-lg-1a9,.col-sm-1a9,.col-xs-1a9{width:11.1111111%;width:11.1111111%;}
+/* Varibales nuevas carrrusel */
+/*
+.cover-carousel .carousel-caption{z-index:1;}
+.cover-carousel .carousel,.cover-carousel .carousel-item,.cover-carousel .carousel-multiple .carousel-item > *{min-height:100vh;}
+@media only screen and (max-width:576px){.cover-carousel .carousel-multiple .carousel-item > *{float:none;}}
+.cover-carousel .carousel-item img,.cover-carousel .carousel-item video{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;padding:0;width:100%;height:100%;max-width:none;max-height:none;-o-object-fit:cover;object-fit:cover;outline:none;border:none;box-shadow:none;}
+*/
+.carousel-item img, .carousel-item video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  -o-object-fit: cover;
+  object-fit: cover;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  z-index: -1;
+}
+.carousel-multiple .carousel-item.active,
+.carousel-multiple .carousel-item-next,
+.carousel-multiple .carousel-item-prev {
+  display: flex;
+}
+/* .carousel-multiple .carousel-caption{z-index:1;} */
+
+@media only screen and (max-width:576px){
+  .carousel-multiple .carousel-inner .carousel-item > * {position:initial;}
+}
+
+
 
 /* ------------------------------------------------------------------------------------------------
  * 2.3) Ekiline Extend B4 Modulo: Modal || Modals
