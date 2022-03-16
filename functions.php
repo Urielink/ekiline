@@ -289,6 +289,9 @@ function ekiline_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	if ( '4' === get_theme_mod( 'ekiline_Columns' ) && ! is_singular() ) {
+		wp_enqueue_script( 'masonry-script', get_template_directory_uri() . '/assets/js/masonry.pkgd.min.js', array(), '5', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'ekiline_scripts', 1 );
 
