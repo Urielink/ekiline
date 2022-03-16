@@ -157,11 +157,8 @@ function ekiline_show_columns( $tag = null, $css = null ) {
 		return;
 	}
 
-	// Agregar masonry.
 	$colset     = get_theme_mod( 'ekiline_Columns' );
-	$sidesview  = ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) ? '' : ' row-cols-md-3';
-	$sidesview .= ( is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-2' ) ) ? '' : ' row-cols-lg-4';
-	$colcontain = ( '4' === $colset ) ? 'row card-columns g-2 row-cols-sm-2' . $sidesview : 'row';
+	$colcontain = ( '4' === $colset ) ? 'card-columns' : 'row';
 
 	// En caso de woocommerce.
 	if ( class_exists( 'woocommerce' ) ) {
@@ -175,12 +172,8 @@ function ekiline_show_columns( $tag = null, $css = null ) {
 	}
 
 	if ( $colset > '0' ) {
-
-		// Agregar atributo para uso de masonry.
-		$hasmasonry = ( '4' === $colset ) ? ' data-masonry=\'{"percentPosition": true }\'' : '';
-
 		if ( 'open' === $tag ) {
-			echo '<div id="viewcolumns" class="' . esc_attr( $colcontain ) . '"' . wp_kses_post( $hasmasonry ) . '>';
+			echo '<div id="viewcolumns" class="' . esc_attr( $colcontain ) . '">';
 		}
 		if ( 'close' === $tag ) {
 			echo '</div><!-- #viewcolumns -->';
