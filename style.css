@@ -428,6 +428,9 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   .modal-nav .modal-dialog{margin:0px auto;}
 /*ajuste en los dispositivos moviles y touch */
 .modal-body{-webkit-overflow-scrolling:touch;overflow-y:auto;}
+/* Desenfocar items */
+body.modal-open > *:not(.modal){-webkit-filter:blur(4px);-moz-filter:blur(4px);-o-filter:blur(4px);-ms-filter:blur(4px);filter:blur(4px);}
+
 
 /* ------------------------------------------------------------------------------------------------
  * 2.4) Ekiline Extend B4 Grid de tarjetas
