@@ -9,7 +9,7 @@
 
 ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class( 'mb-3' ); ?>>
 
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 		<?php the_post_thumbnail( 'medium', array( 'class' => 'img-fluid card-img-top' ) ); ?>
