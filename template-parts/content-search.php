@@ -19,7 +19,7 @@
 
 	</div>
 
-	<?php if ( has_post_thumbnail() ){ ?>
+	<?php if ( has_post_thumbnail() ) { ?>
 
 		<a class="flex-shrink-0" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail img-fluid border-0' ) ); ?>
