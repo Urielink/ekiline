@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2022-02-25 20:20-0600\n"
-"PO-Revision-Date: 2022-02-25 20:20-0600\n"
+"POT-Creation-Date: 2022-03-20 19:27-0600\n"
+"PO-Revision-Date: 2022-03-20 19:27-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -242,7 +242,8 @@ msgid "Remove"
 msgstr ""
 
 #: inc/customizer.php:52 inc/customizer.php:131 inc/customizer.php:154
-#: inc/customizer.php:270 inc/deprecated-widget-options.php:116
+#: inc/customizer.php:270 inc/customizer.php:296
+#: inc/deprecated-widget-options.php:116
 msgid "Default"
 msgstr ""
 
@@ -397,18 +398,42 @@ msgid "Cards grid"
 msgstr ""
 
 #: inc/customizer.php:292
-msgid "In page meta"
+msgid "Format entries"
 msgstr ""
 
 #: inc/customizer.php:293
+msgid "Choose how to show entries in the columns"
+msgstr ""
+
+#: inc/customizer.php:297
+msgid "Wide"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "Wide to default"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Default to wide"
+msgstr ""
+
+#: inc/customizer.php:300
+msgid "Overlay card (Cards grid)"
+msgstr ""
+
+#: inc/customizer.php:318
+msgid "In page meta"
+msgstr ""
+
+#: inc/customizer.php:319
 msgid "Show meta data in pages, author, date, tags."
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:337
 msgid "In page pagination"
 msgstr ""
 
-#: inc/customizer.php:312
+#: inc/customizer.php:338
 msgid "Enable pagination between pages."
 msgstr ""
 
@@ -676,6 +701,14 @@ msgstr ""
 msgid "D4"
 msgstr ""
 
+#: inc/theme-blockeditor.php:197
+msgid "D5"
+msgstr ""
+
+#: inc/theme-blockeditor.php:202
+msgid "D6"
+msgstr ""
+
 #: inc/theme-customcolors.php:19 inc/theme-customheader.php:22
 msgid "Colors"
 msgstr ""
@@ -896,7 +929,7 @@ msgstr ""
 msgid "Continue reading: %s"
 msgstr ""
 
-#: inc/theme-elements.php:31
+#: inc/theme-elements.php:31 template-parts/content-card-overlay.php:15
 msgid "Read more"
 msgstr ""
 

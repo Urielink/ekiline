@@ -356,7 +356,7 @@ function ekiline_pagination() {
 	}
 
 	$the_pages .= '<nav id="page-navigation" class="d-flex justify-content-center w-100" aria-label="' . esc_attr( 'Page navigation', 'ekiline' ) . '">';
-	$the_pages .= '<ul class="pagination justify-content-between">';
+	$the_pages .= '<ul class="pagination justify-content-between my-3">';
 	$the_pages .= $prev_link;
 	$the_pages .= $next_link;
 	$the_pages .= '</ul>';

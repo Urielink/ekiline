@@ -25,12 +25,27 @@ if ( is_page() && ! get_theme_mod( 'ekiline_show_meta' ) ) {
 }
 
 if ( ! is_singular() ) {
-	// Formato para listados.
-	$ekiline_post_style = 'archive';
-	// Formato de tarjeta.
-	if ( get_theme_mod( 'ekiline_Columns' ) === '4' ) {
-		$ekiline_post_style = 'card';
+
+	switch ( get_theme_mod( 'ekiline_column_items' ) ) {
+		case '1':
+			$ekiline_post_style = 'archive-wide';
+			break;
+		case '2':
+			$ekiline_post_style = 'archive-wide-responsive';
+			break;
+		case '3':
+			$ekiline_post_style = 'archive-responsive';
+			break;
+		default:
+			$ekiline_post_style = 'archive';
+			break;
 	}
+
+	// Card columns grid and format card option.
+	if ( get_theme_mod( 'ekiline_Columns' ) === '4' ) {
+		$ekiline_post_style = ( get_theme_mod( 'ekiline_column_items' ) === '4' ) ? 'card-overlay' : 'card';
+	}
+
 	// Formato personalizado para la busqueda no se afecta por columnas.
 	if ( is_search() ) {
 		$ekiline_post_style = 'search';

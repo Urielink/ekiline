@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2022-02-25 20:21-0600\n"
-"PO-Revision-Date: 2022-02-25 20:25-0600\n"
+"POT-Creation-Date: 2022-03-20 19:28-0600\n"
+"PO-Revision-Date: 2022-03-20 21:18-0600\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -15,8 +17,6 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: es_MX\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -244,7 +244,8 @@ msgid "Remove"
 msgstr "Remover"
 
 #: inc/customizer.php:52 inc/customizer.php:131 inc/customizer.php:154
-#: inc/customizer.php:270 inc/deprecated-widget-options.php:116
+#: inc/customizer.php:270 inc/customizer.php:296
+#: inc/deprecated-widget-options.php:116
 msgid "Default"
 msgstr "Default"
 
@@ -403,18 +404,42 @@ msgid "Cards grid"
 msgstr "Cuadrícula de tarjetas"
 
 #: inc/customizer.php:292
-msgid "In page meta"
-msgstr "Página meta"
+msgid "Format entries"
+msgstr "Formato de entradas"
 
 #: inc/customizer.php:293
+msgid "Choose how to show entries in the columns"
+msgstr "Elija cómo mostrar entradas en las columnas"
+
+#: inc/customizer.php:297
+msgid "Wide"
+msgstr "Ancho"
+
+#: inc/customizer.php:298
+msgid "Wide to default"
+msgstr "Ancho a default"
+
+#: inc/customizer.php:299
+msgid "Default to wide"
+msgstr "Default a ancho"
+
+#: inc/customizer.php:300
+msgid "Overlay card (Cards grid)"
+msgstr "Superponer tarjeta (cuadrícula de tarjetas)"
+
+#: inc/customizer.php:318
+msgid "In page meta"
+msgstr "Meta en páginas"
+
+#: inc/customizer.php:319
 msgid "Show meta data in pages, author, date, tags."
 msgstr "Mostrar metadatos en páginas, autor, fecha, etiquetas."
 
-#: inc/customizer.php:311
+#: inc/customizer.php:337
 msgid "In page pagination"
 msgstr "Paginación en página"
 
-#: inc/customizer.php:312
+#: inc/customizer.php:338
 msgid "Enable pagination between pages."
 msgstr "Habilite la paginación entre páginas."
 
@@ -699,6 +724,14 @@ msgstr "D3"
 msgid "D4"
 msgstr "D4"
 
+#: inc/theme-blockeditor.php:197
+msgid "D5"
+msgstr "D5"
+
+#: inc/theme-blockeditor.php:202
+msgid "D6"
+msgstr "D6"
+
 #: inc/theme-customcolors.php:19 inc/theme-customheader.php:22
 msgid "Colors"
 msgstr "Colores"
@@ -944,7 +977,7 @@ msgstr "Página en blanco"
 msgid "Continue reading: %s"
 msgstr "Continuar leyendo %s"
 
-#: inc/theme-elements.php:31
+#: inc/theme-elements.php:31 template-parts/content-card-overlay.php:15
 msgid "Read more"
 msgstr "Leer mas"
 
@@ -1140,7 +1173,7 @@ msgstr ""
 
 #: template-parts/custom-header.php:32
 msgid "Skip to content"
-msgstr "Ir al contenido"
+msgstr "Saltar a contenido"
 
 #: template-parts/searchform.php:28
 msgid "Find term"

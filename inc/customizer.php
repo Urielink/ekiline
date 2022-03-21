@@ -276,6 +276,32 @@ function ekiline_theme_customizer( $wp_customize ) {
 		)
 	);
 
+	// Format list items.
+	$wp_customize->add_setting(
+		'ekiline_column_items',
+		array(
+			'default'           => '0',
+			'sanitize_callback' => 'ekiline_sanitize_select',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_column_items',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'Format entries', 'ekiline' ),
+			'description' => __( 'Choose how to show entries in the columns', 'ekiline' ),
+			'section'     => 'ekiline_vista_section',
+			'choices'     => array(
+				'0' => __( 'Default', 'ekiline' ),
+				'1' => __( 'Wide', 'ekiline' ),
+				'2' => __( 'Wide to default', 'ekiline' ),
+				'3' => __( 'Default to wide', 'ekiline' ),
+				'4' => __( 'Overlay card (Cards grid)', 'ekiline' ),
+			),
+		)
+	);
+
 	// Mostrar metadatos en paginas.
 	$wp_customize->add_setting(
 		'ekiline_show_meta',

@@ -9,12 +9,12 @@
 
 ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class( 'border-bottom py-3' ); ?>>
 
 	<header>
 
 		<?php // Archive, featured image with link. ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+		<a class="d-block mb-3"  href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php the_post_thumbnail( 'medium', array( 'class' => 'w-100 img-fluid' ) ); ?>
 		</a>
 
@@ -24,7 +24,5 @@
 	</header>
 
 	<?php the_content(); ?>
-
-	<hr>
 
 </article><!-- #post-## -->
