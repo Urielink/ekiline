@@ -42,6 +42,7 @@ Ekiline includes support for Woocommerce.
 * Improve: Css blur window when modal nav appears.
 * Improve Markup: Search results (content-search.php).
 * Improve: New option to display content on blog/archive pages (responsive).
+* Improve: New option to display cards on blog/archive pages (responsive).
 
 = 2.3.2.1 - Mar 2, 2022 =
 * Update: Css rules, styles for carousel use.
