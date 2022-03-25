@@ -39,7 +39,8 @@ Ekiline includes support for Woocommerce.
 == Changelog ==
 
 = 2.3.4 - Mar 19, 2022 =
-* Improve: Initialize bootstrap items.
+* Improve: Add toast when initialize bootstrap popovers.
+* Fix: Correct Bootstrap (--bs-black-rgb) varibale.
 
 
 = 2.3.3 - Mar 19, 2022 =

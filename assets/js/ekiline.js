@@ -1,14 +1,19 @@
 /* Ekiline for WordPress Theme, Copyright 2018 Uri Lazcano. Ekiline is distributed under the terms of the GNU GPL. http://ekiline.com */
 window.onload = function() {
-
+	ekiline_init_bootstrap_items();
 	ekiline_smoothNavigation('.smooth');
 	ekiline_navBar_behavior();
 	ekiline_js_style_navbar('.has-navbar-opacity #primarySiteNavigation',300);
 	ekiline_navModal_behavior();
 	ekiline_nestedDropdowns('.dropdown-menu a.dropdown-toggle');
 	ekiline_transformarCarrusel('.carousel-multiple');
+}
 
-	/* Bootstrap: inicializar tooltips y popovers */
+/**
+ * Inicializar bootstrap items
+ */
+function ekiline_init_bootstrap_items(){
+	/* Bootstrap: inicializar tooltips, popovers y toasts */
 	document.querySelectorAll('[data-bs-toggle="tooltip"]')
 		.forEach(function (tooltip) {
 			new bootstrap.Tooltip(tooltip);

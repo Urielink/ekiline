@@ -314,7 +314,7 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
  * 2.2) Ekiline Extend B4 Carousel
  * ----------------------------------------------------------------------------------------------*/
 /* Carousel base */
-.carousel,.carousel-item{min-height:480px;}
+.carousel,.carousel-item{min-height:400px;}
 .carousel .carousel-item{overflow:hidden;}
 .carousel-item .carousel-media{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;padding:0;width:100%;height:100%;max-width:none;max-height:none;-o-object-fit:cover;object-fit:cover;outline:none;border:none;box-shadow:none;}
 /* Carousel multiple */
