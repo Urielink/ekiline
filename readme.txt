@@ -38,6 +38,10 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.3.4 - Mar 19, 2022 =
+* Improve: Initialize bootstrap items.
+
+
 = 2.3.3 - Mar 19, 2022 =
 * Improve: Css blur window when modal nav appears.
 * Improve Markup: Search results (content-search.php).

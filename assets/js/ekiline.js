@@ -9,15 +9,23 @@ window.onload = function() {
 	ekiline_transformarCarrusel('.carousel-multiple');
 
 	/* Bootstrap: inicializar tooltips y popovers */
-	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-		tooltipTriggerList.map(function (tooltipTriggerEl) {
-		return new bootstrap.Tooltip(tooltipTriggerEl)
-	})
+	document.querySelectorAll('[data-bs-toggle="tooltip"]')
+		.forEach(function (tooltip) {
+			new bootstrap.Tooltip(tooltip);
+		});
 
-	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-		popoverTriggerList.map(function (popoverTriggerEl) {
-		return new bootstrap.Popover(popoverTriggerEl)
-	})
+	document.querySelectorAll('[data-bs-toggle="popover"]')
+		.forEach(function (popover) {
+		new bootstrap.Popover(popover);
+		});
+
+	document.querySelectorAll('.toast')
+		.forEach(function (toastNode) {
+			var toast = new bootstrap.Toast(toastNode, {
+				autohide: false
+			});
+			toast.show();
+		});
 }
 
 /**
