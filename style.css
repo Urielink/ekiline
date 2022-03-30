@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
- Version: 2.3.4
+ Version: 2.3.5
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -257,20 +257,20 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 /* Enlace descripcion || Nav link description */
 .link-description {display: inline-block;text-transform: initial;white-space: normal;}
 /* Enlaces con submenu || Submenu links */
-.navbar .dropdown a,.navbar .dropright a, .navbar .dropup a{display:inline-block;width: auto;}
+.navbar .dropdown > a,.navbar .dropend > a, .navbar .dropup > a{display:inline-block;width: auto;}
 .navbar a.dropdown-toggle-split{float: right;}
   .navbar .scroll-menu.show .dropup a.dropdown-toggle-split,
   .modal .navbar a.dropdown-toggle-split{position: absolute;right: 0;}
-    .navbar .dropright .dropdown-menu {margin-left: .25rem;}
+    .navbar .dropend .dropdown-menu {margin-left: .25rem;}
 /* Flecha en submenu ajustes || Subnav arrow position */
-  .modal .navbar .dropright a.dropdown-toggle-split::after,
+  .modal .navbar .dropend a.dropdown-toggle-split::after,
   .modal .navbar .dropup a.dropdown-toggle-split::after,
-  .navbar .order-first .dropright a.dropdown-toggle-split::after,
+  .navbar .order-first .dropend a.dropdown-toggle-split::after,
   .navbar .mega-menu.show.dropdown .sub-menu .dropdown-toggle::after,
   .navbar .scroll-menu.show .dropup .dropdown-toggle::after,
   .navbar .off-canvas-nav.show .dropup a.dropdown-toggle-split::after{border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   @media only screen and (max-width : 768px) {
-    .navbar .dropright a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
+    .navbar .dropend a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   }
 /* Ajustes de submenu anidado(probable agregar) {position:static;float:none;} */
 .navbar-nav .dropdown-menu .dropdown-menu{border-left:0px;border-radius:0px;border-right:0px;}
@@ -289,11 +289,11 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
  /*scroll-menu*/
  .navbar-collapse:not(.order-first) .scroll-menu.dropdown.show, .navbar-collapse:not(.order-first) .scroll-menu.dropup.show{position: inherit;}
  .navbar-collapse:not(.order-first) .scroll-menu.show > .dropdown-menu{max-width: 100%;left: 0;right: 0;margin: 0 auto;border-radius: 0px;display:flex;overflow-x: scroll;}
- .navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropdown,.navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropright{display: flex;}
- .navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropdown .dropdown-menu,.navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropright .dropdown-menu{position: static;padding: 0px;display: flex;}
+ .navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropdown,.navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropend{display: flex;}
+ .navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropdown .dropdown-menu,.navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropend .dropdown-menu{position: static;padding: 0px;display: flex;}
  /*en caso de modal D: */
    .modal .navbar-collapse .scroll-menu.show .dropdown-menu{display: block;overflow: auto;flex-direction: column;}
-   .modal .navbar-collapse .scroll-menu.dropdown.show .dropdown,.modal .navbar-collapse .scroll-menu.dropdown.show .dropright{display: block;}
+   .modal .navbar-collapse .scroll-menu.dropdown.show .dropdown,.modal .navbar-collapse .scroll-menu.dropdown.show .dropend{display: block;}
  /*mega-menu*/
  .navbar-collapse:not(.order-first) .mega-menu a {display: block;}
  .navbar-collapse:not(.order-first) .mega-menu .dropdown-toggle-split{background-color: initial !important;}
