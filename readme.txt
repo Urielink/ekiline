@@ -38,10 +38,13 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.3.5 - Mar 29, 2022 =
+* Update: the pagination markup, added new bootstrap 5 classes.
+* Update: the contnet-* markup, added new bootstrap 5 classes.
+
 = 2.3.4 - Mar 25, 2022 =
 * Improve: Add toast when initialize bootstrap popovers.
 * Fix: Correct Bootstrap (--bs-black-rgb) varibale.
-
 
 = 2.3.3 - Mar 19, 2022 =
 * Improve: Css blur window when modal nav appears.

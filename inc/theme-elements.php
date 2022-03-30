@@ -277,7 +277,7 @@ function ekiline_pagination() {
 		return;
 	}
 
-	// en caso de woocommerce no aplica.
+	// En caso de woocommerce no aplica.
 	if ( class_exists( 'WooCommerce' ) ) {
 		if ( is_cart() || is_checkout() || is_account_page() ) {
 			return;
@@ -287,6 +287,7 @@ function ekiline_pagination() {
 	$the_pages = '';
 	$prev_link = '';
 	$next_link = '';
+	$nav_class = '';
 
 	if ( is_page() ) {
 
@@ -302,21 +303,23 @@ function ekiline_pagination() {
 		$nexr_id = ( isset( $pages[ $current + 1 ] ) ) ? $pages[ $current + 1 ] : '';
 
 		if ( ! empty( $prev_id ) ) {
-			$prev_link .= '<li class="page-item page-link"><a href="' . esc_url( get_permalink( $prev_id ) ) . '" title="' . esc_attr( get_the_title( $prev_id ) ) . '"><span>&leftarrow;</span> ' . esc_attr( get_the_title( $prev_id ) ) . '</a></li>';
+			$prev_link .= '<li class="page-item page-link"><a href="' . esc_url( get_permalink( $prev_id ) ) . '" title="' . esc_attr( get_the_title( $prev_id ) ) . '"><span>&larr;</span> ' . esc_attr( get_the_title( $prev_id ) ) . '</a></li>';
 		}
 		if ( ! empty( $nexr_id ) ) {
-			$next_link .= '<li class="page-item page-link"><a href="' . esc_url( get_permalink( $nexr_id ) ) . '" title="' . esc_attr( get_the_title( $nexr_id ) ) . '">' . esc_attr( get_the_title( $nexr_id ) ) . ' <span>&rightarrow;</span></a></li>';
+			$next_link .= '<li class="page-item page-link text-end"><a href="' . esc_url( get_permalink( $nexr_id ) ) . '" title="' . esc_attr( get_the_title( $nexr_id ) ) . '">' . esc_attr( get_the_title( $nexr_id ) ) . ' <span>&rarr;</span></a></li>';
 		}
 	}
 
 	if ( is_single() ) {
-		$prev_link = get_previous_post_link( '<li class="page-item page-link">%link</li>', '<span>&leftarrow;</span> %title', true );
-		$next_link = get_next_post_link( '<li class="page-item page-link">%link</li>', '%title <span>&rightarrow;</span>', true );
+		$prev_link = get_previous_post_link( '<li class="page-item page-link">%link</li>', '<span>&larr;</span> %title', true );
+		$next_link = get_next_post_link( '<li class="page-item page-link text-end">%link</li>', '%title <span>&rarr;</span>', true );
 	}
 
 	// Paginacion para listados: https://codex.wordpress.org/Function_Reference/paginate_links.
 
 	if ( is_archive() || is_home() || is_search() ) {
+
+		$nav_class = ' d-flex justify-content-center';
 
 		global $wp_query;
 		$big = 999999999;
@@ -355,15 +358,14 @@ function ekiline_pagination() {
 		}
 	}
 
-	$the_pages .= '<nav id="page-navigation" class="d-flex justify-content-center w-100" aria-label="' . esc_attr( 'Page navigation', 'ekiline' ) . '">';
-	$the_pages .= '<ul class="pagination justify-content-between my-3">';
+	$the_pages .= '<nav id="page-navigation" class="' . $nav_class . '" aria-label="' . esc_attr( 'Page navigation', 'ekiline' ) . '">';
+	$the_pages .= '<ul class="pagination justify-content-between mb-3">';
 	$the_pages .= $prev_link;
 	$the_pages .= $next_link;
 	$the_pages .= '</ul>';
 	$the_pages .= '</nav>';
 
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo $the_pages;
+	echo wp_kses_post( $the_pages );
 }
 
 /**
