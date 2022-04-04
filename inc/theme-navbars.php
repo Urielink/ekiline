@@ -77,9 +77,8 @@ function ekiline_navbar_menu( $nav_position ) {
 	$nav_help   = '';
 	$modal_css  = '';
 	$nav_action = '';
-
-	// Variables para boton modal.
-	$datatoggle = 'collapse';
+	$nav_wdg_1  = 'ms-auto me-2'; // Variables para widgets en menu.
+	$datatoggle = 'collapse'; // Variables para boton modal.
 	$datatarget = $nav_position . 'NavMenu';
 	$expand     = 'navbar-expand-md ';
 	$toggle_btn = 'navbar-toggler collapsed';
@@ -102,33 +101,37 @@ function ekiline_navbar_menu( $nav_position ) {
 	// Clases css por estilo de menu.
 	switch ( $styles ) {
 		case 0:
-			$nav_align = ' me-auto';
+			$nav_align  = ' me-auto';
+			$nav_wdg_1 .= ' order-md-1 mx-md-0';
 			break;
 		case 1:
-			$nav_align = ' ms-auto';
+			$nav_align  = ' ms-auto';
+			$nav_wdg_1 .= ' order-md-1 mx-md-0';
 			break;
 		case 2:
-			$nav_help  = ' justify-content-md-center';
-			$nav_align = ' justify-content-md-center';
-			$nav_head  = ' flex-md-column';
+			$nav_help  = ' justify-content-md-center w-100';
+			$nav_align = ' justify-content-md-center w-100';
+			$nav_head  = ' flex-md-wrap justify-content-md-center';
 			break;
 		case 3:
-			$nav_help  = ' justify-content-md-between w-100';
+			$nav_help  = ' justify-content-md-center w-100';
 			$nav_align = ' justify-content-md-between w-100';
-			$nav_head  = ' flex-md-column';
+			$nav_head  = ' flex-md-wrap justify-content-md-center';
 			break;
 		case 4:
-			$nav_help  = ' nav-scroller show';
+			$nav_help  = ' nav-scroller show w-100';
 			$nav_align = ' nav flex-row';
-			$nav_head  = ' flex-md-column';
+			$nav_head  = ' flex-md-wrap';
 			break;
 		case 5:
-			$nav_help  = ' off-canvas-nav ' . $nav_inverse;
-			$nav_align = ' ms-auto';
+			$nav_help   = ' off-canvas-nav ' . $nav_inverse;
+			$nav_align  = ' ms-auto';
+			$nav_wdg_1 .= ' order-md-1';
 			break;
 		case 6:
-			$nav_help = ' order-first';
-			$expand   = ' ';
+			$nav_help   = ' order-first';
+			$expand     = ' ';
+			$nav_wdg_1 .= ' order-md-0';
 			break;
 		case 7:
 			$modal_css = 'modal fade';
@@ -180,7 +183,9 @@ function ekiline_navbar_menu( $nav_position ) {
 			<span class="navbar-text d-none d-md-block site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></span>
 			<?php } ?>
 
-			<?php dynamic_sidebar( 'navbar-w1' ); ?>
+			<?php if ( is_active_sidebar( 'navbar-w1' ) ) { ?>
+				<div class="<?php echo esc_attr( $nav_wdg_1 ); ?>"> <?php dynamic_sidebar( 'navbar-w1' ); ?> </div>
+			<?php } ?>
 
 			<button class="<?php echo esc_attr( $toggle_btn ); ?>" type="button" data-bs-toggle="<?php echo esc_attr( $datatoggle ); ?>" data-bs-target="#<?php echo esc_attr( $datatarget ); ?>" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ekiline' ); ?>">
 				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
@@ -307,7 +312,7 @@ function ekiline_modal_menu_bottom( $nav_position ) {
 					)
 				);
 
-				dynamic_sidebar( 'navbar-w1' );
+				dynamic_sidebar( 'navbar-w2' );
 
 				?>
 				</div>
