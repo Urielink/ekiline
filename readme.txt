@@ -41,7 +41,9 @@ Ekiline includes support for Woocommerce.
 = 2.3.5 - Abr 04, 2022 =
 * Update: the pagination markup, added new bootstrap styles.
 * Update: the content-* markup, added new bootstrap styles.
-* Update: the navbar items markup, replace dropright by dropend. Add new flex bootstrap styles. (theme-navbars.php)
+* Update: the navbar items markup, replace dropright by dropend. Add new flex bootstrap styles (theme-navbars.php).
+* Update: Article pagination markup (theme-elements.php).
+* Update: language items.
 
 = 2.3.4 - Mar 25, 2022 =
 * Improve: Add toast when initialize bootstrap popovers.
