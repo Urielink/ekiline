@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ekiline\n"
-"POT-Creation-Date: 2022-03-20 19:27-0600\n"
-"PO-Revision-Date: 2022-03-20 19:27-0600\n"
+"POT-Creation-Date: 2022-04-08 17:39-0500\n"
+"PO-Revision-Date: 2022-04-08 17:39-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -913,50 +913,50 @@ msgid "Maybe try one of the links below or a search?"
 msgstr ""
 
 #: inc/theme-elements.php:20
-msgid "Simple page"
-msgstr ""
-
-#: inc/theme-elements.php:21
-msgid "No sidebars"
-msgstr ""
-
-#: inc/theme-elements.php:22
 msgid "Blank page"
 msgstr ""
 
-#: inc/theme-elements.php:31 inc/theme-elements.php:170
+#: inc/theme-elements.php:21
+msgid "No header"
+msgstr ""
+
+#: inc/theme-elements.php:30 inc/theme-elements.php:169
 #, php-format
 msgid "Continue reading: %s"
 msgstr ""
 
-#: inc/theme-elements.php:31 template-parts/content-card-overlay.php:15
+#: inc/theme-elements.php:30 template-parts/content-card-overlay.php:15
 msgid "Read more"
 msgstr ""
 
-#: inc/theme-elements.php:232
+#: inc/theme-elements.php:231
 msgid "Continue reading: "
 msgstr ""
 
-#: inc/theme-elements.php:261
+#: inc/theme-elements.php:235
+msgid "page %"
+msgstr ""
+
+#: inc/theme-elements.php:260
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
 msgstr ""
 
-#: inc/theme-elements.php:262
+#: inc/theme-elements.php:261
 msgid "Password:"
 msgstr ""
 
-#: inc/theme-elements.php:264
+#: inc/theme-elements.php:263
 msgctxt "post password form"
 msgid "Enter"
 msgstr ""
 
-#: inc/theme-elements.php:332
+#: inc/theme-elements.php:334
 msgid "&larr; Previous"
 msgstr ""
 
-#: inc/theme-elements.php:333
+#: inc/theme-elements.php:335
 msgid "Next &rarr;"
 msgstr ""
 
@@ -965,27 +965,27 @@ msgstr ""
 msgid "There are %1$s entries related to %2$s"
 msgstr ""
 
-#: inc/theme-navbars.php:185 inc/theme-navbars.php:194
+#: inc/theme-navbars.php:190 inc/theme-navbars.php:199
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/theme-navbars.php:274 inc/theme-navbars.php:283
+#: inc/theme-navbars.php:279 inc/theme-navbars.php:288
 msgid "Close"
 msgstr ""
 
-#: inc/theme-navbars.php:279
+#: inc/theme-navbars.php:284
 msgid "Modal size"
 msgstr ""
 
-#: inc/theme-navbars.php:336
+#: inc/theme-navbars.php:341
 msgid "Assign a menu!"
 msgstr ""
 
-#: inc/theme-navbars.php:339
+#: inc/theme-navbars.php:344
 msgid "Login"
 msgstr ""
 
-#: inc/theme-navbars.php:350
+#: inc/theme-navbars.php:355
 msgid "Theme help"
 msgstr ""
 
