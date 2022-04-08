@@ -9,7 +9,7 @@
 
 ?>
 
-<article <?php post_class( 'border-bottom py-3' ); ?>>
+<article <?php post_class( 'border-bottom pb-3 mb-3' ); ?>>
 
 	<header>
 

@@ -9,7 +9,7 @@
 
 ?>
 
-<article class="d-flex border-bottom pt-3">
+<article class="d-flex border-bottom mb-3">
 
 	<div class="flex-grow-1">
 

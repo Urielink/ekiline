@@ -9,7 +9,7 @@
 
 ?>
 
-<article <?php post_class( 'd-flex border-bottom py-3' ); ?>>
+<article <?php post_class( 'd-flex border-bottom pb-3 mb-3' ); ?>>
 
 	<header class="flex-grow-1 d-flex align-content-start flex-wrap">
 

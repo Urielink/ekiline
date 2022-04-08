@@ -136,7 +136,7 @@ class Ekiline_Nav_Menu extends Walker_Nav_Menu {
 			if ( get_theme_mod( 'ekiline_primarymenuSettings' ) === '2' ) {
 				$drop = ' dropup item-' . $depth;
 			} elseif ( $depth > 0 && get_theme_mod( 'ekiline_primarymenuSettings' ) !== '2' ) {
-				$drop = ' dropright item-' . $depth;
+				$drop = ' dropend item-' . $depth;
 			}
 			$classes[] .= $drop;
 		}
