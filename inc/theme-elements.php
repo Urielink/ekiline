@@ -17,14 +17,13 @@
 function ekiline_localize_extra_terms() {
 	$words = array();
 	// Nuevas plantillas / Template Name.
-	$words[] = __( 'Simple page', 'ekiline' );
-	$words[] = __( 'No sidebars', 'ekiline' );
 	$words[] = __( 'Blank page', 'ekiline' );
+	$words[] = __( 'No header', 'ekiline' );
 }
 
 /**
  * Reemplazar el marcado para el enlace de leer mas
- * Custom read more link
+ * Read more link, custom markup.
  */
 function ekiline_override_read_more_link() {
 	/* translators: screenread only %s is replaced with title */
