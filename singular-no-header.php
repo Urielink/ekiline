@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: No header
- * Template Post Type: post, page, product
+ * Template Post Type: post, page
  *
  * Para uso en casos de mostrar contenido sin encabezado.
  * For use in cases of displaying content, without custom header.
