@@ -26,8 +26,17 @@ function ekiline_width_control() {
 	}
 	// En caso de woocommerce.
 	if ( class_exists( 'woocommerce' ) ) {
-		if ( is_shop() || is_product_category() || is_product_tag() ) {
+		// Reset CSS "container" class.
+		if ( is_woocommerce() || is_account_page() || is_cart() || is_checkout() ) {
+			$container = 'container';
+		}
+		// Todos los tipos de contenido de woocommerce.
+		if ( is_woocommerce() || is_account_page() || is_cart() || is_checkout() ) {
 			$container .= ( true === get_theme_mod( 'ekiline_anchoShop' ) ) ? $fluid : '';
+		}
+		// En caso de que la tienda sea home.
+		if ( is_woocommerce() && ( is_front_page() || is_home() ) ) {
+			$container .= ( true === get_theme_mod( 'ekiline_anchoHome' ) ) ? $fluid : '';
 		}
 	}
 
@@ -61,8 +70,13 @@ function ekiline_view_sidebar_filter( $width_sb_ctrl ) {
 	}
 	// En caso de woocommerce.
 	if ( class_exists( 'woocommerce' ) ) {
-		if ( is_shop() || is_product_category() || is_product_tag() ) {
+		// Todos los tipos de contenido de woocommerce.
+		if ( is_woocommerce() || is_account_page() || is_cart() || is_checkout() ) {
 			$opt = get_theme_mod( 'ekiline_disableSbShop' );
+		}
+		// En caso de que la tienda sea home.
+		if ( is_woocommerce() && ( is_front_page() || is_home() ) ) {
+			$opt = get_theme_mod( 'ekiline_disableSbHome' );
 		}
 	}
 
