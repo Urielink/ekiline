@@ -38,6 +38,10 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.3.7 - May 9, 2022 =
+* Update CSS styles modal.
+* Fix: Adding classnames in thumbnail (template-parts directory.)
+
 = 2.3.6 - Abr 21, 2022 =
 * Update: Woocommerce visual options, fullwidth, hide or show sidebars enhanced.
 * Deprecated term: Product. In singular-*.php templates (Template Post Type description).

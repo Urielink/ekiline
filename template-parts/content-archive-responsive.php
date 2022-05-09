@@ -26,7 +26,15 @@
 
 		<a class="col-md-5 me-md-3" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
-			<?php the_post_thumbnail( 'medium_large', array( 'sizes' => '(max-width:576px) 230px, (max-width:768px) 310px, 800px' ) ); ?>
+			<?php
+			the_post_thumbnail(
+				'medium_large',
+				array(
+					'sizes' => '(max-width:576px) 230px, (max-width:768px) 310px, 800px',
+					'class' => 'w-100 img-fluid',
+				)
+			);
+			?>
 
 		</a>
 
