@@ -169,6 +169,13 @@ function ekiline_content_additions( $content ) {
 		$tittle = sprintf( esc_attr__( 'Continue reading: %s', 'ekiline' ), wp_strip_all_tags( get_the_title() ) );
 		$link   = '... <a class="' . $css_class . '" href="' . esc_url( get_permalink() ) . '" aria-label="' . $tittle . '">' . $tittle . '</a>';
 
+		/**
+		 * FIX, WP6, Content and excerpt not shows.
+		 * @link https://wordpress.org/search/the_excerpt()/;
+		 * My solution.
+		 */
+		$content = ( ! $content ) ? get_the_content() : $content ;
+
 		if ( strpos( $post->post_content, '<!--more-->' ) ) {
 			$content = $content;
 		} elseif ( '' !== $post->post_excerpt ) {
