@@ -289,6 +289,9 @@ function ekiline_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	// 2022 Mejora, organizar todos los estilos css y js, acorde al tema.
+	wp_styles()->add_data( 'ekiline-style', 'before', array() );
+	wp_scripts()->add_data( 'ekiline-layout', 'before', array() );
 }
 add_action( 'wp_enqueue_scripts', 'ekiline_scripts', 1 );
 
@@ -330,7 +333,6 @@ function ekiline_inline_css_tag() {
 	);
 }
 add_action( 'wp_head', 'ekiline_inline_css_tag', 100 );
-
 
 /* Ekiline adiciones */
 require get_template_directory() . '/inc/class-ekiline-nav-menu.php';
