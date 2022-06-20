@@ -10,7 +10,8 @@ window.onload = function() {
 }
 
 /**
- * Inicializar bootstrap items
+ * Inicializar bootstrap items.
+ * Se ejecutan inmediatamente.
  */
 function ekiline_init_bootstrap_items(){
 	/* Bootstrap: inicializar tooltips, popovers y toasts */
@@ -29,7 +30,10 @@ function ekiline_init_bootstrap_items(){
 			var toast = new bootstrap.Toast(toastNode, {
 				autohide: false
 			});
-			toast.show();
+			// Stop run if 'hide' classname presents.
+			if (!toastNode.classList.contains('hide')){
+				toast.show();
+			}
 		});
 }
 

@@ -38,6 +38,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.4.1 - Jun 20, 2022 =
+* Improve init bootstrap js (ekiline.js).
+
 = 2.4 - Jun 5, 2022 =
 * Verified WP6 compatibility.
 * Bootstrap 5.2 update (css, js)
