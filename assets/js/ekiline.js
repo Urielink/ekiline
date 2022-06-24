@@ -30,7 +30,7 @@ function ekiline_init_bootstrap_items(){
 			var toast = new bootstrap.Toast(toastNode, {
 				autohide: false
 			});
-			// Stop run if 'hide' classname presents.
+			// Dont run if 'hide' classname presents.
 			if (!toastNode.classList.contains('hide')){
 				toast.show();
 			}
