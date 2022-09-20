@@ -1,20 +1,27 @@
 === Ekiline ===
 Contributors: urielink
 Requires at least: 5.0
-Tested up to: 6.0
+Tested up to: 6.0.2
 Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 Donate link: https://www.paypal.com/paypalme/urielink
 
-A starter theme called Ekiline.
-
 == Description ==
-Hello! I am ekiline, a wordpress theme created the easy development of a website.
+
+Hello! I'm Ekiline, a Hybrid Theme created to make your website development easy.
 My developer and designer (@Urielink) has used all his experience and enthusiasm to facilitate the process of customizing a site using WordPress.
 With me you can build from a simple site to a very robust one like news blog or e-commerce.
 All my components are coordinated to become a site optimized for search engines, responsive, fast loading and I have galleries and many tools that you will love.
 Also, I do not need regular updates, just your attention and dedication.
+
+Highlights:
+- Hybrid Theme built with Bootstrap 5.
+- Multiple widget areas.
+- Easy creation and organization of websites.
+- Search engine friendly markup (HTML5)
+- It combines the capabilities of bootstrap's CSS and JS with WordPress Customizer and new editor Blocks. 
+- Project under constant revision by author.
 
 == Installation ==
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -30,7 +37,7 @@ Also, I do not need regular updates, just your attention and dedication.
 5. Extra: Ekiline has a script organizer, you decide which style or javascript files to load synchronously or asynchronously.
 
 == Frequently Asked Questions ==
-https://ekiline.com/faq
+https://ekiline.com/category/docs
 
 = Does this theme support any plugins? =
 Ekiline includes support for Infinite Scroll in Jetpack.
@@ -38,8 +45,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 2.4.1 - Jun 20, 2022 =
-* Improve init bootstrap js (ekiline.js).
+= 2.4.1 - Sep 19, 2022 =
+* Update Bootstrap library to stable version (5.2.1).
+* Improve init js (ekiline.js).
 * Desconexion, test.
 
 = 2.4 - Jun 5, 2022 =
@@ -207,7 +215,7 @@ Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
 Ekiline for WordPress Theme bundles the following third-party resources:
 
-Bootstrap v5.1.3 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+Bootstrap v5.2.1 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
 Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
 Source: https://getbootstrap.com/.
 

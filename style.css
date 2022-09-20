@@ -3,14 +3,14 @@
  Theme URI: http://www.ekiline.com/
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
- Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
+ Description: Hybrid Theme built with Bootstrap 5. Has multiple widget areas. Designed to facilitate the creation of websites. Search engine friendly markup (HTML5), it combines the capabilities of Bootstrap CSS and JS with WordPress customizer and new editor Blocks. Project under constant revision by author. Documentation: http://www.ekiline.com
  Version: 2.4.0
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
  Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, theme-options, translation-ready, blog, e-commerce, portfolio
  Requires at least: 5.0
- Tested up to: 6.0
+ Tested up to: 6.0.2
  Requires PHP: 7.0
 
  Ekiline for WordPress Theme, Copyright 2018 Uri Lazcano
@@ -23,7 +23,7 @@
  Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
 
  Ekiline for WordPress Theme bundles the following third-party resources:
- Bootstrap v5.1.3 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+ Bootstrap v5.2.1 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
  Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
  Source: https://getbootstrap.com/.
  */
