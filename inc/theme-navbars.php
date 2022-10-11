@@ -73,7 +73,7 @@ function ekiline_navbar_menu( $nav_position ) {
 
 	// Clase CSS auxiliar alineación de items, transformar a header.
 	$nav_align  = '';
-	$nav_head   = '';
+	$nav_head   = ( ! get_theme_mod( 'ekiline_primarymenuContainer' ) ) ? 'container' : 'container-fluid'; // Anchura de contenedor en navbar.
 	$nav_help   = '';
 	$modal_css  = '';
 	$nav_action = '';
@@ -111,17 +111,17 @@ function ekiline_navbar_menu( $nav_position ) {
 		case 2:
 			$nav_help  = ' justify-content-md-center w-100';
 			$nav_align = ' justify-content-md-center w-100';
-			$nav_head  = ' flex-md-wrap justify-content-md-center';
+			$nav_head .= ' flex-md-wrap justify-content-md-center';
 			break;
 		case 3:
 			$nav_help  = ' justify-content-md-center w-100';
 			$nav_align = ' justify-content-md-between w-100';
-			$nav_head  = ' flex-md-wrap justify-content-md-center';
+			$nav_head .= ' flex-md-wrap justify-content-md-center';
 			break;
 		case 4:
 			$nav_help  = ' nav-scroller show w-100';
 			$nav_align = ' nav flex-row';
-			$nav_head  = ' flex-md-wrap';
+			$nav_head .= ' flex-md-wrap';
 			break;
 		case 5:
 			$nav_help   = ' off-canvas-nav ' . $nav_inverse;
@@ -175,7 +175,7 @@ function ekiline_navbar_menu( $nav_position ) {
 
 	<header id="<?php echo esc_attr( $nav_position ); ?>SiteNavigation"  class="<?php echo esc_attr( $nav_class_css ); ?>">
 
-		<div class="container<?php echo esc_attr( $nav_head ); ?>">
+		<div class="<?php echo esc_attr( $nav_head ); ?>">
 
 			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php ekiline_logo_theme(); ?></a>
 
