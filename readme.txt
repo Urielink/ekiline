@@ -3,6 +3,7 @@ Contributors: urielink
 Requires at least: 5.0
 Tested up to: 6.0.2
 Requires PHP: 7.0
+Stable tag: 2.4.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 Donate link: https://www.paypal.com/paypalme/urielink
@@ -24,6 +25,7 @@ Highlights:
 - Project under constant revision by author.
 
 == Installation ==
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -37,13 +39,20 @@ Highlights:
 5. Extra: Ekiline has a script organizer, you decide which style or javascript files to load synchronously or asynchronously.
 
 == Frequently Asked Questions ==
+
 https://ekiline.com/category/docs
 
 = Does this theme support any plugins? =
+
 Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.4.2 - Oct 10, 2022 =
+* Improve: New navbar view option (customizer).
+* Improve: Refactor js code in the main navbar theme.
+* Improve: remove old js.
 
 = 2.4.1 - Sep 19, 2022 =
 * Update Bootstrap library to stable version (5.2.1).
@@ -199,7 +208,9 @@ Next update: Customizer color palette for 100% compatibility when working with t
 * Initial release
 
 == Upgrade Notice ==
-Ekiline includes support for Infinite Scroll in Jetpack.
+
+New navbar option.
+Includes support for Infinite Scroll in Jetpack.
 Ready translations, English and Spanish.
 
 == Copyright ==
@@ -224,3 +235,9 @@ License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/z
 
 Image for theme screenshot, Copyright Uri Lazcano
 License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
+
+== Screenshots ==
+
+1. [https://ekiline.com/wp-content/uploads/2022/02/01-identidad-scaled.jpg Identity]
+2. [https://ekiline.com/wp-content/uploads/2022/03/cabecera-video-show-link-scaled.jpg Header]
+3. [https://ekiline.com/wp-content/uploads/2022/03/mapa-widgets.jpg Widget area]

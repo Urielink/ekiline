@@ -1,20 +1,19 @@
 /* Ekiline for WordPress Theme, Copyright 2018 Uri Lazcano. Ekiline is distributed under the terms of the GNU GPL. http://ekiline.com */
 window.onload = function() {
-	ekiline_init_bootstrap_items();
-	ekiline_smoothNavigation('.smooth');
-	ekiline_navBar_behavior();
-	ekiline_js_style_navbar('.has-navbar-opacity #primarySiteNavigation',300);
-	ekiline_navModal_behavior();
-	ekiline_nestedDropdowns('.dropdown-menu a.dropdown-toggle');
-	ekiline_transformarCarrusel('.carousel-multiple');
+	ekiline_extend_bootstrap_init_bundle_items();
+	ekiline_safari_smooth_navigation('.smooth');
+	ekiline_navbar_add_focus_behavior();
+	ekiline_navbar_show_hide_scroll();
+	ekiline_navbar_add_opacity('.has-navbar-opacity #primarySiteNavigation',300);
+	ekiline_navbar_modal_behavior();
 }
 
 /**
- * Inicializar bootstrap items.
- * Se ejecutan inmediatamente.
+ * Extension Bootstrap.
+ * Inicializar / Init bootstrap bundle items as tooltips, popovers and toasts.
  */
-function ekiline_init_bootstrap_items(){
-	/* Bootstrap: inicializar tooltips, popovers y toasts */
+function ekiline_extend_bootstrap_init_bundle_items(){
+
 	document.querySelectorAll('[data-bs-toggle="tooltip"]')
 		.forEach(function (tooltip) {
 			new bootstrap.Tooltip(tooltip);
@@ -38,11 +37,11 @@ function ekiline_init_bootstrap_items(){
 }
 
 /**
- * Scroll suave, aplica a enlaces con clase (.smooth).
- * @param {string} item Clase en link para ejecutar scroll.
+ * UX theme, smooth scroll in safari, apply each item with classname -smooth-.
+ * @param {string} item, classname in links
  */
-function ekiline_smoothNavigation(item = null){
-	document.querySelectorAll('.smooth').forEach(anchor => {
+function ekiline_safari_smooth_navigation( item = null ){
+	document.querySelectorAll(item).forEach(anchor => {
 		var href = anchor.getAttribute('href');
 		anchor.addEventListener('click', function (e) {
 			e.preventDefault();
@@ -54,12 +53,41 @@ function ekiline_smoothNavigation(item = null){
 	});
 }
 
-/* Navegacion con scroll */
-function ekiline_navBar_behavior(){
+/**
+ * WP developers requirement, close navbar if user play with keyboard.
+ * - Uso de teclado: document.addEventListener('keydown/focus/etc...', (e) => { console.log(e.code) }, true );
+ * - Verificar descencientes: parentEl.contains(childEl)
+ */
+function ekiline_navbar_add_focus_behavior(){
+	// Verificar elemento activo | Check active element (focus).
+	var domFocusitem = document.activeElement;
+	domFocusitem.addEventListener('focus', () => {
+		// Si navbar se muestra | if navbar shows.
+		var activeNav = document.querySelector('.navbar-collapse.show:not(.modal .navbar-collapse)');
+		if ( activeNav ){
+			// Cotejar si el objeto seleccionado es descendiente | Check descendant.
+			var newDomFocusitem = document.activeElement;
+			var isDescendant = activeNav.contains( newDomFocusitem );
+			if ( ! isDescendant ){
+				// Cerrar la navegacion | Close navigation.
+				new bootstrap.Collapse(activeNav, {
+					close: true
+				});
+			}
+		}
+	}, true);
+}
 
-	var navbarSticky = document.querySelector('#primarySiteNavigation.navbar-sticky');
+/**
+ * Customizer Ekiline Menu option:
+ * Show and hide navbar when user scroll top/bottom.
+ */
+function ekiline_navbar_show_hide_scroll(){
 
-	if ( navbarSticky ){
+	var stickynav = document.querySelector('#primarySiteNavigation.navbar-sticky');
+
+	if ( stickynav ){
+
 		var last_scroll_top = 0, scroll_top;
 
 		window.addEventListener('scroll', function() {
@@ -67,56 +95,32 @@ function ekiline_navBar_behavior(){
 			scroll_top = this.scrollY;
 
 			if( scroll_top < last_scroll_top ) {
-				navbarSticky.classList.remove('scrolled-down');
-				navbarSticky.classList.add('scrolled-up');
+				stickynav.classList.remove('scrolled-down');
+				stickynav.classList.add('scrolled-up');
 			} else {
-				navbarSticky.classList.remove('scrolled-up');
-				navbarSticky.classList.add('scrolled-down');
+				stickynav.classList.remove('scrolled-up');
+				stickynav.classList.add('scrolled-down');
 			}
 
 			last_scroll_top = scroll_top;
 		});
 	}
-
-	/**
-	 * Hacks interesantes:
-	 * Uso de teclado
-	 * - document.addEventListener('keydown', (e) => { console.log(e.code) }, true );
-	 * Verificar descencientes
-	 * parentEl.contains(childEl)
-	 */
-	// Elemento activo.
-	var domFocusitem = document.activeElement;
-	domFocusitem.addEventListener('focus', () => {
-		// Si navbar se muestra.
-		var activeNav = document.querySelector('.navbar-collapse.show:not(.modal .navbar-collapse)');
-		if ( activeNav ){
-			// Cotejar si el objeto seleccionado es descendiente.
-			var newDomFocusitem = document.activeElement;
-			var isDescendant = activeNav.contains( newDomFocusitem );
-			if ( ! isDescendant ){
-				var closeNav = activeNav;
-				// cerrar la navegacion.
-				new bootstrap.Collapse(closeNav, {
-					close: true
-				})
-			}
-		}
-	}, true);
-
 }
 
-/* Opacidad en menu navbar */
-function ekiline_js_style_navbar( selector = null, height = 0 ){
+/**
+ * Customizer Ekiline Header option:
+ * Add opacity classname in navbar when user scroll top/bottom.
+ */
+function ekiline_navbar_add_opacity( selector = null, height = 0 ){
 	// Validar selector.
-	let navFx = document.querySelector( selector );
+	var navFx = document.querySelector( selector );
 	if ( navFx ){
 		// Agregar clase css default.
 		navFx.classList.add('nav-opacity');
 		// Listener.
 		window.addEventListener('scroll',
 			function() {
-				let scroll_top = this.scrollY;
+				var scroll_top = this.scrollY;
 				if( scroll_top > height ) {
 					navFx.classList.remove('nav-opacity');
 				} else {
@@ -127,8 +131,11 @@ function ekiline_js_style_navbar( selector = null, height = 0 ){
 	}
 }
 
-/* Animar el boton del menu modal */
-function ekiline_navModal_behavior(){
+/**
+ * Customizer Ekiline Menu Modal option:
+ * Animate modal button.
+ */
+function ekiline_navbar_modal_behavior(){
 
 	var modalTogglerBtn = document.querySelector('.modal-toggler');
 	var modalNav = document.querySelector('.modal-nav');
@@ -152,93 +159,3 @@ function ekiline_navModal_behavior(){
 		}, false);
 	}
 }
-
-/* Ajuste en dropdown de widgets dentro de navbar */
-function ekiline_nestedDropdowns(item = null){
-	var dropdownList = [].slice.call(document.querySelectorAll(item))
-	dropdownList.map(function (dropdownEl) {
-		dropdownEl.addEventListener('click', function(e) {
-			e.stopPropagation();
-			e.preventDefault();
-		}, false);
-	})
-}
-
-/**
- * Modificar carrusel. Se ocupa en el Editor de bloques también.
- * @param {string} carrusel Idendifica la clase para reajustar el diseno.
- */
-window.ekiline_transformarCarrusel = function(carrusel){
-
-	// Si no hay carrusel cancelar todo.
-	var loaditem = document.querySelector(carrusel);
-	if ( !loaditem || 0 < loaditem.getElementsByTagName('figure').length ) {
-		return;
-	}
-
-	// Funcion envoltorio (Wrapper).
-	function envolver(fuente,col){
-		var hijos = fuente.children;
-		// crear envoltorio
-		var wrapper = document.createElement('figure');
-			wrapper.className = 'col-md-' + col;
-		// envolver los hijos.
-		for (var i = hijos.length - 1; i >= 0; i--) {
-			wrapper.appendChild(hijos[i]);
-		};
-		fuente.appendChild(wrapper);
-	}
-
-	// Si hay carrusel,
-	var siCarruseles = document.querySelectorAll(carrusel);
-
-	// Cuantos son, modificar cada uno
-	Array.prototype.forEach.call(siCarruseles, function(unCarrusel, i){
-
-		// Objeto e indice. Vistas, columnas y grupo.
-		var params = [ ['x2','6','0'],['x3','4','1'],['x4','3','2'],['x6','2','4'] ];
-		var view, item;
-		// Envoltorio extra para agrupar.
-		for ( var i = 0; i < params.length; i++ ) {
-			// Atributos por clase.
-			if ( unCarrusel.classList.contains(params[i][0]) ) {
-				item = params[i][1];
-				view = params[i][2];
-			}
-		}
-
-		// Resultado de seleccion por carrusel
-		// Carrusel padre. Items para envoltorio.
-		hijosCarrusel = unCarrusel.querySelectorAll('.carousel-item');
-
-		// Carrusel hijo. Envoltorio por item.
-		Array.prototype.forEach.call(hijosCarrusel, function(el,i){
-			envolver(el,item);
-		});
-
-		// Loop grupos.
-		Array.prototype.forEach.call(hijosCarrusel, function(el, i){
-			// Copiar el primer slide y agregarlo.
-			var next = el.nextElementSibling;
-			if ( !next ) {
-				next = el.parentNode.children[0];
-			}
-
-			// Elemento siguiente. Clonar.
-			var firstChildClone = next.children[0].cloneNode(true);
-			var firstChildSet = el.parentNode.children[i];
-			firstChildSet.appendChild(firstChildClone);
-
-			// Agrupar slides (view).
-			for ( var i=0;i<view;i++ ) {
-				next = next.nextElementSibling;
-				if ( !next ) {
-					next = el.parentNode.children[0];
-				}
-				firstChildClone = next.children[0].cloneNode(true);
-				firstChildSet.appendChild(firstChildClone);
-			}
-
-		});
-	});
-};

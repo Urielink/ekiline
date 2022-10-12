@@ -166,6 +166,25 @@ function ekiline_theme_customizer( $wp_customize ) {
 		)
 	);
 
+	// Anchura de navbar.
+	$wp_customize->add_setting(
+		'ekiline_primarymenuContainer',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'ekiline_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ekiline_primarymenuContainer',
+		array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Show full width navbar', 'ekiline' ),
+			'section'  => 'menu_locations',
+			'priority' => 100,
+		)
+	);
+
 	/**
 	 * Diseño, ajuste de elementos y paginas
 	 * Layout design
