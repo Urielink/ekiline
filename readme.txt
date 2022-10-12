@@ -51,6 +51,8 @@ Ekiline includes support for Woocommerce.
 
 = 2.4.2 - Oct 10, 2022 =
 * Improve: New navbar view option (customizer).
+* Improve: Refactor js code in the main navbar theme.
+* Improve: remove old js.
 
 = 2.4.1 - Sep 19, 2022 =
 * Update Bootstrap library to stable version (5.2.1).
