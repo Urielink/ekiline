@@ -69,9 +69,8 @@ function ekiline_navbar_add_focus_behavior(){
 			var newDomFocusitem = document.activeElement;
 			var isDescendant = activeNav.contains( newDomFocusitem );
 			if ( ! isDescendant ){
-				var closeNav = activeNav;
 				// Cerrar la navegacion | Close navigation.
-				new bootstrap.Collapse(closeNav, {
+				new bootstrap.Collapse(activeNav, {
 					close: true
 				});
 			}
