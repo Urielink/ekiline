@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Hybrid Theme built with Bootstrap 5. Has multiple widget areas. Designed to facilitate the creation of websites. Search engine friendly markup (HTML5), it combines the capabilities of Bootstrap CSS and JS with WordPress customizer and new editor Blocks. Project under constant revision by author. Documentation: http://www.ekiline.com
- Version: 2.4.3
+ Version: 2.4.4
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -279,7 +279,8 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
 .navbar-sticky.scrolled-down{ transform:translateY(-100%); transition: all 0.3s ease-in-out; }
 .navbar-sticky.scrolled-up{ transform:translateY(0); transition: all 0.3s ease-in-out; }
  /* Modal + Sticky navbar */
- .modal-open .navbar-sticky{z-index: 1100;}
+ /* verificar el uso de z-index */
+ /* .modal-open .navbar-sticky{z-index: 1100;} */
  .modal-open .navbar-sticky.scrolled-down, .modal-open .navbar-sticky.scrolled-up{transform: none;top: -100px;}
 /* Estilos de navegación que solo necesitan ejecutarse en desktop */
 @media only screen and (min-width : 768px) {
