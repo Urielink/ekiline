@@ -327,13 +327,14 @@ add_action( 'group_inline_css', 'ekiline_custom_header_style', 4 );
 
 /**
  * Clases CSS de apoyo en body_class().
+ * Condicion: revisar que existe la accion (ekiline_top_page_custom_header) en la plantilla.
  *
  * @link https://developer.wordpress.org/reference/functions/body_class/
  *
  * @param string $classes add new css class to body.
  */
 function ekiline_custom_header_css( $classes ) {
-	if ( get_header_image() ) {
+	if ( get_header_image() && has_action( 'wp_body_open', 'ekiline_top_page_custom_header', 1 ) ) {
 		$classes[] = ( 100 === get_theme_mod( 'ekiline_range_header' ) ) ? 'has-custom-header-full-view' : 'has-custom-header';
 	}
 	return $classes;
@@ -628,11 +629,12 @@ function ekiline_header_text_position_css() {
 /**
  * 25022022 New feature, add transparency in navbar.
  * Opciones de opacidad navbar clases CSS de apoyo en body_class().
+ * Condicion: revisar que existe la accion (ekiline_top_page_custom_header) en la plantilla.
  *
  * @param string $classes add new css class to body.
  */
 function ekiline_navbar_set_trans_css( $classes ) {
-	if ( get_header_image() && get_theme_mod( 'ekiline_navTransparency' ) ) {
+	if ( get_header_image() && get_theme_mod( 'ekiline_navTransparency' ) && has_action( 'wp_body_open', 'ekiline_top_page_custom_header', 1 ) ) {
 		$classes[] = 'has-navbar-opacity';
 	}
 	return $classes;
