@@ -629,11 +629,12 @@ function ekiline_header_text_position_css() {
 /**
  * 25022022 New feature, add transparency in navbar.
  * Opciones de opacidad navbar clases CSS de apoyo en body_class().
+ * Condicion: revisar que existe la accion (ekiline_top_page_custom_header) en la plantilla.
  *
  * @param string $classes add new css class to body.
  */
 function ekiline_navbar_set_trans_css( $classes ) {
-	if ( get_header_image() && get_theme_mod( 'ekiline_navTransparency' ) ) {
+	if ( get_header_image() && get_theme_mod( 'ekiline_navTransparency' ) && has_action( 'wp_body_open', 'ekiline_top_page_custom_header', 1 ) ) {
 		$classes[] = 'has-navbar-opacity';
 	}
 	return $classes;
