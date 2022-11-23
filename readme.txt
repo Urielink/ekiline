@@ -49,7 +49,7 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
-= 2.4.4 - Nov 3, 2022 =
+= 2.4.5 - Nov 22, 2022 =
 * Enhance: remove navbar opacity if template has no header.
 
 = 2.4.4 - Nov 3, 2022 =
