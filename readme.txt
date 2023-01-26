@@ -1,9 +1,9 @@
 === Ekiline ===
 Contributors: urielink
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.1.1
 Requires PHP: 7.0
-Stable tag: 2.4.5
+Stable tag: 2.5.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 Donate link: https://www.paypal.com/paypalme/urielink
@@ -48,6 +48,9 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.5.0 - Ene 25, 2023 =
+* Improvement: reorganize styles and scripts.
 
 = 2.4.5 - Nov 22, 2022 =
 * Enhance: remove navbar opacity if template has no header.
