@@ -49,6 +49,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.5.1 - Ene 29, 2023 =
+* Improvement: fix fullwidth align styles.
+
 = 2.5.0 - Ene 25, 2023 =
 * Improvement: reorganize styles and scripts.
 
