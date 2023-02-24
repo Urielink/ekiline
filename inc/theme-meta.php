@@ -69,12 +69,10 @@ function ekiline_meta_keywords() {
 	$keywords = '';
 
 	if ( is_single() || is_page() ) {
-
 		global $post;
-		$tags = get_the_tags( $post->ID );
-
-		if ( $tags && ! is_wp_error( $tags ) ) {
-			$keywords = ekiline_collect_tags( $tags );
+		$tags = get_the_tags();
+		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
+			$keywords = ekiline_collect_tags( get_the_tags( $post->ID ) );
 		}
 	} elseif ( is_tag() ) {
 

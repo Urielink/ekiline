@@ -49,6 +49,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.5.2 - Feb 23, 2023 =
+* Fix: Keywords function error. Throwed by woocommerce shop page with empty products.
+
 = 2.5.1 - Ene 29, 2023 =
 * Improvement: fix fullwidth align styles.
 
