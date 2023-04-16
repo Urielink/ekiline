@@ -50,7 +50,7 @@ Ekiline includes support for Woocommerce.
 == Changelog ==
 
 = 2.5.3 - Apr 15, 2023 =
-* Tested up in new WordPress version (6.2).
+* Check up in new WordPress version (6.2).
 
 = 2.5.2 - Feb 23, 2023 =
 * Fix: Keywords function error. Throwed by woocommerce shop page with empty products.
