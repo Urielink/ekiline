@@ -1,7 +1,7 @@
 === Ekiline ===
 Contributors: urielink
 Requires at least: 5.0
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 7.0
 Stable tag: 2.5.0
 License: GPL-2.0-or-later
@@ -48,6 +48,9 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.5.3 - Apr 15, 2023 =
+* Tested up in new WordPress version (6.2).
 
 = 2.5.2 - Feb 23, 2023 =
 * Fix: Keywords function error. Throwed by woocommerce shop page with empty products.
