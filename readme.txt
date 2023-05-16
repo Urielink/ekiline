@@ -49,6 +49,9 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.5.4 - May 16, 2023 =
+* Fix: css style of fullwidth content.
+
 = 2.5.3 - Apr 15, 2023 =
 * Check up in new WordPress version (6.2).
 
