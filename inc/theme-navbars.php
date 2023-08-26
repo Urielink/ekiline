@@ -38,19 +38,22 @@ function ekiline_logo_theme() {
 	// Variables de logotipo.
 	$brand_icon = get_theme_mod( 'ekiline_minilogo' );
 	$brand_hor  = wp_get_attachment_image_url( get_theme_mod( 'ekiline_logo_max' ), 'medium' );
+	$brand_alt  = get_bloginfo( 'name' );
 
 	if ( $brand_hor && ! $brand_icon ) {
-		echo '<img class="img-fluid" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" loading="lazy"/>';
+		echo '<img class="img-fluid" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( $brand_alt ) . '" loading="lazy"/>';
 	} elseif ( ! $brand_hor && ( $brand_icon && get_site_icon_url() ) ) {
-		echo '<img class="brand-icon" src="' . esc_url( get_site_icon_url() ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>';
+		echo '<img class="brand-icon" src="' . esc_url( get_site_icon_url() ) . '" alt="' . esc_attr( $brand_alt ) . '" height="32" width="32" loading="lazy"/>';
 	} elseif ( $brand_hor && ( $brand_icon && get_site_icon_url() ) ) {
 		echo '
-		<img class="img-fluid d-none d-md-inline" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" loading="lazy"/>
-		<img class="brand-icon d-inline d-md-none" src="' . esc_url( get_site_icon_url( '150' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="32" width="32" loading="lazy"/>';
+		<img class="img-fluid d-none d-md-inline" src="' . esc_url( $brand_hor ) . '" alt="' . esc_attr( $brand_alt ) . '" loading="lazy"/>
+		<img class="brand-icon d-inline d-md-none" src="' . esc_url( get_site_icon_url( '150' ) ) . '" alt="' . esc_attr( $brand_alt ) . '" height="32" width="32" loading="lazy"/>';
 	}
+
 	$hide_title = ( $brand_hor && ( $brand_icon && get_site_icon_url() ) ) ? ' d-md-none' : '';
 	echo '<span class="site-title' . esc_attr( $hide_title ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
 }
+
 
 /**
  * Todos los menus
@@ -147,12 +150,18 @@ function ekiline_navbar_menu( $nav_position ) {
 			break;
 	}
 
-	// Clases css para mostrar el boton del modal.
+	// Mostrar el boton del modal y el modal.
 	if ( $styles >= '7' ) {
 		$expand     = ' ';
 		$datatoggle = 'modal';
 		$datatarget = $nav_position . 'NavModal';
 		$toggle_btn = 'modal-toggler navbar-toggler collapsed';
+		// Definir un closure para ejecutar ekiline_modal_menu_bottom en wp_footer.
+		$closure_modal_nav = function() use ( $nav_position ) {
+			ekiline_modal_menu_bottom( $nav_position );
+		};
+		// Agregar el closure al pie de WordPress.
+		add_action( 'wp_footer', $closure_modal_nav, 0 );
 	}
 
 	// Mejora, obtener el nombre del menu y agregarlo como clase.
@@ -231,17 +240,12 @@ function ekiline_navbar_menu( $nav_position ) {
 	</header><!-- .site-navigation -->
 
 	<?php
-	if ( $styles >= '7' ) {
-			ekiline_modal_menu_bottom( $nav_position );
-	}
-	?>
-
-	<?php
-
 }
 
 /**
- * Fragmento para crear un menu con madal
+ * Fragmento para crear un menu con modal
+ * Se invoca debajo de nav.
+ * add_action( 'wp_footer', 'ekiline_modal_menu_bottom', 0, 1 );
  *
  * @param string $nav_position Elegir posicion del menu.
  */
@@ -327,10 +331,6 @@ function ekiline_modal_menu_bottom( $nav_position ) {
 
 	<?php
 }
-/**
- * Se invoca debajo de nav, pero puede necesitarse en la parte baja del sitio
- * add_action( 'wp_footer', 'ekiline_modal_menu_bottom', 0, 1 );
- */
 
 /**
  * En caso de no existir un menu, default.
@@ -359,7 +359,7 @@ function ekiline_nav_fallback() {
 } // ekiline_nav_fallback
 
 /**
- * Agregar a wp_body_open, menu a la pagina, en la parte superior.
+ * Agregar menu a wp_body_open, en la parte superior.
  * Add nav at top of page.
  */
 function ekiline_top_navbar() {
