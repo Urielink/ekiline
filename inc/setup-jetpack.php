@@ -4,6 +4,7 @@
  *
  * @link https://themeshaper.com/2016/01/29/jetpack-dependency-script/
  * @link https://jetpack.com/support/jetpack-for-developers/
+ * @link https://jetpack.com/support/infinite-scroll/
  *
  * @package ekiline
  */

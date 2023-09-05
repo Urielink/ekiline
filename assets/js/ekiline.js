@@ -6,6 +6,7 @@ window.onload = function() {
 	ekiline_navbar_show_hide_scroll();
 	ekiline_navbar_add_opacity('.has-navbar-opacity #primarySiteNavigation',300);
 	ekiline_navbar_modal_behavior();
+	ekiline_jetpack_infinity_scroll_button_click('#infinite-handle');
 }
 
 /**
@@ -157,5 +158,34 @@ function ekiline_navbar_modal_behavior(){
 			modalOpen.classList.toggle('modal-full');
 			this.firstElementChild.classList.toggle('float-right');
 		}, false);
+	}
+}
+
+/**
+ * Scroll infinito de jetpack.
+ * En caso de ocupar un botón este ejecutará automáticamente luego de 2 segundos.
+ */
+function ekiline_jetpack_infinity_scroll_button_click(buttonSelector) {
+	// Selector de boton y temporizador.
+	var jp_button = document.querySelector(buttonSelector);
+	var scrollTimer = null;
+
+	// Escuchar evento de scroll.
+	if (jp_button) {
+		window.addEventListener('scroll', function() {
+			// Si hay un temporizador, cancelarlo.
+			clearTimeout(scrollTimer);
+			// Obtener posición del botón y la altura de la ventana.
+			var buttonRect = jp_button.getBoundingClientRect();
+			var windowHeight = window.innerHeight;
+			// Si el botón está dentro de los rangos del display ejecutar (+100 adelanta la ejecucion).
+			if (buttonRect.top >= -100 && buttonRect.bottom <= windowHeight + 100) {
+				scrollTimer = setTimeout(function() {
+					if ( document.contains(jp_button) ) {
+						jp_button.click();
+					}
+				}, 2000);
+			}
+		});
 	}
 }
