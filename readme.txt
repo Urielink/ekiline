@@ -53,6 +53,7 @@ Ekiline includes support for Woocommerce.
 * Update: Include new  Bootstrap version (v5.3.1).
 * Improve: navbar code.
 * Improve: When Jetpack's infinite scrolling has been selected and the button replaces the pagination, it runs automatically.
+* Improve: Added theme support: border and link color.
 
 = 2.5.5 - May 18, 2023 =
 * Fix: Restore css style for fullwidth blocks.

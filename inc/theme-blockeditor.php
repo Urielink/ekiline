@@ -5,6 +5,7 @@
  * @package ekiline
  *
  * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#appearance-tools
  */
 
 /**
@@ -12,23 +13,37 @@
  */
 function ekiline_block_editor_setup() {
 
-	// Alineaciones a todo lo ancho.
-	add_theme_support( 'align-wide' );
-
 	// Estilo de bloques.
 	add_theme_support( 'wp-block-styles' );
+
+	// Alineaciones a todo lo ancho.
+	add_theme_support( 'align-wide' );
 
 	// Estilo de textos interlineado.
 	add_theme_support( 'custom-line-height' );
 
 	// Unidades de medida.
-	add_theme_support( 'custom-units', 'rem', 'em', 'px' );
+	add_theme_support( 'custom-units', 'px', 'em', 'rem', 'vh', 'vw', '%' );
 
 	// Nuevo soporte de bloques: responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
 	// Nuevo soporte de bloques: padding en bloques de grupo.
 	add_theme_support( 'custom-spacing' );
+
+	// Nuevo soporte de bloques: propiedades de borde.
+	add_theme_support( 'border' );
+
+	// Nuevo soporte de bloques: color en enlace.
+	add_theme_support( 'link-color' );
+
+	/**
+	 * Soporte de bloques, compatibilidad de estilos globales.
+	 * add_theme_support( 'appearance-tools' );
+	 *
+	 * Soporte de bloques: permitir el uso de patrones en plantilla.
+	 * add_theme_support( 'block-template-parts' );
+	 */
 
 	// Estilos de apoyo, llamar siempre al tema padre.
 	add_theme_support( 'editor-styles' );
