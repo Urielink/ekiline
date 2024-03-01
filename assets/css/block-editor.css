@@ -6,9 +6,9 @@
 /* .wp-block{border:1px dotted #ccc;padding:.25em;} */
 
 /* Mostrar elementos acorde a bootstrap */
-.wp-block{max-width: 86%;}
-.wp-block[data-align="wide"]{max-width: 94%;}
-.wp-block[data-align="full"]{max-width: none;}
+html:where(.wp-block){max-width:960px;}
+html:where(.wp-block[data-align="wide"]){max-width:1040px;}
+html:where(.wp-block[data-align="full"]){max-width:none;}
 
 /* Ajustar colores */
 .wp-block p.has-text-color a { color: inherit; }
@@ -17,5 +17,5 @@
 .carousel-multiple figure{
     background-color: #f8f8f8;
     border:1px solid #ffffff;
-	float:left;
+    float:left;
 }
