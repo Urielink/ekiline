@@ -3,6 +3,9 @@
  * Custom header.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * MAR-5-2024: new markup.
+ * @link https://developer.wordpress.org/reference/functions/the_header_image_tag/
+ * @link https://developer.wordpress.org/reference/functions/get_header_image_tag/
  *
  * @package ekiline
  */
@@ -13,10 +16,12 @@
 
 <div id="custom_header_module" class="custom-header mb-3<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' container px-0'; ?>">
 
-	<div class="wp-block-cover has-background-dim-20 has-background-dim has-parallax bg-deep<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' jumbotron'; ?>" style="background-image:url( '<?php echo esc_url( ekiline_header_image() ); ?>' );">
+	<div class="wp-block-cover has-background-dim-20 has-background-dim<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' rounded-3'; ?>">
 
 	<?php if ( get_theme_mod( 'ekiline_video' ) && is_front_page() ) { ?>
-		<video class="wp-block-cover__video-background intrinsic-ignore" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
+		<video class="wp-block-cover__video-background intrinsic-ignore custom-header-video" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
+	<?php } else { ?>
+		<?php echo esc_html( the_header_image_tag( array( 'class' => 'custom-header-image bg-zoom-in' ) ) ); ?>
 	<?php } ?>
 
 		<div class="headline<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? ' container' : ' w-100'; ?><?php echo esc_html( ekiline_header_text_position_css() ); ?>">

@@ -316,7 +316,6 @@ function ekiline_custom_header_style() {
 	$hdr_style  = '#custom_header_module .wp-block-cover, #custom_header_module .wp-block-cover.has-background-dim::before{ background-color:' . esc_attr( $hdr_bgc ) . ';min-height:' . $range_head . 'vh; }';
 	$hdr_style .= '#custom_header_module .headline{color:' . $new_coltxt . ';}';
 	$hdr_style .= '#custom_header_module .headline a{color:' . esc_attr( $hdr_lkc ) . ';}';
-	$hdr_style .= '@media only screen and (min-width:960px){#custom_header_module .wp-block-cover{background-image:url("' . ekiline_header_image( 'full' ) . '") !important;}}';
 
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo $hdr_style;
@@ -342,9 +341,18 @@ function ekiline_custom_header_css( $classes ) {
 add_filter( 'body_class', 'ekiline_custom_header_css' );
 
 /**
+ * MAR-05-2024 Deprecated, update header structure.
+ *
  * Crear un header dinamico y personalizable.
  * the_header_image_tag() : llama la etiqueta completa.
  * header_image(); : llama la url.
+ *
+ * Multiples dimensiones de un attachment
+ * https://developer.wordpress.org/reference/functions/wp_get_attachment_image_srcset/
+ * $url = wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'medium', null );
+ * Tamaño medio (thumbnail,medium,medium_large,large,full)
+ * https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
+ * otra documentacion: https://premium.wpmudev.org/blog/wordpress-image-sizes/
  *
  * @link https://developer.wordpress.org/reference/functions/get_header_image/
  * @link https://developer.wordpress.org/reference/functions/header_image/
@@ -356,15 +364,6 @@ function ekiline_header_image( $size = null ) {
 
 	$size = ( ! $size ) ? 'medium_large' : '';
 	$url  = get_header_image();
-
-	/*
-	* Multiples dimensiones de un attachment
-	* https://developer.wordpress.org/reference/functions/wp_get_attachment_image_srcset/
-	* $url = wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'medium', null );
-	* Tamaño medio (thumbnail,medium,medium_large,large,full)
-	* https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
-	* otra documentacion: https://premium.wpmudev.org/blog/wordpress-image-sizes/
-	*/
 
 	$theme_images = array( 'media', 'patron' );
 	$header_img   = array();
