@@ -341,7 +341,7 @@ function ekiline_custom_header_css( $classes ) {
 add_filter( 'body_class', 'ekiline_custom_header_css' );
 
 /**
- * MAR-05-2024 Deprecated, update header structure.
+ * MAR-05-2024 Deprecated, get image directly in header structure ( custom-header.php ).
  *
  * Crear un header dinamico y personalizable.
  * the_header_image_tag() : llama la etiqueta completa.

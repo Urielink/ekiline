@@ -19,9 +19,17 @@
 	<div class="wp-block-cover has-background-dim-20 has-background-dim<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? '' : ' rounded-3'; ?>">
 
 	<?php if ( get_theme_mod( 'ekiline_video' ) && is_front_page() ) { ?>
+
 		<video class="wp-block-cover__video-background intrinsic-ignore custom-header-video" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
+
+	<?php } elseif ( is_single() && has_post_thumbnail() ) { ?>
+
+		<?php the_post_thumbnail( 'full', array( 'class' => 'custom-header-image bg-zoom-in' ) ); ?>
+
 	<?php } else { ?>
-		<?php echo esc_html( the_header_image_tag( array( 'class' => 'custom-header-image bg-zoom-in' ) ) ); ?>
+
+		<?php the_header_image_tag( array( 'class' => 'custom-header-image bg-zoom-in' ) ); ?>
+
 	<?php } ?>
 
 		<div class="headline<?php echo ( ! get_theme_mod( 'ekiline_headerCustomWidth' ) ) ? ' container' : ' w-100'; ?><?php echo esc_html( ekiline_header_text_position_css() ); ?>">

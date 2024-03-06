@@ -51,7 +51,6 @@ Ekiline includes support for Woocommerce.
 
 = 2.7.1 - Mar 5, 2024 =
 * Update: Custom header, new markup and CSS rules for image position and animation.
-* Update.
 
 = 2.7.0 - Sep 20, 2023 =
 * Checkup: compatibility WordPress 6.4
