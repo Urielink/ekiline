@@ -22,7 +22,7 @@
 
 		<video class="wp-block-cover__video-background intrinsic-ignore custom-header-video" autoplay="" muted="" loop="" playsinline="" src="<?php echo esc_url( get_theme_mod( 'ekiline_video' ) ); ?>" data-object-fit="cover"></video>
 
-	<?php } elseif ( is_single() && has_post_thumbnail() ) { ?>
+	<?php } elseif ( is_singular() && has_post_thumbnail() ) { ?>
 
 		<?php the_post_thumbnail( 'full', array( 'class' => 'custom-header-image bg-zoom-in' ) ); ?>
 
