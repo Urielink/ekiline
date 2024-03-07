@@ -4,7 +4,7 @@
  Author: Uri Lazcano (Urielink)
  Author URI: https://profiles.wordpress.org/urielink/
  Description: Hybrid Theme built with Bootstrap 5. Has multiple widget areas. Designed to facilitate the creation of websites. Search engine friendly markup (HTML5), it combines the capabilities of Bootstrap CSS and JS with WordPress customizer and new editor Blocks. Project under constant revision by author. Documentation: http://www.ekiline.com
- Version: 2.7.0
+ Version: 2.7.1
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: ekiline
@@ -158,29 +158,26 @@
 
  /* ------------------------------------------------
   * 1.4) Ekiline THEME OPTIONS:
+  * march 2024 update: custom-header-image and bg-zoom-in new rules
   * ----------------------------------------------*/
 /* Custom header */
-.bg-deep,.wp-block-cover.bg-deep div{background-size:1px;background-repeat:no-repeat;-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
-#custom_header_module .wp-block-cover,#custom_header_module .wp-block-cover.has-background-dim::before{display:flex;align-items:flex-end;}
-#custom_header_module > .alignfull{margin-left:calc(-101vw / 2 + 100% / 2);margin-right:calc(-101vw / 2 + 100% / 2);width:100vw;}
+#custom_header_module .wp-block-cover,
+#custom_header_module .wp-block-cover.has-background-dim::before{display:flex;align-items:flex-end;}
+#custom_header_module>.alignfull{margin-left:calc(-101vw / 2 + 100% / 2);margin-right:calc(-101vw / 2 + 100% / 2);width:100vw;}
 #custom_header_module .wp-block-cover.has-background-dim::before{z-index:1;opacity:0.2 !important;}
 #custom_header_module .wp-block-cover .headline{z-index:1;}
 #custom_header_module h1{line-height:0.88;}
-@media only screen and (max-width:576px){
-  #custom_header_module > .alignfull{margin-left:calc(-100vw / 2 + 100% / 2);margin-right:calc(-100vw / 2 + 100% / 2);}
+@media only screen and (max-width:576px) {
+ #custom_header_module>.alignfull{margin-left:calc(-100vw / 2 + 100% / 2);margin-right:calc(-100vw / 2 + 100% / 2);}
 }
-@keyframes bgresize{
-  0%{background-size:150%;}
-  100%{background-size:130%;}
+/** march 2024 update **/
+#custom_header_module .custom-header-image{border:none;bottom:0;box-shadow:none;height:100%;left:0;margin:0;max-height:none;max-width:none;object-fit:cover;outline:none;padding:0;position:absolute;right:0;top:0;width:100%;}
+@keyframes bgzoomin{
+  0%{scale:1.1;}
+  100%{scale:1;}
 }
-.bg-deep,.wp-block-cover.bg-deep{animation:bgresize 5s ease;background-position:50% 50%;background-repeat:no-repeat;background-size:130%;}
-@media only screen and (max-width:960px),(aspect-ratio:1/1),(orientation:portrait){
-  @keyframes bgresize{
-    0%{background-size:200vh;}
-    100%{background-size:180vh;}
-  }
-  .bg-deep,.wp-block-cover.bg-deep{background-size:180vh;}
-}
+.custom-header-image.bg-zoom-in{animation:bgzoomin 5s ease;}
+
 /* Navbar options, combine rules with header */
 body.has-navbar-static-top, body.has-navbar-fixed-top.has-custom-header-full-view, body.has-navbar-fixed-top-sticky.has-custom-header-full-view{margin-top:initial;}
 body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top:50px;}
@@ -273,6 +270,7 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   .navbar .scroll-menu.show .dropup .dropdown-toggle::after,
   .navbar .off-canvas-nav.show .dropup a.dropdown-toggle-split::after{border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   @media only screen and (max-width : 768px) {
+    .navbar .dropdown > a,.navbar .dropend > a, .navbar .dropup > a{display:block;}
     .navbar .dropend a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   }
 /* Ajustes de submenu anidado(probable agregar) {position:static;float:none;} */
