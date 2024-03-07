@@ -270,6 +270,7 @@ body.has-navbar-static-top.has-navbar-opacity #primarySiteNavigation,body.has-na
   .navbar .scroll-menu.show .dropup .dropdown-toggle::after,
   .navbar .off-canvas-nav.show .dropup a.dropdown-toggle-split::after{border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   @media only screen and (max-width : 768px) {
+    .navbar .dropdown > a,.navbar .dropend > a, .navbar .dropup > a{display:block;}
     .navbar .dropend a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
   }
 /* Ajustes de submenu anidado(probable agregar) {position:static;float:none;} */

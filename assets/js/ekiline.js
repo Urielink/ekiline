@@ -22,7 +22,7 @@ function ekiline_extend_bootstrap_init_bundle_items(){
 
 	document.querySelectorAll('[data-bs-toggle="popover"]')
 		.forEach(function (popover) {
-		new bootstrap.Popover(popover);
+			new bootstrap.Popover(popover);
 		});
 
 	document.querySelectorAll('.toast')
@@ -34,6 +34,17 @@ function ekiline_extend_bootstrap_init_bundle_items(){
 			if (!toastNode.classList.contains('hide')){
 				toast.show();
 			}
+		});
+
+	// MAR062024: Nested navbar links.
+	document.querySelectorAll('.dropdown-toggle')
+		.forEach(function(dropdown) {
+			dropdown.addEventListener('click', function(event) {
+				var parentElement = event.target.closest('.dropdown-menu');
+				if (parentElement) {
+					event.stopPropagation();
+				}
+			});
 		});
 }
 
