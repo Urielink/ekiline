@@ -6,10 +6,17 @@
 /* .wp-block{border:1px dotted #ccc;padding:.25em;} */
 
 /* Mostrar elementos acorde a bootstrap */
-html:where(.wp-block){max-width:960px;}
-html:where(.wp-block[data-align="wide"]){max-width:1040px;}
-html:where(.wp-block[data-align="full"]){max-width:none;}
-
+html :where(.wp-block){max-width:960px;}
+html :where(.wp-block[data-align="wide"]){max-width:1040px;}
+html :where(.wp-block[data-align="full"]){max-width:none;}
+/*
+ * Existen espacios no controlados debido a estilos de compatibilidad
+ * (classic.min.css / wp-editor-classic-layout-styles-css)
+ */
+html :where(.wp-block),
+.is-root-container .wp-block .wp-block{
+    margin: initial;
+}
 /* Ajustar colores */
 .wp-block p.has-text-color a { color: inherit; }
 
