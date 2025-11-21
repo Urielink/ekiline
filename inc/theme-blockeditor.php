@@ -48,7 +48,7 @@ function ekiline_block_editor_setup() {
 	// Estilos de apoyo, llamar siempre al tema padre.
 	add_theme_support( 'editor-styles' );
 	$block_styles = array(
-		get_template_directory_uri() . '/assets/css/bootstrap.min.css',
+		// get_template_directory_uri() . '/assets/css/bootstrap.min.css',
 		get_template_directory_uri() . '/style.css',
 		get_template_directory_uri() . '/assets/css/block-editor.css',
 	);
@@ -228,20 +228,34 @@ add_action( 'after_setup_theme', 'ekiline_block_editor_setup' );
 
 
 /**
- * Estilos de apoyo
+ * Estilos de apoyo.
+ * Inyectar CSS personalizado del Customizer en el editor de bloques.
  */
-function ekiline_custom_colors_styles() {
-	global $pagenow;
-	if ( 'post.php' === $pagenow && get_theme_mod( 'ekiline_textarea_css' ) !== '' ) {
-		$css      = get_theme_mod( 'ekiline_textarea_css' );
-		$xchange  = str_replace( '}', '}.block-editor .editor-styles-wrapper', $css );
-		$csstag   = '<style id="ekiline-from-custom-colors">' . $xchange . '</style>';
-		$tagclean = str_replace( '.block-editor .editor-styles-wrapper</style>', '</style>', $csstag );
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $tagclean;
+function ekiline_custom_colors_styles_editor() {
+
+	$custom_css = get_theme_mod( 'ekiline_textarea_css' );
+
+	if ( empty( $custom_css ) ) {
+		return;
 	}
+
+	// Registramos un "handle" vacío solo para poder inyectar CSS.
+	wp_register_style(
+		'ekiline-editor-custom-colors',
+		false,
+		array(),
+		null
+	);
+
+	// Add bootstrap.
+	wp_enqueue_style('bootstrap-style-editor', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4', 'all');
+	// Add ekiline theme.
+	wp_enqueue_style( 'ekiline-editor-custom-colors' );
+	wp_add_inline_style( 'ekiline-editor-custom-colors', $custom_css );
+
 }
-add_action( 'admin_head', 'ekiline_custom_colors_styles', 100 );
+add_action( 'enqueue_block_assets', 'ekiline_custom_colors_styles_editor', 100 );
+
 
 /**
  * Scripts de apoyo: bootstrap.
@@ -250,4 +264,4 @@ function ekiline_add_editor_scripts() {
 	wp_enqueue_script( 'bootstrap-script-editor', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), '4', true );
 	wp_enqueue_script( 'ekiline-layout-editor', get_template_directory_uri() . '/assets/js/ekiline.js', array( 'jquery' ), '20151226', true );
 }
-add_action( 'enqueue_block_editor_assets', 'ekiline_add_editor_scripts' );
+// add_action( 'enqueue_block_editor_assets', 'ekiline_add_editor_scripts' );

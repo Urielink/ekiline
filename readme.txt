@@ -3,7 +3,7 @@ Contributors: urielink
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.8.0
+Stable tag: 2.8.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 Donate link: https://www.paypal.com/paypalme/urielink
@@ -48,6 +48,11 @@ Ekiline includes support for Infinite Scroll in Jetpack.
 Ekiline includes support for Woocommerce.
 
 == Changelog ==
+
+= 2.8.1 - Nov 20, 2025 =
+* Enhance: Disable javascript bootstrap from editor.
+* Enhance: New method to enqueue bootstrap styles in editor.
+
 
 = 2.8.0 - Nov 19, 2025 =
 * Update: Upgrade bootstrap version addons
