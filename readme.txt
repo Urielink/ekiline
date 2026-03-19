@@ -49,10 +49,13 @@ Ekiline includes support for Woocommerce.
 
 == Changelog ==
 
+= 2.9.0 - Mar 19, 2026 =
+* Refactor: ekiline_above_fold_styles now replaces previous enqueue-based loading method.
+* Improve: Standardize Bootstrap usage by loading only minified bundle versions.
+
 = 2.8.1 - Nov 20, 2025 =
 * Enhance: Disable javascript bootstrap from editor.
 * Enhance: New method to enqueue bootstrap styles in editor.
-
 
 = 2.8.0 - Nov 19, 2025 =
 * Update: Upgrade bootstrap version addons

@@ -253,18 +253,29 @@ function ekiline_get_string_between( $string, $start, $end ) {
  * debe aparecer al principio de cualquier css (0).
  */
 function ekiline_above_fold_styles() {
-	// Estilos.
-	$file = get_template_directory_uri() . '/assets/css/style-atf.css';
-	$file = wp_remote_get( $file );
-	$data = wp_remote_retrieve_body( $file );
-	// Quitar comentarios.
-	$data = preg_replace( '#/\*.*?\*/#s', '', $data );
-	// Quitar saltos de linea y convertir en un string.
-	$data = wp_strip_all_tags( $data, true );
-	wp_register_style( 'ekiline-atf', false, '', '2.0', 'all' );
-	wp_enqueue_style( 'ekiline-atf' );
-	if ( $data ) {
-		wp_add_inline_style( 'ekiline-atf', $data );
+	// Ruta REAL del archivo en servidor (no URL)
+	$file_path = get_template_directory() . '/assets/css/style-atf.css';
+
+	// Verificar que existe
+	if ( file_exists( $file_path ) ) {
+
+		// Leer archivo directamente (sin HTTP)
+		$data = file_get_contents( $file_path );
+
+		// Quitar comentarios
+		$data = preg_replace( '#/\*.*?\*/#s', '', $data );
+
+		// Limpiar contenido
+		$data = wp_strip_all_tags( $data, true );
+
+		// Registrar estilo vacío
+		wp_register_style( 'ekiline-atf', false );
+		wp_enqueue_style( 'ekiline-atf' );
+
+		// Inyectar CSS inline
+		if ( $data ) {
+			wp_add_inline_style( 'ekiline-atf', $data );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ekiline_above_fold_styles', 0 );
